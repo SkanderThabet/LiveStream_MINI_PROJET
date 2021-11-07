@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".OTP">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="223dp"
+        android:layout_height="233dp"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="94dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_1" />
+
+    <TextView
+        android:id="@+id/otp_verific"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="103dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="103dp"
+        android:fontFamily="@font/montserratbold700"
+        android:text="@string/otp_verific"
+        android:textAlignment="center"
+        android:textAppearance="@style/otp_verific"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/we_will_sen"
+        android:layout_width="314dp"
+        android:layout_height="48dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="49dp"
+        android:gravity="center_horizontal|top"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/we_will_sen"
+        android:textAppearance="@style/we_will_sen"
+        android:translationY="-2.25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otp_verific" />
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="89dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="89dp"
+        android:layout_marginBottom="42dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/we_will_sen"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/txtEnterMobileNu"
+            style="@style/txtMontserratregular14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="@dimen/_33pxh"
+            android:layout_marginEnd="@dimen/_33pxh"
+            android:gravity="top|start"
+            android:text="Enter Mobile Number"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/txt49111222333"
+            style="@style/txtMontserratbold18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="@dimen/_50pxh"
+            android:layout_marginTop="@dimen/_20pxv"
+            android:layout_marginEnd="@dimen/_48pxh"
+            android:backgroundTint="#2743FD"
+            android:gravity="center"
+            android:hint="Enter your number"
+            android:inputType="phone"
+            android:minHeight="48dp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="315dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="75dp"
+        android:background="@drawable/rectangle_gradient_s_indigo_a400_e_indigo_a700_radius_28"
+        android:foreground="@drawable/img_mask_group_14"
+        android:gravity="center"
+        android:text="Get OTP"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear1" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

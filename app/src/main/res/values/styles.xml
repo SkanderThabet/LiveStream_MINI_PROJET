@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <style name="groupStylecornerRadius">
+        <item name="android:background">
+            @drawable/rectangle_gradient_s_indigo_a400_e_indigo_a700_radius_28
+        </item>
+    </style>
+
+    <style name="txtMontserratbold15_1" parent="txtMontserratmedium15">
+        <item name="android:textFontWeight">700</item>
+    </style>
+
+    <style name="txtMontserratregular16_3" parent="txtMontserratmedium16_1">
+        <item name="android:textFontWeight">400</item>
+    </style>
+
+    <style name="txtMontserratregular16_4" parent="txtMontserratmedium16">
+        <item name="android:textFontWeight">400</item>
+    </style>
+
+    <style name="groupStylegray_800cornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_gray_800_radius_22_5</item>
+    </style>
+
+    <style name="txtMontserratregular16_1" parent="txtMontserratbold16_1">
+        <item name="android:textFontWeight">400</item>
+    </style>
+
+    <style name="groupStylewhite_A700_66cornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_white_a700_66_radius_28</item>
+    </style>
+
+    <style name="txtMontserratregular16_2" parent="txtMontserratlight16">
+        <item name="android:textFontWeight">400</item>
+    </style>
+
+    <style name="etMontserratregular14_1" parent="etMontserratregular14_2">
+        <item name="android:textColor">@color/light_blue_A100</item>
+    </style>
+
+    <style name="txtMontserratregular12_1" parent="txtMontserratregular20_2">
+        <item name="android:textSize">@dimen/_12pxh</item>
+    </style>
+
+    <style name="etMontserratregular14_3" parent="etMontserratregular14_2">
+        <item name="android:textColor">@color/indigo_a701</item>
+    </style>
+
+    <style name="groupStylewhite_A700">
+        <item name="android:background">@drawable/rectangle_bg_white_a700</item>
+    </style>
+
+    <style name="txtMontserratregular12_2" parent="txtMontserratblack12">
+        <item name="android:textFontWeight">400</item>
+    </style>
+
+    <style name="etMontserratregular14_2">
+        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textColor">@color/white_A700</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight">400</item>
+    </style>
+
+    <style name="txtMontserratregular28" parent="txtMontserratregular14_4">
+        <item name="android:textSize">@dimen/_28pxh</item>
+    </style>
+
+    <style name="txtMontserratregular24" parent="txtMontserratlight24">
+        <item name="android:textFontWeight">400</item>
+    </style>
+
+    <style name="txtRobotoregular16" parent="txtMontserratregular16_4">
+        <item name="android:textSize">@dimen/_16pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="txtRobotoregular13" parent="txtPoppinsregular13">
+        <item name="android:textColor">@color/gray_600</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="txtPoppinsmedium22">
+        <item name="android:textSize">@dimen/_22pxh</item>
+        <item name="android:textColor">@color/gray_50</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textFontWeight">500</item>
+    </style>
+
+    <style name="txtMontserratmedium10_1" parent="txtMontserratmedium10">
+        <item name="android:textColor">@color/gray_601</item>
+    </style>
+
+    <style name="groupStylegray_50">
+        <item name="android:background">@drawable/rectangle_bg_gray_50</item>
+    </style>
+
+    <style name="txtMontserratlight9" parent="txtMontserratlight24">
+        <item name="android:textSize">@dimen/_9pxh</item>
+    </style>
+
+    <style name="txtSFProDisplaymedium20" parent="txtMontserratmedium11">
+        <item name="android:textSize">@dimen/_20pxh</item>
+        <item name="android:fontFamily">@font/sf_pro_display</item>
+    </style>
+
+    <style name="groupStylegray_600_1ecornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_gray_600_1e_radius_6</item>
+    </style>
+
+    <style name="txtMontserratregular16" parent="txtMontserratregular20_3">
+        <item name="android:textSize">@dimen/_16pxh</item>
+    </style>
+
+    <style name="txtSolidRounded" parent="txtMontserratmedium16_1">
+        <item name="android:background">@drawable/rectangle_bg_deep_purple_a200_9b_radius_60</item>
+    </style>
+
+    <style name="groupStylegreen_A200_44cornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_green_a200_44_radius_50</item>
+    </style>
+
+    <style name="txtMontserratregular18" parent="txtMontserratregular18_4">
+        <item name="android:textColor">@color/indigo_A700</item>
+    </style>
+
+    <style name="txtMontserratbold12">
+        <item name="android:textSize">@dimen/_12pxh</item>
+        <item name="android:textColor">@color/white_A700</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight">700</item>
+    </style>
+
+    <style name="txtMontserratbold11" parent="txtMontserratmedium11">
+        <item name="android:textFontWeight">700</item>
+    </style>
+
+    <style name="txtMontserratbold14" parent="txtMontserratbold24_2">
+        <item name="android:textSize">@dimen/_14pxh</item>
+    </style>
+
+    <style name="txtMontserratregular12" parent="txtMontserratregular14_3">
+        <item name="android:textSize">@dimen/_12pxh</item>
+    </style>
+
+    <style name="groupStylecornerRadius_12">
+        <item name="android:background">@drawable/rectangle_radius_23_32</item>
+    </style>
+
+    <style name="txtMontserratregular13" parent="txtMontserratsemibold12">
+        <item name="android:textSize">@dimen/_13pxh</item>
+        <item name="android:textFontWeight">400</item>
+    </style>
+
+    <style name="groupStylecornerRadius_11">
+        <item name="android:background">@drawable/rectangle_radius_14_4</item>
+    </style>
+
+    <style name="txtMontserratregular14" parent="txtMontserratregular14_4">
+        <item name="android:textColor">@color/gray_400</item>
+    </style>
+
+    <style name="txtMontserratbold16" parent="txtMontserratbold16_1">
+        <item name="android:textColor">@color/white_A700</item>
+    </style>
+
+    <style name="groupStylecornerRadius_10">
+        <item name="android:background">@drawable/rectangle_radius_14_5</item>
+    </style>
+
+    <style name="txtMontserratbold15" parent="txtMontserratbold24_3">
+        <item name="android:textSize">@dimen/_15pxh</item>
+    </style>
+
+    <style name="txtMontserratregular15" parent="txtMontserratmedium15">
+        <item name="android:textColor">@color/bluegray_700</item>
+        <item name="android:textFontWeight">400</item>
+    </style>
+
+    <style name="txtMontserratbold18" parent="txtMontserratbold16_1">
+        <item name="android:textSize">@dimen/_18pxh</item>
+    </style>
+
+    <style name="groupStylecornerRadius_16">
+        <item name="android:background">
+            @drawable/rectangle_gradient_s_red_a100_e_red_300_radius_25
+        </item>
+    </style>
+
+    <style name="groupStylecornerRadius_15">
+        <item name="android:background">
+            @drawable/rectangle_gradient_s_indigo_a700_e_indigo_a700_00_radius_40
+        </item>
+    </style>
+
+    <style name="groupStylecornerRadius_14">
+        <item name="android:background">@drawable/rectangle_radius_99999</item>
+    </style>
+
+    <style name="groupStylecornerRadius_13">
+        <item name="android:background">@drawable/rectangle_radius_6</item>
+    </style>
+
+    <style name="groupStylecornerRadius_19">
+        <item name="android:background">
+            @drawable/rectangle_gradient_s_purple_a100_e_deep_purple_400_radius_25
+        </item>
+    </style>
+
+    <style name="groupStylegray_100cornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_gray_100_radius_16</item>
+    </style>
+
+    <style name="groupStylecornerRadius_18">
+        <item name="android:background">
+            @drawable/rectangle_gradient_s_cyan_a100_e_teal_300_radius_25
+        </item>
+    </style>
+
+    <style name="groupStylecornerRadius_17">
+        <item name="android:background">
+            @drawable/rectangle_gradient_s_orange_a100_e_lime_700_radius_25
+        </item>
+    </style>
+
+    <style name="groupStylegray_201cornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_gray_201_radius_30</item>
+    </style>
+
+    <style name="txtMontserratblack12" parent="txtMontserratblack12_1">
+        <item name="android:textColor">@color/gray_600</item>
+    </style>
+
+    <style name="txtMontserratregular20" parent="txtMontserratregular14_4">
+        <item name="android:textSize">@dimen/_20pxh</item>
+    </style>
+
+    <style name="groupStyleblue_1">
+        <item name="android:background">@drawable/rectangle_bg_blue_600_radius_10</item>
+    </style>
+
+    <style name="txtMontserratregular22" parent="txtMontserratregular15_1">
+        <item name="android:textSize">@dimen/_22pxh</item>
+        <item name="android:textColor">@color/cyan_A100</item>
+    </style>
+
+    <style name="txtSolidRounded_1" parent="txt_10">
+        <item name="android:textFontWeight">300</item>
+        <item name="android:background">@drawable/rectangle_bg_gray_800_6b_radius_50</item>
+    </style>
+
+    <style name="txtRobotomedium20" parent="txtMontserratmedium16">
+        <item name="android:textSize">@dimen/_20pxh</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="txtSolidRounded_2" parent="txtMontserratmedium11">
+        <item name="android:background">@drawable/rectangle_bg_blue_500_radius_30</item>
+    </style>
+
+    <style name="txtMontserratregular20_1" parent="txtMontserratmedium20">
+        <item name="android:textFontWeight">400</item>
+    </style>
+
+    <style name="txtHelveticabold20" parent="txtMontserratbold24_3">
+        <item name="android:textSize">@dimen/_20pxh</item>
+        <item name="android:fontFamily">@font/helvetica</item>
+    </style>
+
+    <style name="groupStylewhite_A700cornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_white_a700_radius_28</item>
+    </style>
+
+    <style name="txt" parent="txtMontserratregular18_4">
+        <item name="android:background">@drawable/rectangle_dhi_0</item>
+    </style>
+
+    <style name="txtMontserratblack12_1" parent="txtMontserratmedium12_3">
+        <item name="android:textFontWeight">900</item>
+    </style>
+
+    <style name="groupStylebluegray_400_d6cornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_bluegray_400_d6_radius_5</item>
+    </style>
+
+    <style name="txtMontserratregular10" parent="txtMontserratlight10">
+        <item name="android:textFontWeight">400</item>
+    </style>
+
+    <style name="txtMontserratregular11" parent="txtMontserratregular14_5">
+        <item name="android:textSize">@dimen/_11pxh</item>
+    </style>
+
+    <style name="groupStylepurple_a200cornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_purple_a200_radius_50</item>
+    </style>
+
+    <style name="txtMontserratregular20_2" parent="txtMontserratlight18">
+        <item name="android:textSize">@dimen/_20pxh</item>
+        <item name="android:textFontWeight">400</item>
+    </style>
+
+    <style name="txtMontserratregular20_3" parent="txtMontserratregular20_2">
+        <item name="android:textColor">@color/indigo_A700</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="txtMontserratregular24_1" parent="txtMontserratbold24_2">
+        <item name="android:textFontWeight">400</item>
+    </style>
+
+    <style name="groupStyleblack_1">
+        <item name="android:background">@drawable/rectangle_bg_black_900_radius_10</item>
+    </style>
+
+    <style name="btnSolidRounded_3">
+        <item name="android:textSize">@dimen/_12pxh</item>
+        <item name="android:textColor">@color/gray_801</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight">900</item>
+        <item name="android:background">@drawable/rectangle_bg_gray_300_radius_8</item>
+    </style>
+
+    <style name="btnSolidRounded_2" parent="btnSolidRounded_1">
+        <item name="android:textSize">@dimen/_11pxh</item>
+        <item name="android:background">@drawable/rectangle_bg_blue_500_radius_30</item>
+    </style>
+
+    <style name="groupStylegray_402cornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_gray_402_radius_45</item>
+    </style>
+
+    <style name="btnSolidRounded_1">
+        <item name="android:textSize">@dimen/_13pxh</item>
+        <item name="android:textColor">@color/white_A700</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight">500</item>
+        <item name="android:background">@drawable/rectangle_bg_teal_a200_b5_radius_50</item>
+    </style>
+
+    <style name="txt_10" parent="txt_8">
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textFontWeight">600</item>
+    </style>
+
+    <style name="txtMontserratregular18_5" parent="txtMontserratregular18_4">
+        <item name="android:textColor">@color/lime_900</item>
+    </style>
+
+    <style name="txtMontserratregular18_6" parent="txtMontserratregular18_4">
+        <item name="android:textColor">@color/teal_400</item>
+    </style>
+
+    <style name="txtMontserratregular18_7" parent="txtMontserratregular18_4">
+        <item name="android:textColor">@color/purple_500</item>
+    </style>
+
+    <style name="txtMontserratregular18_1" parent="txtMontserratregular18_4">
+        <item name="android:textColor">@color/indigo_a400</item>
+    </style>
+
+    <style name="txtMontserratregular14_5" parent="txtMontserratregular14_4">
+        <item name="android:textColor">@color/black_900</item>
+    </style>
+
+    <style name="txtMontserratregular14_6" parent="txtMontserratregular14_4">
+        <item name="android:textColor">@color/indigo_a701</item>
+    </style>
+
+    <style name="txtMontserratregular18_2" parent="txtMontserratregular18_4">
+        <item name="android:textColor">@color/deep_purple_A400</item>
+    </style>
+
+    <style name="txtMontserratregular18_3" parent="txtMontserratregular14_4">
+        <item name="android:textSize">@dimen/_18pxh</item>
+    </style>
+
+    <style name="txtMontserratregular18_4" parent="txtMontserratregular18_3">
+        <item name="android:textColor">@color/red_900</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight">400</item>
+    </style>
+
+    <style name="txtMontserratregular14_1" parent="txtMontserratregular14_4">
+        <item name="android:textColor">@color/gray_800</item>
+    </style>
+
+    <style name="txtMontserratregular14_2" parent="txtMontserratregular14_4">
+        <item name="android:textColor">@color/red_600</item>
+    </style>
+
+    <style name="txtMontserratregular14_3" parent="txtMontserratmedium14">
+        <item name="android:textColor">@color/light_blue_A100</item>
+        <item name="android:textFontWeight">400</item>
+    </style>
+
+    <style name="txtMontserratregular14_4" parent="txtMontserratregular14_3">
+        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textColor">@color/white_A700</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="txtMontserratregular10_1" parent="txtMontserratregular10">
+        <item name="android:textSize">@dimen/_10pxh</item>
+        <item name="android:textColor">@color/gray_700</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="txtMontserratbold40" parent="txtMontserratbold16_1">
+        <item name="android:textSize">@dimen/_40pxh</item>
+    </style>
+
+    <style name="etSolidRounded" parent="etMontserratregular14_2">
+        <item name="android:textSize">@dimen/_13pxh</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:background">@drawable/rectangle_bg_cyan_500_radius_50</item>
+    </style>
+
+    <style name="groupStylecornerRadius_3">
+        <item name="android:background">@drawable/rectangle_radius_18_22</item>
+    </style>
+
+    <style name="groupStylecornerRadius_2">
+        <item name="android:background">@drawable/rectangle_radius_36</item>
+    </style>
+
+    <style name="btnSolidRounded" parent="btnSolidRounded_1">
+        <item name="android:textSize">@dimen/_16pxh</item>
+        <item name="android:background">@drawable/rectangle_bg_indigo_a700_9b_radius_50</item>
+    </style>
+
+    <style name="groupStylecornerRadius_5">
+        <item name="android:background">@drawable/rectangle_radius_14_6</item>
+    </style>
+
+    <style name="txtMontserratbold22" parent="txtMontserratbold16_1">
+        <item name="android:textSize">@dimen/_22pxh</item>
+    </style>
+
+    <style name="groupStylecornerRadius_4">
+        <item name="android:background">
+            @drawable/rectangle_gradient_s_indigo_a400_e_indigo_a700_radius_40
+        </item>
+    </style>
+
+    <style name="txtMontserratbold24" parent="txtMontserratbold16_1">
+        <item name="android:textSize">@dimen/_24pxh</item>
+    </style>
+
+    <style name="txtPoppinsregular13" parent="txtMontserratregular13">
+        <item name="android:textColor">@color/white_A700</item>
+        <item name="android:fontFamily">@font/poppins</item>
+    </style>
+
+    <style name="groupStyleindigo_a704cornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_indigo_a704_radius_30</item>
+    </style>
+
+    <style name="groupStylecornerRadius_1">
+        <item name="android:background">@drawable/rectangle_border_indigo_a701_radius_28</item>
+    </style>
+
+    <style name="groupStylecornerRadius_20">
+        <item name="android:background">@drawable/rectangle_radius_10</item>
+    </style>
+
+    <style name="groupStylewhite_1">
+        <item name="android:background">@drawable/rectangle_bg_white_a700_radius_10</item>
+    </style>
+
+    <style name="txtMontserratbold28" parent="txtMontserratbold16_1">
+        <item name="android:textSize">@dimen/_28pxh</item>
+    </style>
+
+    <style name="groupStylewhite_3">
+        <item name="android:background">@drawable/rectangle_bg_white_a700_radius_40</item>
+    </style>
+
+    <style name="groupStylewhite_2">
+        <item name="android:background">@drawable/rectangle_bg_white_a700_radius_29</item>
+    </style>
+
+    <style name="etSolidRoundedOutline" parent="etMontserratregular14_2">
+        <item name="android:textColor">@color/gray_600</item>
+        <item name="android:textFontWeight">500</item>
+        <item name="android:background">
+            @drawable/rectangle_bg_white_a700_border_gray_200_radius_18
+        </item>
+    </style>
+
+    <style name="groupStylewhite_5">
+        <item name="android:background">@drawable/rectangle_bg_white_a700_radius_bl_25_br_25</item>
+    </style>
+
+    <style name="groupStylewhite_4">
+        <item name="android:background">@drawable/rectangle_bg_white_a701</item>
+    </style>
+
+    <style name="groupStyleindigo_a703cornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_indigo_a703_radius_50</item>
+    </style>
+
+    <style name="groupStylewhite_7">
+        <item name="android:background">@drawable/rectangle_bg_white_a702</item>
+    </style>
+
+    <style name="groupStylewhite_6">
+        <item name="android:background">@drawable/rectangle_bg_white_a700_radius_30</item>
+    </style>
+
+    <style name="txtMontserratmedium16_1" parent="txtMontserratmedium11">
+        <item name="android:textSize">@dimen/_16pxh</item>
+    </style>
+
+    <style name="txt_9" parent="txt_5">
+        <item name="android:textSize">@dimen/_15pxh</item>
+    </style>
+
+    <style name="txtMontserratbold24_3" parent="txtMontserratlight24">
+        <item name="android:textFontWeight">700</item>
+    </style>
+
+    <style name="txt_7" parent="txtMontserratregular12_2">
+        <item name="android:textSize">@dimen/_12pxh</item>
+        <item name="android:textColor">@color/gray_600</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:background">@drawable/rectangle_dhi_0</item>
+    </style>
+
+    <style name="txt_8" parent="txt_5">
+        <item name="android:textSize">@dimen/_18pxh</item>
+    </style>
+
+    <style name="groupStylegray_2">
+        <item name="android:background">@drawable/rectangle_bg_gray_100_radius_50</item>
+    </style>
+
+    <style name="txt_1" parent="txt_2">
+        <item name="android:textSize">@dimen/_20pxh</item>
+        <item name="android:textFontWeight">100</item>
+    </style>
+
+    <style name="txt_2" parent="txtMontserratlight24">
+        <item name="android:textSize">@dimen/_28pxh</item>
+        <item name="android:background">@drawable/rectangle_dhi_0</item>
+    </style>
+
+    <style name="groupStyle">
+        <item name="android:background">@drawable/rectangle_gradient_s_indigo_a400_e_indigo_a702
+        </item>
+    </style>
+
+    <style name="txt_5" parent="txt_1">
+        <item name="android:textColor">@color/white_A700</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight">700</item>
+        <item name="android:background">@drawable/rectangle_dhi_0</item>
+    </style>
+
+    <style name="txtMontserratmedium12_1" parent="txtMontserratmedium12">
+        <item name="android:textColor">@color/red_600</item>
+    </style>
+
+    <style name="groupStylecornerRadius_7">
+        <item name="android:background">@drawable/rectangle_radius_14_7</item>
+    </style>
+
+    <style name="groupStylegray_1">
+        <item name="android:background">@drawable/rectangle_bg_gray_100_radius_235</item>
+    </style>
+
+    <style name="txt_6" parent="txtMontserratbold14">
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight">700</item>
+        <item name="android:background">@drawable/rectangle_dhi_0</item>
+    </style>
+
+    <style name="groupStylecornerRadius_6">
+        <item name="android:background">@drawable/rectangle_radius_14_8</item>
+    </style>
+
+    <style name="txtMontserratbold30" parent="txtMontserratbold16_1">
+        <item name="android:textSize">@dimen/_30pxh</item>
+        <item name="android:textColor">@color/blue_500</item>
+    </style>
+
+    <style name="txt_3" parent="txtMontserratmedium16">
+        <item name="android:textColor">@color/teal_A200</item>
+        <item name="android:background">@drawable/rectangle_dhi_0</item>
+    </style>
+
+    <style name="txtMontserratbold24_2" parent="txtMontserratbold24_1">
+        <item name="android:textColor">@color/black_900</item>
+    </style>
+
+    <style name="txtMontserratmedium12_3" parent="txtMontserratmedium12">
+        <item name="android:textColor">@color/black_900</item>
+    </style>
+
+    <style name="groupStylecornerRadius_9">
+        <item name="android:background">@drawable/rectangle_radius_14_9</item>
+    </style>
+
+    <style name="txt_4" parent="txt">
+        <item name="android:textSize">@dimen/_18pxh</item>
+        <item name="android:textColor">@color/indigo_A700</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight">400</item>
+    </style>
+
+    <style name="txtMontserratbold24_1" parent="txtMontserratlight24">
+        <item name="android:textColor">@color/indigo_a701</item>
+        <item name="android:textFontWeight">700</item>
+    </style>
+
+    <style name="txtMontserratmedium12_2" parent="txtMontserratmedium12">
+        <item name="android:textColor">@color/bluegray_500</item>
+    </style>
+
+    <style name="groupStylecornerRadius_8">
+        <item name="android:background">@drawable/rectangle_radius_14_10</item>
+    </style>
+
+    <style name="groupStyle_1">
+        <item name="android:background">@drawable/rectangle_dhi_1</item>
+    </style>
+
+    <style name="groupStyle_2">
+        <item name="android:background">@drawable/rectangle_gradient_s_black_900_00_e_black_900_8f
+        </item>
+    </style>
+
+    <style name="txtMontserratmedium20" parent="txtMontserratmedium10">
+        <item name="android:textSize">@dimen/_20pxh</item>
+        <item name="android:textColor">@color/indigo_a701</item>
+    </style>
+
+    <style name="groupStyleblue_600cornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_blue_600_radius_28</item>
+    </style>
+
+    <style name="txtMontserratlight13" parent="txtMontserratlight24">
+        <item name="android:textSize">@dimen/_13pxh</item>
+        <item name="android:textColor">@color/red_600</item>
+    </style>
+
+    <style name="txtMontserratbold16_1" parent="txtMontserratmedium16">
+        <item name="android:textColor">@color/gray_800</item>
+        <item name="android:textFontWeight">700</item>
+    </style>
+
+    <style name="txtMontserratlight10" parent="txtMontserratsemibold12">
+        <item name="android:textSize">@dimen/_10pxh</item>
+        <item name="android:textFontWeight">300</item>
+    </style>
+
+    <style name="txtMontserratlight11" parent="txtMontserratlight24">
+        <item name="android:textSize">@dimen/_11pxh</item>
+        <item name="android:textColor">@color/gray_500</item>
+    </style>
+
+    <style name="txtMontserratlight16" parent="txtMontserratlight24">
+        <item name="android:textSize">@dimen/_16pxh</item>
+        <item name="android:textColor">@color/indigo_a701</item>
+    </style>
+
+    <style name="etSolidRoundedOutline_1" parent="etSolidRoundedOutline">
+        <item name="android:background">
+            @drawable/rectangle_bg_white_a700_border_gray_200_radius_20
+        </item>
+    </style>
+
+    <style name="txtregular20">
+        <item name="android:textSize">@dimen/_20pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:textFontWeight">400</item>
+    </style>
+
+    <style name="txtMontserratregular15_1" parent="txtMontserratregular15">
+        <item name="android:textSize">@dimen/_15pxh</item>
+        <item name="android:textColor">@color/gray_602</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="txtMontserratmedium15" parent="txtMontserratsemibold18">
+        <item name="android:textSize">@dimen/_15pxh</item>
+        <item name="android:textFontWeight">500</item>
+    </style>
+
+    <style name="txtPromptregular12" parent="txtMontserratregular12">
+        <item name="android:textColor">@color/gray_200</item>
+        <item name="android:fontFamily">@font/prompt</item>
+        <item name="android:textFontWeight">400</item>
+    </style>
+
+    <style name="txtMontserratmedium16" parent="txtMontserratmedium15">
+        <item name="android:textSize">@dimen/_16pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="groupStyleblack_900cornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_black_900_radius_28</item>
+    </style>
+
+    <style name="txtMontserratmedium14" parent="txtMontserratmedium10">
+        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textColor">@color/gray_600</item>
+    </style>
+
+    <style name="txtregular16">
+        <item name="android:textSize">@dimen/_16pxh</item>
+        <item name="android:textColor">@color/bluegray_400</item>
+        <item name="android:textFontWeight">400</item>
+    </style>
+
+    <style name="txtMontserratmedium11" parent="txtMontserratsemibold12">
+        <item name="android:textSize">@dimen/_11pxh</item>
+        <item name="android:textFontWeight">500</item>
+    </style>
+
+    <style name="txtMontserratmedium12" parent="txtMontserratsemibold12">
+        <item name="android:textColor">@color/blue_400</item>
+        <item name="android:textFontWeight">500</item>
+    </style>
+
+    <style name="txtPromptregular18" parent="txtPromptregular12">
+        <item name="android:textSize">@dimen/_18pxh</item>
+    </style>
+
+    <style name="groupStylegray_50cornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_gray_50_radius_10</item>
+    </style>
+
+    <style name="txtMontserratmedium10" parent="txtMontserratmedium12">
+        <item name="android:textSize">@dimen/_10pxh</item>
+        <item name="android:textColor">@color/green_a700</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="groupStylegray_100">
+        <item name="android:background">@drawable/rectangle_bg_gray_100</item>
+    </style>
+
+    <style name="txtMontserratlight18" parent="txtMontserratsemibold18">
+        <item name="android:textColor">@color/gray_400</item>
+        <item name="android:textFontWeight">300</item>
+    </style>
+
+    <style name="groupStyleindigo_900cornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_indigo_900_radius_16</item>
+    </style>
+
+    <style name="txtMontserratlight24" parent="txtMontserratlight10">
+        <item name="android:textSize">@dimen/_24pxh</item>
+        <item name="android:textColor">@color/white_A700</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="groupStylered_500cornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_red_500_radius_8</item>
+    </style>
+
+    <style name="etMontserratregular14" parent="etMontserratregular14_2">
+        <item name="android:textColor">@color/gray_800</item>
+    </style>
+
+    <style name="btnRoundedOutline">
+        <item name="android:textSize">@dimen/_20pxh</item>
+        <item name="android:textColor">@color/indigo_a701</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight">400</item>
+        <item name="android:background">@drawable/rectangle_border_indigo_a701_radius_28</item>
+    </style>
+
+    <style name="txtMontserratsemibold12" parent="txtMontserratbold12">
+        <item name="android:textFontWeight">600</item>
+    </style>
+
+    <style name="txtMontserratsemibold18" parent="txtMontserratsemibold12">
+        <item name="android:textSize">@dimen/_18pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+    <style name="enter_mobil">
+
+        <item name="android:textSize">
+            14sp
+        </item>
+
+        <item name="android:textColor">
+            #B9B9B9
+        </item>
+
+    </style>
+    <style name="some_id">
+
+        <item name="android:textSize">
+            18sp
+        </item>
+
+        <item name="android:textColor">
+            #3A3A3A
+        </item>
+
+    </style>
+    <style name="otp_verific">
+
+        <item name="android:textSize">
+            24sp
+        </item>
+
+        <item name="android:textColor">
+            #3A3A3A
+        </item>
+
+    </style>
+    <style name="we_will_sen">
+
+        <item name="android:textSize">
+            16sp
+        </item>
+
+        <item name="android:textColor">
+            #3A3A3A
+        </item>
+
+    </style>
+</resources>
