@@ -1,5 +1,7 @@
 package com.projet.miniprojet.androidVox.activities.OTP
 
+import android.content.Intent
+import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -12,20 +14,69 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.isVisible
+import com.google.android.gms.auth.api.phone.SmsRetriever
 import com.projet.miniprojet.R
 import java.util.concurrent.CompletableFuture
+import java.util.regex.Pattern
 
 const val PHONE_NUMBER = "PhoneNumber"
 
 class OTPSecondStep : AppCompatActivity() {
     var phoneNumber: String? = null
+    private val REQ_USER_CONSENT = 200
+    var smsBroadcastReceiver: OTPBroadCastReceiver? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_otp3)
         initViews()
         showTimer(60000)
+        startSmartUserConsent()
     }
+
+    private fun startSmartUserConsent() {
+        val client = SmsRetriever.getClient(this)
+        client.startSmsUserConsent(null)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == REQ_USER_CONSENT) {
+            if (resultCode == RESULT_OK && data != null) {
+                val message = data.getStringExtra(SmsRetriever.EXTRA_SMS_MESSAGE)
+                getOtpMessage(message)
+            }
+        }
+    }
+
+    private fun getOtpMessage(message: String?) {
+        val firstdigit = findViewById<TextView>(R.id.firstdigit)
+        val otpPattern = Pattern.compile("(|^)\\d{6}")
+        val matcher = otpPattern.matcher(message)
+        if (matcher.find()) {
+            firstdigit!!.setText(matcher.group(0))
+        }
+    }
+
+    private fun registerBroadcastReceiver() {
+        smsBroadcastReceiver = OTPBroadCastReceiver()
+        smsBroadcastReceiver!!.smsBroadcastReceiverListener =
+            object : OTPBroadCastReceiver.SmsBroadcastReceiverListener {
+                override fun onSuccess(intent: Intent?) {
+                    startActivityForResult(intent, REQ_USER_CONSENT)
+
+                }
+
+                override fun onFailure() {
+
+                }
+
+            }
+        val intentFilter = IntentFilter(SmsRetriever.SMS_RETRIEVED_ACTION)
+        registerReceiver(smsBroadcastReceiver, intentFilter)
+    }
+
 
     private fun showTimer(milliSecInFuture: Long) {
         val timercounter = findViewById<TextView>(R.id.timer)
@@ -61,10 +112,9 @@ class OTPSecondStep : AppCompatActivity() {
             override fun updateDrawState(ds: TextPaint) {
                 super.updateDrawState(ds)
                 ds.isUnderlineText = false
-                if(!resendotp.isEnabled){
-                    ds.color=getColor(R.color.bluegray_400)
-                }
-                else{
+                if (!resendotp.isEnabled) {
+                    ds.color = getColor(R.color.bluegray_400)
+                } else {
                     ds.color = getColor(R.color.indigo_A700)
                 }
             }
@@ -82,5 +132,15 @@ class OTPSecondStep : AppCompatActivity() {
         resendotp.movementMethod = LinkMovementMethod.getInstance()
         resendotp.text = span
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        registerBroadcastReceiver()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        unregisterReceiver(smsBroadcastReceiver)
     }
 }
