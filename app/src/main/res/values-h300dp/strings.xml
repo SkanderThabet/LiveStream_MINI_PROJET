@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="enter_otp">Enter the OTP sent to %s</string>
+    <string name="resend_otp">Didn\'t you receive the OTP ? Resend OTP</string>
+    <string name="enter_otp_sent">Enter the OTP sent to %s</string>
+    <string name="resend_otp_if_not_recieved">Didn\'t you receive the OTP ? Resend OTP</string>
+    <string name="second_remaining">Seconds Remaining: %d</string>
+</resources>

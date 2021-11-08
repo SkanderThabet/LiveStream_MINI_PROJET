@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Miniprojet">
         <activity
-            android:name=".androidVox.activities.test"
+            android:name=".androidVox.activities.OTP.OTPSecondStep"
             android:exported="false" />
         <activity
-            android:name=".androidVox.activities.OTP"
+            android:name=".androidVox.activities.OTP.OTPFirstStep"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

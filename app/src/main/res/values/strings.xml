@@ -353,4 +353,9 @@ Back</string>
     <string name="lbl_join_now">Join Now</string>
     <string name="lbl_entertainement">Entertainement</string>
     <string name="lbl_launch_screen">Launch Screen</string>
+    <string name="enter_otp">Enter the OTP sent to %s</string>
+    <string name="resend_otp">Didn\'t you receive the OTP ? %s Resend OTP</string>
+    <string name="enter_otp_sent">Enter the OTP sent to %s</string>
+    <string name="resend_otp_if_not_recieved">Didn\'t you receive the OTP ? Resend OTP</string>
+    <string name="second_remaining">Seconds Remaining: %d</string>
 </resources>

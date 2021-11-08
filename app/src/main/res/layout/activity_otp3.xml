@@ -36,7 +36,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
-        android:id="@+id/we_will_sen"
+        android:id="@+id/enter_otp_message"
         android:layout_width="314dp"
         android:layout_height="48dp"
         android:layout_alignParentLeft="true"
@@ -60,84 +60,55 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="89dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="89dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/we_will_sen">
+        app:layout_constraintTop_toBottomOf="@+id/timer">
 
         <EditText
             android:id="@+id/firstdigit"
             style="@style/txtMontserratbold18"
-            android:layout_width="48dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|center_horizontal"
-            android:layout_marginRight="24dp"
             android:backgroundTint="#2743FD"
             android:gravity="center"
             android:inputType="numberDecimal"
-            android:maxLength="1"
+            android:letterSpacing="0.8"
+            android:maxLength="6"
             android:maxLines="1"
             android:minHeight="48dp"
-            android:textSize="24sp" />
-
-        <EditText
-            android:id="@+id/seconddigit"
-            style="@style/txtMontserratbold18"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|center_horizontal"
-            android:layout_marginRight="24dp"
-            android:backgroundTint="#2743FD"
-            android:gravity="center"
-            android:inputType="numberDecimal"
-            android:maxLength="1"
-            android:maxLines="1"
-            android:minHeight="48dp"
-            android:textSize="24sp" />
-
-        <EditText
-            android:id="@+id/thirddigit"
-            style="@style/txtMontserratbold18"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|center_horizontal"
-            android:layout_marginRight="24dp"
-            android:backgroundTint="#2743FD"
-            android:gravity="center"
-            android:inputType="numberDecimal"
-            android:maxLength="1"
-            android:maxLines="1"
-            android:minHeight="48dp"
-            android:textSize="24sp" />
-
-        <EditText
-            android:id="@+id/fourthdigit"
-            style="@style/txtMontserratbold18"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|center_horizontal"
-            android:layout_marginRight="24dp"
-            android:backgroundTint="#2743FD"
-            android:gravity="center"
-            android:inputType="numberDecimal"
-            android:maxLength="1"
-            android:maxLines="1"
-            android:minHeight="48dp"
+            android:singleLine="true"
+            android:textCursorDrawable="@drawable/cursor"
             android:textSize="24sp" />
 
     </LinearLayout>
 
+    <!--    <Button-->
+<!--        android:id="@+id/resentOTP"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:layout_marginEnd="50dp"-->
+<!--        android:background="@android:color/transparent"-->
+<!--        android:fontFamily="@font/montserrat"-->
+<!--        android:text="Resend"-->
+<!--        android:textColor="#2743FD"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/linear1" />-->
+
     <Button
-        android:id="@+id/button"
+        android:id="@+id/getOTPbtn"
         android:layout_width="315dp"
         android:layout_height="72dp"
         android:layout_marginStart="48dp"
+        android:layout_marginTop="75dp"
         android:layout_marginEnd="48dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/rectangle_gradient_s_indigo_a400_e_indigo_a700_radius_28"
         android:fontFamily="@font/montserrat"
         android:foreground="@drawable/img_mask_group_14"
@@ -149,37 +120,40 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/resentOTP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="50dp"
-        android:background="@android:color/transparent"
-        android:fontFamily="@font/montserrat"
-        android:text="Resend"
-        android:textColor="#2743FD"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linear1" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear1"
+        app:layout_constraintVertical_bias="0.742" />
 
     <TextView
-        android:id="@+id/txtDidnTYouRece"
+        android:id="@+id/resendnotrecieved"
         style="@style/txtMontserratregular14_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center|center_horizontal"
-        android:layout_marginStart="49dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
         android:layout_weight="1"
         android:fontFamily="@font/montserrat"
         android:gravity="top|center"
         android:text="Didn't you recieve the OTP ?"
         android:textColor="#9E9D9D"
         android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@+id/resentOTP"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintBottom_toTopOf="@+id/getOTPbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linear1" />
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="TextView"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/linear1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enter_otp_message" />
 </androidx.constraintlayout.widget.ConstraintLayout>
