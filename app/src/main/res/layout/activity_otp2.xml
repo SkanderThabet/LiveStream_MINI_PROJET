@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".OTP">
+    tools:context=".androidVox.activities.OTP">
 
     <ImageView
         android:id="@+id/imageView"
@@ -57,7 +57,7 @@
         app:layout_constraintTop_toBottomOf="@+id/otp_verific" />
 
     <LinearLayout
-        android:id="@+id/linear1"
+        android:id="@+id/linear2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -99,7 +99,8 @@
             android:gravity="center"
             android:hint="Enter your number"
             android:inputType="phone"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:textCursorDrawable="@drawable/cursor" />
 
     </LinearLayout>
 
@@ -120,7 +121,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linear1" />
+        app:layout_constraintTop_toBottomOf="@+id/linear2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
