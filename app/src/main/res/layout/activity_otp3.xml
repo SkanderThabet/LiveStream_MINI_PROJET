@@ -70,7 +70,7 @@
         app:layout_constraintTop_toBottomOf="@+id/timer">
 
         <EditText
-            android:id="@+id/firstdigit"
+            android:id="@+id/receivedOtpET"
             style="@style/txtMontserratbold18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -102,7 +102,7 @@
 <!--        app:layout_constraintTop_toBottomOf="@+id/linear1" />-->
 
     <Button
-        android:id="@+id/getOTPbtn"
+        android:id="@+id/verifybutton"
         android:layout_width="315dp"
         android:layout_height="72dp"
         android:layout_marginStart="48dp"
@@ -110,6 +110,7 @@
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/rectangle_gradient_s_indigo_a400_e_indigo_a700_radius_28"
+        android:enabled="false"
         android:fontFamily="@font/montserrat"
         android:foreground="@drawable/img_mask_group_14"
         android:gravity="center"

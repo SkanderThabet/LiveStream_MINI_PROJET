@@ -16,6 +16,7 @@ class OTPFirstStep : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_Miniprojet)
         setContentView(R.layout.activity_otp2)
         val phonenumberET = findViewById<EditText>(R.id.phonenumberET)
         val getOTPbtn = findViewById<Button>(R.id.getOTPbtn)
