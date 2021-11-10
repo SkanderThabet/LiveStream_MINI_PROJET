@@ -17,7 +17,7 @@ class LaunchScreen : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        startActivity(Intent(this.applicationContext, OTPFirstStep::class.java))
+        startActivity(Intent(this.applicationContext, OnBoardingActivity::class.java))
         finish()
     }
 }

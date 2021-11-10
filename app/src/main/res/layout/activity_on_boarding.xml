@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".androidVox.app.OnBoardingActivity">
+
+    <View
+        android:id="@+id/ellipse_10"
+        android:layout_width="470dp"
+        android:layout_height="470dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-155dp"
+        android:layout_marginTop="423dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginBottom="-70dp"
+        android:background="@drawable/eclipse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="183dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="183dp"
+        android:layout_marginBottom="298dp"
+        app:layout_constraintBottom_toTopOf="@+id/ellipse_10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img" />
+
+
+
+    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+        android:id="@+id/dots_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="736dp"
+        android:layout_marginBottom="82dp"
+        app:dotsColor="#B5BFFF"
+        app:dotsCornerRadius="6dp"
+        app:dotsSize="5dp"
+        app:dotsSpacing="4dp"
+        app:dotsWidthFactor="4"
+        app:layout_constraintBottom_toBottomOf="@+id/viewpager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:progressMode="false"
+        app:selectedDotColor="#2A46FF" />
+
+    <Button
+        android:id="@+id/nextbtn"
+        android:layout_width="153dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="239dp"
+        android:layout_marginTop="700dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="51dp"
+        android:background="@drawable/rectangle_gradient_s_indigo_a400_e_indigo_a700_radius_28"
+        android:fontFamily="@font/montserratregular400"
+        android:foreground="@drawable/rectangle_1"
+        android:pointerIcon="context_menu"
+        android:text="Next"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:visibility="visible"
+        app:icon="@drawable/vector"
+        app:iconGravity="end"
+        app:layout_constraintBottom_toBottomOf="@id/viewpager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/getstartedbtn"
+        android:layout_width="211dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="172dp"
+        android:layout_marginTop="703dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="48dp"
+        android:background="@drawable/rectangle_gradient_s_indigo_a400_e_indigo_a700_radius_28"
+        android:fontFamily="@font/montserratregular400"
+        android:foreground="@drawable/getstartedbtn_onboard"
+        android:pointerIcon="context_menu"
+        android:text="Get Started"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/viewpager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="131dp">
+
+
+    </androidx.viewpager.widget.ViewPager>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

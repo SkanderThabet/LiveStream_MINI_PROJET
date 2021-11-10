@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Miniprojet">
         <activity
+            android:name=".androidVox.app.OnBoardingActivity"
+            android:exported="false" />
+        <activity
             android:name=".androidVox.app.LaunchScreen"
             android:exported="true"
             android:theme="@style/SplashScreenStyle">
