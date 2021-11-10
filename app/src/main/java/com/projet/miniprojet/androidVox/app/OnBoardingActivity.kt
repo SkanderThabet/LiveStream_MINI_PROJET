@@ -27,8 +27,8 @@ class OnBoardingActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_on_boarding)
-        val nextbtn=findViewById<Button>(R.id.nextbtn)
-        val getstartBtn=findViewById<Button>(R.id.getstartedbtn)
+        val nextbtn = findViewById<Button>(R.id.nextbtn)
+        val getstartBtn = findViewById<Button>(R.id.getstartedbtn)
         val dotsIndicator = findViewById<DotsIndicator>(R.id.dots_indicator)
         viewPager = findViewById(R.id.viewpager)
         viewPageAdapter = ViewPageAdapter(this)
@@ -36,29 +36,54 @@ class OnBoardingActivity : AppCompatActivity() {
         dotsIndicator.setViewPager(viewPager)
         nextButton()
 
-        Log.i("Tag",viewPager.currentItem.toString())
+        Log.i("Tag", viewPager.currentItem.toString())
+
+        viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {
+            }
+
+            override fun onPageSelected(position: Int) {
+                if (position == 2) {
+                    nextbtn.visibility = View.INVISIBLE
+                    getstartBtn.visibility = View.VISIBLE
+                    getStartButton()
+
+                }
+            }
+
+            override fun onPageScrollStateChanged(state: Int) {
+            }
 
 
+        })
     }
-
-
 
 
     private fun getItem(i: Int): Int {
         return viewPager.currentItem + i
     }
+
+    private fun getStartButton() {
+        val getstartBtn = findViewById<Button>(R.id.getstartedbtn)
+        getstartBtn.setOnClickListener {
+            otpFirstAct()
+        }
+    }
+
     private fun nextButton() {
-        val nextbtn=findViewById<Button>(R.id.nextbtn)
-        val getstartBtn=findViewById<Button>(R.id.getstartedbtn)
+        val nextbtn = findViewById<Button>(R.id.nextbtn)
+        val getstartBtn = findViewById<Button>(R.id.getstartedbtn)
         nextbtn.setOnClickListener {
-            viewPager.setCurrentItem(getItem(+1),true)
-            if(viewPager.currentItem==2){
-                nextbtn.visibility=View.INVISIBLE
-                getstartBtn.visibility=View.VISIBLE
+            viewPager.setCurrentItem(getItem(+1), true)
+            if (viewPager.currentItem == 2) {
+                nextbtn.visibility = View.INVISIBLE
+                getstartBtn.visibility = View.VISIBLE
             }
-            getstartBtn.setOnClickListener {
-                otpFirstAct()
-            }
+            getStartButton()
         }
     }
 
