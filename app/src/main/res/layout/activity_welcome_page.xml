@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".androidVox.activities.welcome.WelcomePage">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="816dp"
+        android:layout_height="720dp"
+        android:layout_marginStart="-162dp"
+        android:layout_marginTop="-524dp"
+        android:layout_marginEnd="-156dp"
+        android:layout_marginBottom="310dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/shapes_welcome" />
+
+    <TextView
+        android:id="@+id/welcome_bac"
+        android:layout_width="134dp"
+        android:layout_height="68dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="52dp"
+
+        android:layout_marginTop="139dp"
+        android:layout_marginEnd="225dp"
+        android:layout_marginBottom="616dp"
+        android:fontFamily="@font/montserratregular400"
+        android:gravity="top"
+        android:text="Welcome"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/SignUPWelcome"
+        style="@style/buttonsignupWelcome"
+        android:layout_width="@dimen/_315pxh"
+        android:layout_height="@dimen/_72pxv"
+        android:layout_gravity="center"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="46dp"
+        android:background="@drawable/rectangle_border_white_a701_radius_28"
+        android:backgroundTint="#ECE9E9"
+        android:enabled="true"
+        android:text="Sign UP"
+        android:textAlignment="textStart"
+        app:icon="@drawable/vector"
+        app:iconGravity="end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SignInButtonWelcome" />
+
+    <Button
+        android:id="@+id/SignInButtonWelcome"
+        android:layout_width="@dimen/_315pxh"
+        android:layout_height="@dimen/_72pxv"
+        android:layout_gravity="center"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="46dp"
+        android:background="@drawable/rectangle_gradient_s_indigo_a400_e_indigo_a700_radius_28"
+        android:enabled="true"
+        android:foreground="@drawable/shapes_button_signin_up"
+        android:text="Sign in"
+        android:textAlignment="textStart"
+        app:icon="@drawable/vector"
+        app:iconGravity="end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/facebook" />
+
+    <Button
+        android:id="@+id/facebook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="116dp"
+        android:background="@drawable/facebook__actionloginfacebook_"
+        android:text="Sign in with Facebook"
+        app:iconTint="#D1C6C6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/welcome_bac"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_white_1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

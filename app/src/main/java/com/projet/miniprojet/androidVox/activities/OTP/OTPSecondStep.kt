@@ -1,8 +1,10 @@
 package com.projet.miniprojet.androidVox.activities.OTP
 
+import android.app.ProgressDialog
+import android.content.ContentValues.TAG
+import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.text.SpannableString
@@ -10,22 +12,35 @@ import android.text.Spanned
 import android.text.TextPaint
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
+import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
 import com.google.android.gms.auth.api.phone.SmsRetriever
-import com.projet.miniprojet.R
-import java.util.concurrent.CompletableFuture
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.resources.CancelableFontCallback
+import com.google.firebase.FirebaseException
+import com.google.firebase.FirebaseTooManyRequestsException
+import com.google.firebase.auth.*
+import com.projet.miniprojet.androidVox.R
+import com.projet.miniprojet.androidVox.activities.SignInUp.Sign_Up
+import com.projet.miniprojet.androidVox.activities.profileSettings.ProfileSettings
+import com.projet.miniprojet.androidVox.activities.welcome.WelcomePage
+import java.util.concurrent.TimeUnit
 import java.util.regex.Pattern
 
 const val PHONE_NUMBER = "PhoneNumber"
 
-class OTPSecondStep : AppCompatActivity() {
+class OTPSecondStep : AppCompatActivity(), View.OnClickListener {
+    lateinit var callbacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks
+    private lateinit var progressDialog: ProgressDialog
     var phoneNumber: String? = null
+    var mVerificationID: String? = null
+    var mResendToken: PhoneAuthProvider.ForceResendingToken? = null
+    private var mCounterDown: CountDownTimer? = null
+
     private val REQ_USER_CONSENT = 200
     var smsBroadcastReceiver: OTPBroadCastReceiver? = null
 
@@ -33,64 +48,80 @@ class OTPSecondStep : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_otp3)
-        val verifbtn=findViewById<Button>(R.id.verifybutton)
-        val otpdigits= findViewById<EditText>(R.id.receivedOtpET)
+        val verifbtn = findViewById<Button>(R.id.verifybutton)
+        val otpdigits = findViewById<EditText>(R.id.receivedOtpET)
         initViews()
-        showTimer(60000)
-        startSmartUserConsent()
+        startVerify()
+//        startSmartUserConsent()
         otpdigits.addTextChangedListener {
-            verifbtn.isEnabled=!(it.isNullOrEmpty() || it.length < 6)
+            verifbtn.isEnabled = !(it.isNullOrEmpty() || it.length < 6)
         }
     }
 
-    private fun startSmartUserConsent() {
-        val client = SmsRetriever.getClient(this)
-        client.startSmsUserConsent(null)
+    private fun startVerify() {
+        val auth = FirebaseAuth.getInstance()
+//        auth.firebaseAuthSettings.setAppVerificationDisabledForTesting(true);
+        val options = PhoneAuthOptions.newBuilder(auth)
+            .setPhoneNumber(phoneNumber!!)       // Phone number to verify
+            .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
+            .setActivity(this)                 // Activity (for callback binding)
+            .setCallbacks(callbacks)          // OnVerificationStateChangedCallbacks
+            .build()
+        PhoneAuthProvider.verifyPhoneNumber(options)
+        showTimer(60000)
+        progressDialog = createProgressDialog("Sending a verification code", false)
+        progressDialog.show()
+
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == REQ_USER_CONSENT) {
-            if (resultCode == RESULT_OK && data != null) {
-                val message = data.getStringExtra(SmsRetriever.EXTRA_SMS_MESSAGE)
-                getOtpMessage(message)
-            }
-        }
-    }
-
-    private fun getOtpMessage(message: String?) {
-        val firstdigit = findViewById<TextView>(R.id.receivedOtpET)
-        val otpPattern = Pattern.compile("(|^)\\d{6}")
-        val matcher = otpPattern.matcher(message)
-        if (matcher.find()) {
-            firstdigit!!.setText(matcher.group(0))
-        }
-    }
-
-    private fun registerBroadcastReceiver() {
-        smsBroadcastReceiver = OTPBroadCastReceiver()
-        smsBroadcastReceiver!!.smsBroadcastReceiverListener =
-            object : OTPBroadCastReceiver.SmsBroadcastReceiverListener {
-                override fun onSuccess(intent: Intent?) {
-                    startActivityForResult(intent, REQ_USER_CONSENT)
-
-                }
-
-                override fun onFailure() {
-
-                }
-
-            }
-        val intentFilter = IntentFilter(SmsRetriever.SMS_RETRIEVED_ACTION)
-        registerReceiver(smsBroadcastReceiver, intentFilter)
-    }
+//    private fun startSmartUserConsent() {
+//        val client = SmsRetriever.getClient(this)
+//        client.startSmsUserConsent(null)
+//    }
+//
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        super.onActivityResult(requestCode, resultCode, data)
+//        if (requestCode == REQ_USER_CONSENT) {
+//            if (resultCode == RESULT_OK && data != null) {
+//                val message = data.getStringExtra(SmsRetriever.EXTRA_SMS_MESSAGE)
+//                getOtpMessage(message)
+//            }
+//        }
+//    }
+//
+//    private fun getOtpMessage(message: String?) {
+//        val firstdigit = findViewById<TextView>(R.id.receivedOtpET)
+//        val otpPattern = Pattern.compile("(|^)\\d{6}")
+//        val matcher = otpPattern.matcher(message)
+//        if (matcher.find()) {
+//            firstdigit!!.setText(matcher.group(0))
+//        }
+//    }
+//
+//    private fun registerBroadcastReceiver() {
+//        smsBroadcastReceiver = OTPBroadCastReceiver()
+//        smsBroadcastReceiver!!.smsBroadcastReceiverListener =
+//            object : OTPBroadCastReceiver.SmsBroadcastReceiverListener {
+//                override fun onSuccess(intent: Intent?) {
+//                    startActivityForResult(intent, REQ_USER_CONSENT)
+//
+//                }
+//
+//                override fun onFailure() {
+//
+//                }
+//
+//            }
+//        val intentFilter = IntentFilter(SmsRetriever.SMS_RETRIEVED_ACTION)
+//        registerReceiver(smsBroadcastReceiver, intentFilter)
+//    }
 
 
     private fun showTimer(milliSecInFuture: Long) {
         val timercounter = findViewById<TextView>(R.id.timer)
         val resendotp = findViewById<TextView>(R.id.resendnotrecieved)
         resendotp.isEnabled = false
-        object : CountDownTimer(milliSecInFuture, 1000) {
+        mCounterDown = object : CountDownTimer(milliSecInFuture, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 timercounter.isVisible = true
                 timercounter.text = getString(R.string.second_remaining, millisUntilFinished / 1000)
@@ -107,10 +138,132 @@ class OTPSecondStep : AppCompatActivity() {
 
     private fun initViews() {
         val verifymessage = findViewById<TextView>(R.id.enter_otp_message)
+        val firstdigit = findViewById<TextView>(R.id.receivedOtpET)
+        val verifBtn = findViewById<Button>(R.id.verifybutton)
         phoneNumber = intent.getStringExtra(PHONE_NUMBER)
         verifymessage.text = getString(R.string.enter_otp_sent, phoneNumber)
         setSpannableString()
 
+        verifBtn.setOnClickListener(this)
+
+
+
+
+        callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+
+            override fun onVerificationCompleted(credential: PhoneAuthCredential) {
+                // This callback will be invoked in two situations:
+                // 1 - Instant verification. In some cases the phone number can be instantly
+                //     verified without needing to send or enter a verification code.
+                // 2 - Auto-retrieval. On some devices Google Play services can automatically
+                //     detect the incoming verification SMS and perform verification without
+                //     user action.
+
+                //check if progressdialog is initialized or not
+                if (::progressDialog.isInitialized) {
+                    progressDialog.dismiss()
+                }
+                val smsCode: String? = credential.smsCode
+                if (!smsCode.isNullOrBlank())
+                    firstdigit.setText(smsCode)
+
+                Log.d(TAG, "onVerificationCompleted:$credential")
+                signInWithPhoneAuthCredential(credential)
+
+            }
+
+            override fun onVerificationFailed(e: FirebaseException) {
+                // This callback is invoked in an invalid request for verification is made,
+                // for instance if the the phone number format is not valid.
+                Log.w(TAG, "onVerificationFailed", e)
+                if (::progressDialog.isInitialized) {
+                    progressDialog.dismiss()
+                }
+                if (e is FirebaseAuthInvalidCredentialsException) {
+                    // Invalid request
+                } else if (e is FirebaseTooManyRequestsException) {
+                    // The SMS quota for the project has been exceeded
+                }
+
+                // Show a message and update the UI
+                Log.e("ERROR-Firebase", e.localizedMessage)
+                notifyUserAndRetry("Your phone number might be wrong or connection error.Retry again!")
+            }
+
+            override fun onCodeSent(
+
+                verificationId: String,
+                token: PhoneAuthProvider.ForceResendingToken
+            ) {
+                val timercounter = findViewById<TextView>(R.id.timer)
+                // The SMS verification code has been sent to the provided phone number, we
+                // now need to ask the user to enter the code and then construct a credential
+                // by combining the code with a verification ID.
+                Log.d(TAG, "onCodeSent:$verificationId")
+                if (::progressDialog.isInitialized) {
+                    progressDialog.dismiss()
+                }
+                timercounter.isVisible = false
+                // Save verification ID and resending token so we can use them later
+                mVerificationID = verificationId
+                mResendToken = token
+            }
+        }
+    }
+
+    private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
+
+        val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
+//        mAuth.firebaseAuthSettings.setAppVerificationDisabledForTesting(true);
+        mAuth.signInWithCredential(credential)
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+
+                    if (::progressDialog.isInitialized) {
+                        progressDialog.dismiss()
+                    }
+                    //First Time Login
+                    if (it.result?.additionalUserInfo?.isNewUser == true) {
+                        startProfileSettingsActivity()
+                    } else {
+                        showLoginActivity()
+                    }
+                } else {
+
+                    if (::progressDialog.isInitialized) {
+                        progressDialog.dismiss()
+                    }
+
+                    notifyUserAndRetry("Your Phone Number Verification is failed.Retry again!")
+                }
+            }
+
+    }
+
+    private fun startProfileSettingsActivity() {
+        startActivity(Intent(this, ProfileSettings::class.java))
+        finish()
+    }
+
+    private fun notifyUserAndRetry(message: String) {
+        MaterialAlertDialogBuilder(this).apply {
+            setMessage(message)
+            setPositiveButton("Ok") { _, _ ->
+                showLoginActivity()
+            }
+            setNegativeButton("Cancel") { dialog, _ ->
+                dialog.dismiss()
+            }
+            setCancelable(false)
+            create()
+            show()
+        }
+
+    }
+
+    private fun showLoginActivity() {
+        startActivity(Intent(this, Sign_Up::class.java))
+        finish()
     }
 
     private fun setSpannableString() {
@@ -128,11 +281,20 @@ class OTPSecondStep : AppCompatActivity() {
             }
 
             override fun onClick(p0: View) {
-                Toast.makeText(
-                    applicationContext,
-                    "OTP has been resend successfully",
-                    Toast.LENGTH_SHORT
-                ).show()
+                if (mResendToken != null) {
+                    showTimer(60000)
+                    progressDialog = createProgressDialog("Sending a verification code ", false)
+                    progressDialog.show()
+                    val auth = FirebaseAuth.getInstance()
+                    val options = PhoneAuthOptions.newBuilder(auth)
+                        .setPhoneNumber(phoneNumber!!)       // Phone number to verify
+                        .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
+                        .setActivity(this@OTPSecondStep)                 // Activity (for callback binding)
+                        .setCallbacks(callbacks)          // OnVerificationStateChangedCallbacks
+                        .setForceResendingToken(mResendToken!!)
+                        .build()
+                    PhoneAuthProvider.verifyPhoneNumber(options)
+                }
             }
 
         }
@@ -142,13 +304,49 @@ class OTPSecondStep : AppCompatActivity() {
 
     }
 
-    override fun onStart() {
-        super.onStart()
-        registerBroadcastReceiver()
+//    override fun onStart() {
+//        super.onStart()
+//        registerBroadcastReceiver()
+//    }
+//
+//    override fun onStop() {
+//        super.onStop()
+//        unregisterReceiver(smsBroadcastReceiver)
+//    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        if (mCounterDown != null) {
+            mCounterDown!!.cancel()
+        }
     }
 
-    override fun onStop() {
-        super.onStop()
-        unregisterReceiver(smsBroadcastReceiver)
+    override fun onClick(p0: View?) {
+        val verifbtn = findViewById<Button>(R.id.verifybutton)
+        val firstdigit = findViewById<EditText>(R.id.receivedOtpET)
+        when (p0) {
+            verifbtn -> {
+                val code = firstdigit.text.toString()
+                if (code.isNotEmpty() && !mVerificationID.isNullOrEmpty()) {
+                    progressDialog = createProgressDialog("Please wait...", false)
+                    progressDialog.show()
+                    val credential =
+                        PhoneAuthProvider.getCredential(mVerificationID!!, code)
+                    signInWithPhoneAuthCredential(credential)
+                }
+            }
+        }
+    }
+
+
+}
+
+fun Context.createProgressDialog(message: String, isCancelable: Boolean): ProgressDialog {
+    return ProgressDialog(this).apply {
+        setCancelable(false)
+        setMessage(message)
+        setCanceledOnTouchOutside(false)
     }
 }
+
+

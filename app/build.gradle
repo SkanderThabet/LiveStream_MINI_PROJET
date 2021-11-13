@@ -1,13 +1,14 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'com.google.gms.google-services'
 }
 
 android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.projet.miniprojet"
+        applicationId "com.projet.miniprojet.androidVox"
         minSdk 26
         targetSdk 31
         versionCode 1
@@ -50,5 +51,9 @@ dependencies {
     androidTestImplementation 'androidx.OTPSecondStep.espresso:espresso-core:3.4.0'
     implementation 'com.hbb20:ccp:2.4.0'
     implementation 'com.tbuonomo:dotsindicator:4.2'
+    implementation platform('com.google.firebase:firebase-bom:29.0.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'androidx.browser:browser:1.4.0'
 
 }

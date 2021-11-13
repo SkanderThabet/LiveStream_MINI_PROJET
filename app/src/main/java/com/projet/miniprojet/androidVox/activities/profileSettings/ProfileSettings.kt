@@ -1,8 +1,8 @@
 package com.projet.miniprojet.androidVox.activities.profileSettings
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.projet.miniprojet.R
+import androidx.appcompat.app.AppCompatActivity
+import com.projet.miniprojet.androidVox.R
 
 class ProfileSettings : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "573492796570",
+    "project_id": "vox-app-93a90",
+    "storage_bucket": "vox-app-93a90.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:573492796570:android:f919073612acf6a42b5323",
+        "android_client_info": {
+          "package_name": "com.projet.miniprojet.androidVox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "573492796570-s96ll8ldk1ooqadibpboqoq8g9jbeadl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.projet.miniprojet.androidVox",
+            "certificate_hash": "5c93459bb7b34ca8e5f6928a4d1c8761b25f6000"
+          }
+        },
+        {
+          "client_id": "573492796570-bdc71haoh8l1jlhpd1ev0tn856eqvund.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeXvtS77SKHnK3yBV95uhxXLMZY2buxR4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "573492796570-bdc71haoh8l1jlhpd1ev0tn856eqvund.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,23 +1,16 @@
 package com.projet.miniprojet.androidVox.app
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Adapter
 import android.widget.Button
-import androidx.core.view.isVisible
-import androidx.viewpager.widget.PagerAdapter
+import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
-import androidx.viewpager2.widget.ViewPager2
-import com.projet.miniprojet.R
-import com.projet.miniprojet.androidVox.activities.OTP.OTPFirstStep
-import com.projet.miniprojet.androidVox.activities.OTP.OTPSecondStep
-import com.projet.miniprojet.androidVox.activities.OTP.PHONE_NUMBER
+import com.projet.miniprojet.androidVox.R
+import com.projet.miniprojet.androidVox.activities.welcome.WelcomePage
 import com.projet.miniprojet.androidVox.adapters.ViewPageAdapter
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
-import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 
 class OnBoardingActivity : AppCompatActivity() {
     lateinit var viewPager: ViewPager
@@ -88,7 +81,7 @@ class OnBoardingActivity : AppCompatActivity() {
     }
 
     private fun otpFirstAct() {
-        startActivity(Intent(this, OTPFirstStep::class.java))
+        startActivity(Intent(this, WelcomePage::class.java))
         finish()
     }
 

@@ -1,14 +1,14 @@
 package com.projet.miniprojet.androidVox.activities.OTP
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.hbb20.CountryCodePicker
-import com.projet.miniprojet.R
+import com.projet.miniprojet.androidVox.R
 
 class OTPFirstStep : AppCompatActivity() {
     lateinit var phoneNumber: String
