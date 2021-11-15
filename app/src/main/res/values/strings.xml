@@ -358,4 +358,6 @@ Back</string>
     <string name="enter_otp_sent">Enter the OTP sent to %s</string>
     <string name="resend_otp_if_not_recieved">Didn\'t you receive the OTP ? Resend OTP</string>
     <string name="second_remaining">Seconds Remaining: %d</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

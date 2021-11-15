@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.projet.miniprojet.androidVox">
-    
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,10 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Miniprojet">
         <activity
+            android:name=".activities.Chat.chat_main"
+            android:exported="false"
+            android:theme="@style/Theme.welcomePage"/>
+        <activity
             android:name=".activities.welcome.WelcomePage"
             android:exported="false"
-            android:theme="@style/Theme.welcomePage"
-            />
+            android:theme="@style/Theme.welcomePage" />
         <activity
             android:name=".activities.profileSettings.ProfileSettings"
             android:exported="false" />
@@ -35,7 +38,7 @@
         <activity
             android:name=".activities.OTP.OTPSecondStep"
             android:exported="true"
-            android:theme="@style/Theme.welcomePage"/>
+            android:theme="@style/Theme.welcomePage" />
         <activity
             android:name=".activities.OTP.OTPFirstStep"
             android:exported="true"
@@ -49,11 +52,11 @@
         <activity
             android:name=".activities.SignInUp.Sign_In"
             android:exported="true"
-            android:theme="@style/Theme.welcomePage"/>
+            android:theme="@style/Theme.welcomePage" />
         <activity
             android:name=".activities.SignInUp.Sign_Up"
             android:exported="true"
-            android:theme="@style/Theme.welcomePage"/>
+            android:theme="@style/Theme.welcomePage" />
     </application>
 
 </manifest>
