@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/drawable-v24/ic_add.xml" value="0.1701388888888889" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/drawable-v24/img_16_check_all.xml" value="0.2703125" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/drawable-v24/img_24_attach.xml" value="0.2703125" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/drawable-v24/img_24_checkmark.xml" value="0.2703125" />
@@ -40,21 +41,31 @@
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/drawable/eclipse.xml" value="0.18020833333333333" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/drawable/logonamegrad.xml" value="0.18020833333333333" />
-        <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/activity_chat_main.xml" value="0.264" />
+        <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/activity_chat_main.xml" value="0.2" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/activity_launch_screen.xml" value="0.264" />
+        <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/activity_mainchat.xml" value="0.1676975945017182" />
+        <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/activity_navigation_controller.xml" value="0.1676975945017182" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/activity_on_boarding.xml" value="0.264" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/activity_otp.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/activity_otp2.xml" value="0.1" />
+        <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/activity_otp2.xml" value="0.264" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/activity_otp3.xml" value="0.2" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/activity_profile_settings.xml" value="0.16944444444444445" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/activity_sign_in.xml" value="0.152" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/activity_sign_up.xml" value="0.16944444444444445" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/activity_test.xml" value="0.1676975945017182" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/activity_welcome_page.xml" value="0.264" />
+        <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/app_bar_navigation_controller.xml" value="0.1676975945017182" />
+        <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/content_navigation_controller.xml" value="0.1676975945017182" />
+        <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/drawer_header.xml" value="0.264" />
+        <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/fragment_channel.xml" value="0.176" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/fragment_chats.xml" value="0.4" />
+        <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/fragment_login_chat.xml" value="0.1676975945017182" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/fragment_people2.xml" value="0.16944444444444445" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/list_item.xml" value="0.264" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/slider.xml" value="0.176" />
+        <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/menu/activity_main_drawer.xml" value="0.536" />
+        <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/menu/drawer_menu.xml" value="0.1676975945017182" />
+        <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/menu/navigation_controller.xml" value="0.1676975945017182" />
       </map>
     </option>
   </component>

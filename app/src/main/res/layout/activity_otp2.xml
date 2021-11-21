@@ -39,7 +39,7 @@
 
     <TextView
         android:id="@+id/we_will_sen"
-        android:layout_width="314dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -122,16 +122,16 @@
 
     <Button
         android:id="@+id/getOTPbtn"
-        android:layout_width="315dp"
+        android:layout_width="match_parent"
         android:layout_height="72dp"
         android:layout_marginStart="48dp"
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="75dp"
         android:background="@drawable/rectangle_gradient_s_indigo_a400_e_indigo_a700_radius_28"
+        android:enabled="false"
         android:foreground="@drawable/img_mask_group_14"
         android:gravity="center"
         android:text="Get OTP"
-        android:enabled="false"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -2,6 +2,7 @@ package com.projet.miniprojet.androidVox.activities.OTP
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +19,11 @@ class OTPFirstStep : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setTheme(R.style.Theme_Miniprojet)
         setContentView(R.layout.activity_otp2)
+        // Hide the status bar.
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+// Remember that you should never show the action bar if the
+// status bar is hidden, so hide that too if necessary.
+        actionBar?.hide()
         val phonenumberET = findViewById<EditText>(R.id.phonenumberET)
         val getOTPbtn = findViewById<Button>(R.id.getOTPbtn)
 

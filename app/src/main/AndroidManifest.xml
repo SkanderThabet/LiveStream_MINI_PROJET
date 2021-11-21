@@ -12,19 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Miniprojet">
         <activity
-            android:name=".activities.Chat.chat_main"
-            android:exported="false"
-            android:theme="@style/Theme.welcomePage"/>
+            android:name=".activities.Chat.ChatMain"
+            android:exported="true"
+            android:theme="@style/Theme.welcomePage" />
         <activity
             android:name=".activities.welcome.WelcomePage"
             android:exported="false"
             android:theme="@style/Theme.welcomePage" />
         <activity
             android:name=".activities.profileSettings.ProfileSettings"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".app.OnBoardingActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".app.LaunchScreen"
             android:exported="true"

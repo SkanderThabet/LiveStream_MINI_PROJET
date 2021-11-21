@@ -4,7 +4,6 @@ import android.app.ProgressDialog
 import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
-import android.content.IntentFilter
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.text.SpannableString
@@ -18,18 +17,14 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
-import com.google.android.gms.auth.api.phone.SmsRetriever
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.resources.CancelableFontCallback
 import com.google.firebase.FirebaseException
 import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.*
 import com.projet.miniprojet.androidVox.R
+import com.projet.miniprojet.androidVox.activities.Chat.ChatMain
 import com.projet.miniprojet.androidVox.activities.SignInUp.Sign_Up
-import com.projet.miniprojet.androidVox.activities.profileSettings.ProfileSettings
-import com.projet.miniprojet.androidVox.activities.welcome.WelcomePage
 import java.util.concurrent.TimeUnit
-import java.util.regex.Pattern
 
 const val PHONE_NUMBER = "PhoneNumber"
 
@@ -48,6 +43,11 @@ class OTPSecondStep : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_otp3)
+        // Hide the status bar.
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+// Remember that you should never show the action bar if the
+// status bar is hidden, so hide that too if necessary.
+        actionBar?.hide()
         val verifbtn = findViewById<Button>(R.id.verifybutton)
         val otpdigits = findViewById<EditText>(R.id.receivedOtpET)
         initViews()
@@ -241,7 +241,7 @@ class OTPSecondStep : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun startProfileSettingsActivity() {
-        startActivity(Intent(this, ProfileSettings::class.java))
+        startActivity(Intent(this, ChatMain::class.java))
         finish()
     }
 
