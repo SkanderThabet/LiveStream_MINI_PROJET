@@ -3,11 +3,13 @@
     <item
         android:id="@+id/channels_menu"
         android:icon="@drawable/ic_channels"
-        android:title="Channels" />
+        android:title="Channels"
+        android:iconTint="@color/indigo_A700"/>
     <item
         android:id="@+id/groups_menu"
         android:icon="@drawable/ic_groups"
-        android:title="Groups" />
+        android:title="Groups"
+        android:iconTint="@color/indigo_A700"/>
     <item
         android:id="@+id/settings_menu"
         android:icon="@drawable/ic_settings"
@@ -15,5 +17,6 @@
     <item
         android:id="@+id/logout_menu"
         android:icon="@drawable/ic_logout"
-        android:title="Log out" />
+        android:title="Log out"
+        android:iconTint="@color/indigo_A700"/>
 </menu>

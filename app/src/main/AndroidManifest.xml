@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".ChatClient"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -14,7 +15,7 @@
         <activity
             android:name=".activities.Chat.ChatMain"
             android:exported="true"
-            android:theme="@style/Theme.welcomePage" />
+            android:theme="@style/Theme.nostatusbar" />
         <activity
             android:name=".activities.welcome.WelcomePage"
             android:exported="false"

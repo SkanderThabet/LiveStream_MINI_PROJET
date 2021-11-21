@@ -58,14 +58,18 @@
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/content_navigation_controller.xml" value="0.1676975945017182" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/drawer_header.xml" value="0.264" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/fragment_channel.xml" value="0.176" />
+        <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/fragment_chat.xml" value="0.1676975945017182" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/fragment_chats.xml" value="0.4" />
-        <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/fragment_login_chat.xml" value="0.1676975945017182" />
+        <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/fragment_login_chat.xml" value="0.264" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/fragment_people2.xml" value="0.16944444444444445" />
+        <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/fragment_user.xml" value="0.1676975945017182" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/list_item.xml" value="0.264" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/slider.xml" value="0.176" />
+        <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/layout/user_row_layout.xml" value="0.2" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/menu/activity_main_drawer.xml" value="0.536" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/menu/drawer_menu.xml" value="0.1676975945017182" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/menu/navigation_controller.xml" value="0.1676975945017182" />
+        <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/menu/users_menu.xml" value="0.1676975945017182" />
       </map>
     </option>
   </component>

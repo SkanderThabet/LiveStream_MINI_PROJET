@@ -157,7 +157,7 @@ class OTPSecondStep : AppCompatActivity(), View.OnClickListener {
                 //     verified without needing to send or enter a verification code.
                 // 2 - Auto-retrieval. On some devices Google Play services can automatically
                 //     detect the incoming verification SMS and perform verification without
-                //     user action.
+                //     UserFragment action.
 
                 //check if progressdialog is initialized or not
                 if (::progressDialog.isInitialized) {
@@ -197,7 +197,7 @@ class OTPSecondStep : AppCompatActivity(), View.OnClickListener {
             ) {
                 val timercounter = findViewById<TextView>(R.id.timer)
                 // The SMS verification code has been sent to the provided phone number, we
-                // now need to ask the user to enter the code and then construct a credential
+                // now need to ask the UserFragment to enter the code and then construct a credential
                 // by combining the code with a verification ID.
                 Log.d(TAG, "onCodeSent:$verificationId")
                 if (::progressDialog.isInitialized) {

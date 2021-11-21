@@ -74,7 +74,8 @@ dependencies {
 
     // Client + offline + UI components
 
-    implementation "io.getstream:stream-chat-android-ui-components:4.22.0"
+    implementation "io.getstream:stream-chat-android-ui-components:4.13.0"
+
     implementation 'io.coil-kt:coil:1.4.0'
     implementation "androidx.activity:activity-ktx:1.4.0"
 

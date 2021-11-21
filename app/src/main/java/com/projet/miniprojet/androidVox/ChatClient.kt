@@ -1,10 +1,10 @@
-package com.projet.miniprojet.androidVox.activities.Chat
+package com.projet.miniprojet.androidVox
 
 import android.app.Application
 import com.projet.miniprojet.androidVox.R
 import io.getstream.chat.android.client.ChatClient
 import io.getstream.chat.android.client.logger.ChatLogLevel
-import io.getstream.chat.android.offline.ChatDomain
+import io.getstream.chat.android.livedata.ChatDomain
 
 class ChatClient : Application() {
 

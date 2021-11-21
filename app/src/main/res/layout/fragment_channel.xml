@@ -17,6 +17,7 @@
             android:id="@+id/channelListHeaderView"
             android:layout_width="0dp"
             android:layout_height="56dp"
+            app:streamUiOnlineTitleTextSize="@dimen/_15sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -37,6 +38,8 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         app:menu="@menu/drawer_menu"
+        app:itemTextColor="@color/indigo_A700"
+        app:itemIconTint="@color/indigo_A700"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/drawer_header"

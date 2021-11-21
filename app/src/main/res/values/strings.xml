@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
     <string name="api_key">uwx2yzzbyqaf</string>
-    <string name="app_name">application</string>
+    <string name="app_name">Vox</string>
     <string name="loading">Loading…</string>
     <string name="no_internet_connection">No internet connection!</string>
     <string name="lbl_now_playing">Now Playing</string>
