@@ -3,10 +3,14 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
+//    id 'realm-android'
     id 'androidx.navigation.safeargs.kotlin'
     id 'com.google.gms.google-services'
 
 }
+apply plugin: 'realm-android'
+
+
 
 android {
     compileSdk 31
@@ -49,6 +53,10 @@ android {
     }
 }
 
+realm {
+    syncEnabled = true
+}
+
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -71,6 +79,7 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.google.firebase:firebase-auth-ktx'
     implementation 'androidx.browser:browser:1.4.0'
+
 
     // Client + offline + UI components
 

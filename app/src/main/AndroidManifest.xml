@@ -13,9 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Miniprojet">
         <activity
-            android:theme="@style/Theme.AppHome"
+            android:name=".retrofit.RealmDB"
+            android:exported="false" />
+        <activity
             android:name=".activities.Homepage.HomePage"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.AppHome" />
         <activity
             android:name=".activities.Chat.ChatMain"
             android:exported="true"
