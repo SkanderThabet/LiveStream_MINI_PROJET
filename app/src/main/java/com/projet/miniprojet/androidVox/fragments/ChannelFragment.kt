@@ -2,6 +2,7 @@ package com.projet.miniprojet.androidVox.fragments
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
@@ -15,6 +16,8 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.projet.miniprojet.androidVox.R
+import com.projet.miniprojet.androidVox.activities.Chat.ChatMain
+import com.projet.miniprojet.androidVox.activities.Homepage.HomePage
 import com.projet.miniprojet.androidVox.databinding.FragmentChannelBinding
 import io.getstream.chat.android.client.ChatClient
 import io.getstream.chat.android.client.logger.ChatLogLevel
@@ -24,6 +27,7 @@ import io.getstream.chat.android.client.models.User
 import io.getstream.chat.android.client.models.name
 import io.getstream.chat.android.livedata.ChatDomain
 import io.getstream.chat.android.ui.avatar.AvatarView
+import io.getstream.chat.android.ui.channel.list.ChannelListView
 import io.getstream.chat.android.ui.channel.list.header.ChannelListHeaderView
 import io.getstream.chat.android.ui.channel.list.header.viewmodel.ChannelListHeaderViewModel
 import io.getstream.chat.android.ui.channel.list.header.viewmodel.bindView
@@ -117,7 +121,8 @@ class ChannelFragment : Fragment() {
         )
         val viewModelFactory = ChannelListViewModelFactory(
             filters,
-            ChannelListViewModel.DEFAULT_SORT
+            ChannelListViewModel.DEFAULT_SORT,
+
         )
         val listViewModel: ChannelListViewModel by viewModels { viewModelFactory }
         val listHeaderViewModel: ChannelListHeaderViewModel by viewModels()
@@ -126,12 +131,18 @@ class ChannelFragment : Fragment() {
         listViewModel.bindView(binding.channelsView, viewLifecycleOwner)
 
 
+
     }
 
     private fun setupDrawer() {
-        binding.navigationView.setNavigationItemSelectedListener { menuItem ->
-            if (menuItem.itemId == R.id.logout_menu) {
-                logout()
+        binding.signoutBtn.setOnClickListener {
+            logout()
+        }
+        binding.navigationView.menu.getItem(1).isChecked = true
+
+        binding.navigationView.setNavigationItemSelectedListener {
+            if(it.itemId==R.id.home_menu){
+                startHomeAct()
             }
             false
         }
@@ -143,6 +154,11 @@ class ChannelFragment : Fragment() {
         headerId.text = currentUser.id
         val headerName = headerView.findViewById<TextView>(R.id.name_textView)
         headerName.text = currentUser.name
+    }
+
+    private fun startHomeAct() {
+        startActivity(Intent(this.requireContext(), HomePage::class.java))
+
     }
 
     private fun deleteChannel(channel: Channel) {

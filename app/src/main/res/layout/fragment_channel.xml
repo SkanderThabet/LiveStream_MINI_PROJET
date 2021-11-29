@@ -37,14 +37,35 @@
         android:id="@+id/navigationView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        app:menu="@menu/drawer_menu"
-        app:itemTextColor="@color/indigo_A700"
-        app:itemIconTint="@color/indigo_A700"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/drawer_header"
+        app:itemIconTint="@color/indigo_A700"
+        app:itemTextColor="@color/indigo_A700"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/drawer_menu">
+
+        <Button
+            android:id="@+id/signoutBtn"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="221dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="690dp"
+            android:text="Sign out"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            app:cornerRadius="28dp"
+            app:icon="@drawable/ic_logout"
+            app:iconGravity="end"
+            app:iconTint="@color/indigo_A700"
+            app:strokeColor="#2743FD" />
+    </com.google.android.material.navigation.NavigationView>
+
+
+
 
 </androidx.drawerlayout.widget.DrawerLayout>

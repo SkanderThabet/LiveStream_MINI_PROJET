@@ -1,22 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/channels_menu"
-        android:icon="@drawable/ic_channels"
-        android:title="Channels"
-        android:iconTint="@color/indigo_A700"/>
-    <item
-        android:id="@+id/groups_menu"
-        android:icon="@drawable/ic_groups"
-        android:title="Groups"
-        android:iconTint="@color/indigo_A700"/>
-    <item
-        android:id="@+id/settings_menu"
-        android:icon="@drawable/ic_settings"
-        android:title="Settings" />
-    <item
-        android:id="@+id/logout_menu"
-        android:icon="@drawable/ic_logout"
-        android:title="Log out"
-        android:iconTint="@color/indigo_A700"/>
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/channels_menu"
+            android:icon="@drawable/groupchannel"
+            android:title="My Channel" />
+        <item
+            android:id="@+id/messages_menu"
+            android:icon="@drawable/bxbxs_message_alt_detail"
+            android:title="Messages" />
+        <item
+            android:id="@+id/rooms_menu"
+
+            android:icon="@drawable/group"
+            android:title="Rooms" />
+        <item
+            android:id="@+id/podcasts_menu"
+            android:icon="@drawable/cibapple_podcasts"
+            android:title="Podcasts" />
+
+        <item
+            android:id="@+id/groups_menu"
+            android:icon="@drawable/ic_groups"
+            android:iconTint="@color/indigo_A700"
+            android:title="Friends" />
+
+    </group>
+    <item android:title="Private section">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+
+                    android:id="@+id/home_menu"
+                    android:icon="@drawable/ic_baseline_home_24"
+                    android:iconTint="@color/indigo_A700"
+                    android:title="Home" />
+                <item
+                    android:id="@+id/profile_menu"
+                    android:icon="@drawable/ic_baseline_person_24"
+                    android:iconTint="@color/indigo_A700"
+                    android:title="Profile" />
+                <item
+                    android:id="@+id/notification_menu"
+                    android:icon="@drawable/ic_baseline_notifications_24"
+                    android:iconTint="@color/indigo_A700"
+                    android:title="Notifications" />
+                <item
+                    android:id="@+id/settings_menu"
+                    android:icon="@drawable/ic_settings"
+                    android:title="Settings" />
+
+            </group>
+        </menu>
+    </item>
 </menu>

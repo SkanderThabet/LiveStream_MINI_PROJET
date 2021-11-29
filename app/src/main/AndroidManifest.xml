@@ -13,6 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Miniprojet">
         <activity
+            android:theme="@style/Theme.AppHome"
+            android:name=".activities.Homepage.HomePage"
+            android:exported="true" />
+        <activity
             android:name=".activities.Chat.ChatMain"
             android:exported="true"
             android:theme="@style/Theme.nostatusbar" />
