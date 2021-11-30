@@ -12,14 +12,18 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.google.android.gms.common.SignInButton
 import com.google.android.material.textfield.TextInputEditText
+import com.projet.miniprojet.Retrofit.Myservice
 import java.util.regex.Pattern
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import com.projet.miniprojet.User
+
 
 class Sign_Up : AppCompatActivity() {
-
     private lateinit var SignUpButton : Button
-    private lateinit var textinputEmail :TextInputEditText
+    private lateinit var textinputEmail : TextInputEditText
     private lateinit var textinputpass :TextInputEditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,8 +66,7 @@ class Sign_Up : AppCompatActivity() {
 
                 Toast.makeText(this, "valid Email", Toast.LENGTH_SHORT).show()
 
-                var intent = Intent(this, Profile::class.java)
-                    startActivity(intent)
+                doRegister()
 
 
 
@@ -76,6 +79,39 @@ class Sign_Up : AppCompatActivity() {
 
 
         }
+
+    }
+    private fun doRegister(){
+
+        val apiInterface = Myservice.create()
+
+
+        apiInterface.register(textinputEmail.text.toString().trim() , textinputpass.text.toString().trim()).enqueue(object :
+            Callback<User> {
+
+            override fun onResponse(call: Call<User>, response: Response<User>) {
+
+                val user = response.body()
+
+                if (user!=null){
+                    Toast.makeText(this@Sign_Up, "Registration Success", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this@Sign_Up, Profile::class.java))
+
+                }else{
+                    Toast.makeText(this@Sign_Up, "User already has an account", Toast.LENGTH_SHORT).show()
+                }
+
+
+            }
+
+            override fun onFailure(call: Call<User>, t: Throwable) {
+                Toast.makeText(this@Sign_Up, "Connexion error!", Toast.LENGTH_SHORT).show()
+
+
+            }
+
+        })
+
 
     }
 

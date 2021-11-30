@@ -17,11 +17,9 @@
         android:layout_marginStart="155dp"
         android:layout_marginTop="104dp"
         android:layout_marginEnd="155dp"
-        app:layout_constraintBottom_toTopOf="@+id/button_complete"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/img_profile_image_8"
         tools:ignore="MissingConstraints" />
 

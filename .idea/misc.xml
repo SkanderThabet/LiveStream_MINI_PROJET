@@ -53,12 +53,17 @@
         <entry key="..\:/Users/mouhi/AndroidStudioProjects/LiveStream_MINI_PROJET/app/src/main/res/font/montserrat.xml" value="0.284375" />
         <entry key="..\:/Users/mouhi/AndroidStudioProjects/LiveStream_MINI_PROJET/app/src/main/res/font/poppins.xml" value="0.284375" />
         <entry key="..\:/Users/mouhi/AndroidStudioProjects/LiveStream_MINI_PROJET/app/src/main/res/font/sf_pro_display.xml" value="0.284375" />
+        <entry key="..\:/Users/mouhi/AndroidStudioProjects/LiveStream_MINI_PROJET/app/src/main/res/layout/activity_getstarted.xml" value="0.264" />
         <entry key="..\:/Users/mouhi/AndroidStudioProjects/LiveStream_MINI_PROJET/app/src/main/res/layout/activity_otp.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mouhi/AndroidStudioProjects/LiveStream_MINI_PROJET/app/src/main/res/layout/activity_otp2.xml" value="0.264" />
         <entry key="..\:/Users/mouhi/AndroidStudioProjects/LiveStream_MINI_PROJET/app/src/main/res/layout/activity_profile.xml" value="0.264" />
+        <entry key="..\:/Users/mouhi/AndroidStudioProjects/LiveStream_MINI_PROJET/app/src/main/res/layout/activity_screen1.xml" value="0.176" />
+        <entry key="..\:/Users/mouhi/AndroidStudioProjects/LiveStream_MINI_PROJET/app/src/main/res/layout/activity_screen2.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mouhi/AndroidStudioProjects/LiveStream_MINI_PROJET/app/src/main/res/layout/activity_sign_in.xml" value="0.264" />
         <entry key="..\:/Users/mouhi/AndroidStudioProjects/LiveStream_MINI_PROJET/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
         <entry key="..\:/Users/mouhi/AndroidStudioProjects/LiveStream_MINI_PROJET/app/src/main/res/layout/activity_welcome.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/mouhi/AndroidStudioProjects/LiveStream_MINI_PROJET/app/src/main/res/layout/fragment_first.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/mouhi/AndroidStudioProjects/LiveStream_MINI_PROJET/app/src/main/res/layout/fragment_second.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mouhi/AndroidStudioProjects/LiveStream_MINI_PROJET/app/src/main/res/layout/login.xml" value="0.264" />
         <entry key="..\:/Users/mouhi/AndroidStudioProjects/LiveStream_MINI_PROJET/app/src/main/res/layout/welcome.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mouhi/AndroidStudioProjects/LiveStream_MINI_PROJET/app/src/main/res/values/dim/drawable/circular_button_border.xml" value="0.2703125" />

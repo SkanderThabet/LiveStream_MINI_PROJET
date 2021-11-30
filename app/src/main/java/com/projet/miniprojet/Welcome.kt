@@ -6,8 +6,14 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import com.google.android.material.textfield.TextInputEditText
+import com.projet.miniprojet.Retrofit.Myservice
+import io.reactivex.disposables.CompositeDisposable
 
 class Welcome : AppCompatActivity() {
+
+
+    //lateinit var Myservice:Myservice
+    //internal var compositeDisposable = CompositeDisposable()
 
     private lateinit var SignInButton : Button
     private lateinit var SignUpButton : Button
