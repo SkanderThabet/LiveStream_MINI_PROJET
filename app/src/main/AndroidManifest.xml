@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Miniprojet">
         <activity
+            android:name=".activities.BroadcastStreaming.LiveBroadcast"
+            android:exported="false" />
+        <activity
             android:name=".retrofit.RealmDB"
             android:exported="false" />
         <activity
