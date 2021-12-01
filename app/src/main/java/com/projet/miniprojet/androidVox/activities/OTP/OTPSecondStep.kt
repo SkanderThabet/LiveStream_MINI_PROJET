@@ -23,6 +23,7 @@ import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.*
 import com.projet.miniprojet.androidVox.R
 import com.projet.miniprojet.androidVox.activities.Chat.ChatMain
+import com.projet.miniprojet.androidVox.activities.Homepage.HomePage
 import com.projet.miniprojet.androidVox.activities.SignInUp.Sign_Up
 import java.util.concurrent.TimeUnit
 
@@ -241,7 +242,7 @@ class OTPSecondStep : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun startProfileSettingsActivity() {
-        startActivity(Intent(this, ChatMain::class.java))
+        startActivity(Intent(this, HomePage::class.java))
         finish()
     }
 

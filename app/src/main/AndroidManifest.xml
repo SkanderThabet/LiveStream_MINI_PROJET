@@ -13,6 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Miniprojet">
         <activity
+            android:name=".activities.SignInUp.oAuths"
+            android:exported="true"
+            android:theme="@style/Theme.nostatusbar"/>
+        <activity
             android:name=".activities.BroadcastStreaming.LiveBroadcast"
             android:exported="false" />
         <activity

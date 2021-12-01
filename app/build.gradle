@@ -16,6 +16,7 @@ android {
     compileSdk 31
 
     defaultConfig {
+
         applicationId "com.projet.miniprojet.androidVox"
         minSdk 26
         targetSdk 31
@@ -29,7 +30,12 @@ android {
     }
 
     buildTypes {
+        def appId = "vox-kpgyp"  // Replace with proper Application ID
+        debug {
+            buildConfigField "String", "MONGODB_REALM_APP_ID", "\"${appId}\""
+        }
         release {
+            buildConfigField "String", "MONGODB_REALM_APP_ID", "\"${appId}\""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
