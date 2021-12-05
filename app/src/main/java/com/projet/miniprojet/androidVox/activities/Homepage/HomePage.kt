@@ -5,14 +5,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.navigation.fragment.findNavController
 import com.projet.miniprojet.androidVox.APP_ID
 import com.projet.miniprojet.androidVox.R
+import com.projet.miniprojet.androidVox.activities.BroadcastStreaming.MainActivity
 import com.projet.miniprojet.androidVox.activities.Chat.ChatMain
-import com.projet.miniprojet.androidVox.activities.OTP.OTPSecondStep
-import com.projet.miniprojet.androidVox.activities.OTP.PHONE_NUMBER
-import io.realm.RealmConfiguration
 import io.realm.mongodb.App
 import io.realm.mongodb.AppConfiguration
 import io.realm.mongodb.Credentials
@@ -64,10 +60,21 @@ class HomePage : AppCompatActivity() {
             drawerLayout.close()
             true
         }
+        StreamBtn.setOnClickListener {
+            startStreamingActivity()
+        }
     }
+
+    private fun startStreamingActivity() {
+        startActivity(Intent(this, MainActivity::class.java))
+        finish()
+    }
+
 
     private fun startChatAct() {
         startActivity(Intent(this, ChatMain::class.java))
         finish()
     }
+
+
 }
