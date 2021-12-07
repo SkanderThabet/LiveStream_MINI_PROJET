@@ -10,4 +10,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Mini projet"
-include ':app',':rtmp',':encoder',':rtsp',':rtplibrary'
+include ':app',':rtmp',':encoder',':rtsp',':rtplibrary',':liveVideoBroadcasterSDK'

@@ -18,7 +18,7 @@ android {
     defaultConfig {
 
         applicationId "com.projet.miniprojet.androidVox"
-        minSdk 26
+        minSdk 21
         targetSdk 31
         versionCode 1
         versionName "1.0"
@@ -79,6 +79,7 @@ dependencies {
     implementation project(path: ':rtmp')
     implementation project(path: ':rtplibrary')
     implementation project(path: ':rtplibrary')
+    implementation project(path: ':liveVideoBroadcasterSDK')
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.OTPSecondStep.ext:junit:1.1.3'
     androidTestImplementation 'androidx.OTPSecondStep.espresso:espresso-core:3.4.0'
@@ -94,6 +95,12 @@ dependencies {
     // Client + offline + UI components
 
     implementation "io.getstream:stream-chat-android-ui-components:4.13.0"
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.13.2'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.13.2'
+    implementation("com.google.android.exoplayer:extension-rtmp:2.13.2")
+    implementation 'com.airbnb.android:lottie:4.1.0'
+
+
 
     implementation 'io.coil-kt:coil:1.4.0'
     implementation "androidx.activity:activity-ktx:1.4.0"

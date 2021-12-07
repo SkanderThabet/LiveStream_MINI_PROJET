@@ -117,6 +117,12 @@
             android:screenOrientation="fullSensor"
             android:theme="@style/Theme.Brodcast"
             />
+        <activity android:name=".activities.testLive.MainActivity"
+            android:label="Test Live"
+            android:exported="true"
+            />
+        <activity android:name=".activities.testLive.liveVideoBroadcaster.LiveVideoBroadcasterActivity"/>
+        <activity android:name=".activities.testLive.liveVideoPlayer.LiveVideoPlayerActivity"/>
     </application>
 
 </manifest>

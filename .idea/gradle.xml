@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/encoder" />
+            <option value="$PROJECT_DIR$/liveVideoBroadcasterSDK" />
             <option value="$PROJECT_DIR$/rtmp" />
             <option value="$PROJECT_DIR$/rtplibrary" />
             <option value="$PROJECT_DIR$/rtsp" />
