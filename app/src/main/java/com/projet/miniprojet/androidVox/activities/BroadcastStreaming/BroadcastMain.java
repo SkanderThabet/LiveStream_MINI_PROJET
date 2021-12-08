@@ -45,7 +45,7 @@ import com.projet.miniprojet.androidVox.activities.BroadcastStreaming.utils.Imag
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class BroadcastMain extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
   private GridView list;
   private List<ActivityLink> activities;

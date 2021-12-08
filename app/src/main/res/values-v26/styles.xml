@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="EventCard">
+        <item name="android:layout_marginHorizontal">@dimen/margin_large</item>
+        <item name="android:layout_marginVertical">@dimen/margin_medium</item>
+        <item name="elevation">4dp</item>
+        <item name="cardBackgroundColor">@color/app_canvas</item>
+        <item name="cardCornerRadius">16dp</item>
+    </style>
+
+
+
+    <style name="OverviewStatsItem">
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingVertical">@dimen/margin_tiny</item>
+    </style>
+</resources>

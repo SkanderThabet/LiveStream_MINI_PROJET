@@ -94,7 +94,7 @@ dependencies {
 
     // Client + offline + UI components
 
-    implementation "io.getstream:stream-chat-android-ui-components:4.13.0"
+    implementation "io.getstream:stream-chat-android-ui-components:4.22.0"
     implementation 'com.google.android.exoplayer:exoplayer-core:2.13.2'
     implementation 'com.google.android.exoplayer:exoplayer-ui:2.13.2'
     implementation("com.google.android.exoplayer:extension-rtmp:2.13.2")

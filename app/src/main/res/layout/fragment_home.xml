@@ -75,6 +75,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
+                    android:clickable="false"
                     android:text="Live"
                     android:textColor="#C62828"
                     android:textSize="16sp"
@@ -84,6 +85,7 @@
                     app:iconTint="#C62828" />
 
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/see_more_btn"
                     style="?attr/borderlessButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

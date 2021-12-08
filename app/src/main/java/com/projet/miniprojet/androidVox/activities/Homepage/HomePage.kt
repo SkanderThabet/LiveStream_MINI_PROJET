@@ -1,20 +1,22 @@
 package com.projet.miniprojet.androidVox.activities.Homepage
 
 import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.projet.miniprojet.androidVox.APP_ID
 import com.projet.miniprojet.androidVox.R
-import com.projet.miniprojet.androidVox.activities.BroadcastStreaming.MainActivity
+import com.projet.miniprojet.androidVox.activities.BroadcastStreaming.BroadcastMain
 import com.projet.miniprojet.androidVox.activities.Chat.ChatMain
+import com.projet.miniprojet.androidVox.activities.LiveStreamChatInteraction.MainActivity
 import io.realm.mongodb.App
 import io.realm.mongodb.AppConfiguration
 import io.realm.mongodb.Credentials
 import kotlinx.android.synthetic.main.activity_home_page.*
 import kotlinx.android.synthetic.main.activity_home_page.drawerLayout
-import kotlinx.android.synthetic.main.fragment_channel.*
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomePage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,6 +56,9 @@ class HomePage : AppCompatActivity() {
             if(menuItem.itemId==R.id.messages_menu){
                 startChatAct()
             }
+            if(menuItem.itemId==R.id.channels_menu){
+                startStreamingView()
+            }
 
             menuItem.isChecked = true
 
@@ -63,10 +68,16 @@ class HomePage : AppCompatActivity() {
         StreamBtn.setOnClickListener {
             startStreamingActivity()
         }
+
+    }
+
+    private fun startStreamingView() {
+        startActivity(Intent(this,MainActivity::class.java))
+        finish()
     }
 
     private fun startStreamingActivity() {
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(this, BroadcastMain::class.java))
         finish()
     }
 
@@ -74,6 +85,12 @@ class HomePage : AppCompatActivity() {
     private fun startChatAct() {
         startActivity(Intent(this, ChatMain::class.java))
         finish()
+    }
+
+    companion object {
+        fun createIntent(context: Context): Intent {
+            return Intent(context, HomePage::class.java)
+        }
     }
 
 

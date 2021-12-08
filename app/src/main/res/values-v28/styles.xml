@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="txtMontserratregular12_2" parent="txtMontserratblack12">
+        <item name="android:textFontWeight">400</item>
+    </style>
+
+    <style name="txtMontserratbold15_1" parent="txtMontserratmedium15">
+        <item name="android:textFontWeight">700</item>
+    </style>
+
+    <style name="txtMontserratregular16_3" parent="txtMontserratmedium16_1">
+        <item name="android:textFontWeight">400</item>
+    </style>
+
+    <style name="txtMontserratregular16_2" parent="txtMontserratlight16">
+        <item name="android:textFontWeight">400</item>
+    </style>
+
+    <style name="txtMontserratsemibold12" parent="txtMontserratbold12">
+        <item name="android:textFontWeight">600</item>
+    </style>
+
+    <style name="btnRoundedOutline">
+        <item name="android:textSize">@dimen/_20pxh</item>
+        <item name="android:textColor">@color/indigo_a701</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textFontWeight">400</item>
+        <item name="android:background">@drawable/rectangle_border_indigo_a701_radius_28</item>
+    </style>
+
+    <style name="txtMontserratlight18" parent="txtMontserratsemibold18">
+        <item name="android:textColor">@color/gray_400</item>
+        <item name="android:textFontWeight">300</item>
+    </style>
+
+    <style name="txtMontserratmedium12" parent="txtMontserratsemibold12">
+        <item name="android:textColor">@color/blue_400</item>
+        <item name="android:textFontWeight">500</item>
+    </style>
+
+    <style name="txtMontserratmedium11" parent="txtMontserratsemibold12">
+        <item name="android:textSize">@dimen/_11pxh</item>
+        <item name="android:textFontWeight">500</item>
+    </style>
+
+    <style name="txtregular16">
+        <item name="android:textSize">@dimen/_16pxh</item>
+        <item name="android:textColor">@color/bluegray_400</item>
+        <item name="android:textFontWeight">400</item>
+    </style>
+
+    <style name="txtPromptregular12" parent="txtMontserratregular12">
+        <item name="android:textColor">@color/gray_200</item>
+        <item name="android:fontFamily">@font/prompt</item>
+        <item name="android:textFontWeight">400</item>
+    </style>
+</resources>

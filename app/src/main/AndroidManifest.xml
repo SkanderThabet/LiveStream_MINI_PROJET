@@ -28,7 +28,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Miniprojet">
         <activity
-            android:name=".activities.BroadcastStreaming.MainActivity"
+            android:name=".activities.BroadcastStreaming.BroadcastMain"
             android:label="@string/app_name"
             android:screenOrientation="fullSensor"
             android:theme="@style/Theme.Brodcast"
@@ -117,12 +117,14 @@
             android:screenOrientation="fullSensor"
             android:theme="@style/Theme.Brodcast"
             />
-        <activity android:name=".activities.testLive.MainActivity"
-            android:label="Test Live"
+        <activity android:name=".activities.LiveStreamChatInteraction.MainActivity"
             android:exported="true"
+            android:theme="@style/Theme.VirtualEvent.BlackStatusBar"
             />
-        <activity android:name=".activities.testLive.liveVideoBroadcaster.LiveVideoBroadcasterActivity"/>
-        <activity android:name=".activities.testLive.liveVideoPlayer.LiveVideoPlayerActivity"/>
+        <activity android:name=".activities.LiveStreamChatInteraction.feature.event.detail.EventDetailsActivity"
+            android:exported="true"
+            android:theme="@style/Theme.VirtualEvent.BlackStatusBar"
+            />
     </application>
 
 </manifest>

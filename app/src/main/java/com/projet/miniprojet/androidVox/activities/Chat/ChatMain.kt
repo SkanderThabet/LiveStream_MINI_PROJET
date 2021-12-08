@@ -1,20 +1,14 @@
 package com.projet.miniprojet.androidVox.activities.Chat
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.projet.miniprojet.androidVox.R
-import com.projet.miniprojet.androidVox.fragments.ChannelFragment
 import com.projet.miniprojet.androidVox.fragments.LoginFragmentChatDirections
 import com.projet.miniprojet.androidVox.models.ChatUser
 import io.getstream.chat.android.client.ChatClient
-import io.getstream.chat.android.client.models.name
-import io.getstream.chat.android.ui.channel.list.header.ChannelListHeaderView
-import io.getstream.chat.android.ui.channel.list.header.viewmodel.ChannelListHeaderViewModel
-import io.getstream.chat.android.ui.channel.list.header.viewmodel.bindView
-import kotlinx.android.synthetic.main.activity_home_page.*
 
 class ChatMain : AppCompatActivity() {
     private lateinit var navController:NavController
