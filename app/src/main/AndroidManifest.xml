@@ -27,16 +27,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Miniprojet">
         <activity
+            android:name=".activities.PodcastStreaming.PodcastMainAct"
+            android:exported="false" />
+        <activity
             android:name=".activities.SignInUp.Profile_compelation"
             android:exported="true"
-            android:theme="@style/Theme.nostatusbar"
-            />
+            android:theme="@style/Theme.nostatusbar" />
         <activity
             android:name=".activities.BroadcastStreaming.BroadcastMain"
             android:exported="true"
             android:label="@string/app_name"
             android:screenOrientation="fullSensor"
-            android:theme="@style/Theme.Brodcast"></activity>
+            android:theme="@style/Theme.Brodcast" />
         <activity
             android:name=".activities.SignInUp.oAuths"
             android:exported="true"

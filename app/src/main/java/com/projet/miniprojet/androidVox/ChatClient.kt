@@ -17,6 +17,7 @@ import io.realm.mongodb.AppConfiguration
 lateinit var voxApp: App
 const val APP_ID="vox-kpgyp"
 inline fun <reified T> T.TAG(): String = T::class.java.simpleName
+
 class ChatClient : Application() {
 
     override fun onCreate() {
