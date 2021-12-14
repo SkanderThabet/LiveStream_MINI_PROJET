@@ -35,7 +35,7 @@ class Sign_Up : AppCompatActivity() {
     }
 
     private fun startHomeActivity() {
-        startActivity(Intent(this, OTPFirstStep::class.java))
+        startActivity(Intent(this, Profile_compelation::class.java))
         finish()
     }
 

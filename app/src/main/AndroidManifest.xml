@@ -3,21 +3,20 @@
     package="com.projet.miniprojet.androidVox">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.FLASHLIGHT"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <!--some devices need read permission to create folders or files-->
-    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
-
-    <!--needed by background Rtp service to keep service alive-->
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
-
-    <!--Optional for play store-->
-    <uses-feature android:name="android.hardware.camera" android:required="false" />
-    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- some devices need read permission to create folders or files -->
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- needed by background Rtp service to keep service alive -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> <!-- Optional for play store -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
 
     <application
         android:name=".ChatClient"
@@ -28,18 +27,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Miniprojet">
         <activity
+            android:name=".activities.SignInUp.Profile_compelation"
+            android:exported="true"
+            android:theme="@style/Theme.nostatusbar"
+            />
+        <activity
             android:name=".activities.BroadcastStreaming.BroadcastMain"
+            android:exported="true"
             android:label="@string/app_name"
             android:screenOrientation="fullSensor"
-            android:theme="@style/Theme.Brodcast"
-            android:exported="true">
-
-        </activity>
+            android:theme="@style/Theme.Brodcast"></activity>
         <activity
             android:name=".activities.SignInUp.oAuths"
             android:exported="true"
-            android:theme="@style/Theme.nostatusbar"/>
-
+            android:theme="@style/Theme.nostatusbar" />
         <activity
             android:name=".retrofit.RealmDB"
             android:exported="false" />
@@ -97,34 +98,30 @@
             android:name=".activities.BroadcastStreaming.customexample.RtmpActivity"
             android:label="@string/rtmp_streamer"
             android:screenOrientation="fullSensor"
-            android:theme="@style/Theme.Brodcast"
-            />
+            android:theme="@style/Theme.Brodcast" />
         <activity
             android:name=".activities.BroadcastStreaming.customexample.RtspActivity"
             android:label="@string/rtsp_streamer"
             android:screenOrientation="fullSensor"
-            android:theme="@style/Theme.Brodcast"
-            />
+            android:theme="@style/Theme.Brodcast" />
         <activity
             android:name=".activities.BroadcastStreaming.defaultexample.ExampleRtspActivity"
             android:label="@string/default_rtsp"
             android:screenOrientation="fullSensor"
-            android:theme="@style/Theme.Brodcast"
-            />
+            android:theme="@style/Theme.Brodcast" />
         <activity
             android:name=".activities.BroadcastStreaming.defaultexample.ExampleRtmpActivity"
             android:label="@string/default_rtmp"
             android:screenOrientation="fullSensor"
-            android:theme="@style/Theme.Brodcast"
-            />
-        <activity android:name=".activities.LiveStreamChatInteraction.MainActivity"
+            android:theme="@style/Theme.Brodcast" />
+        <activity
+            android:name=".activities.LiveStreamChatInteraction.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.VirtualEvent.BlackStatusBar"
-            />
-        <activity android:name=".activities.LiveStreamChatInteraction.feature.event.detail.EventDetailsActivity"
+            android:theme="@style/Theme.VirtualEvent.BlackStatusBar" />
+        <activity
+            android:name=".activities.LiveStreamChatInteraction.feature.event.detail.EventDetailsActivity"
             android:exported="true"
-            android:theme="@style/Theme.VirtualEvent.BlackStatusBar"
-            />
+            android:theme="@style/Theme.VirtualEvent.BlackStatusBar" />
     </application>
 
 </manifest>
