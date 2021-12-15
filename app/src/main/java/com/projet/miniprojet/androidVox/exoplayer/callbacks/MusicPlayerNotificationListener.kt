@@ -7,14 +7,16 @@ import com.google.android.exoplayer2.ui.PlayerNotificationManager
 import com.projet.miniprojet.androidVox.exoplayer.MusicService
 import com.projet.miniprojet.androidVox.other.Constants.NOTIFICATION_ID
 
+
 class MusicPlayerNotificationListener(
     private val musicService: MusicService
-) : PlayerNotificationManager.NotificationListener{
+) : PlayerNotificationManager.NotificationListener {
+
     override fun onNotificationCancelled(notificationId: Int, dismissedByUser: Boolean) {
         super.onNotificationCancelled(notificationId, dismissedByUser)
         musicService.apply {
             stopForeground(true)
-            isForegroundService=false
+            isForegroundService = false
             stopSelf()
         }
     }
@@ -26,14 +28,25 @@ class MusicPlayerNotificationListener(
     ) {
         super.onNotificationPosted(notificationId, notification, ongoing)
         musicService.apply {
-            if(ongoing && !isForegroundService){
+            if(ongoing && !isForegroundService) {
                 ContextCompat.startForegroundService(
                     this,
-                    Intent(applicationContext,this::class.java)
+                    Intent(applicationContext, this::class.java)
                 )
-                startForeground(NOTIFICATION_ID,notification)
-                isForegroundService=true
+                startForeground(NOTIFICATION_ID, notification)
+                isForegroundService = true
             }
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+

@@ -5,17 +5,30 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.projet.miniprojet.androidVox.R
+import com.projet.miniprojet.androidVox.adapters.SwipeSongAdapter
+import com.projet.miniprojet.androidVox.exoplayer.MusicServiceConnection
+
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
-
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
+
+    @Singleton
+    @Provides
+    fun provideMusicServiceConnection(
+        @ApplicationContext context: Context
+    ) = MusicServiceConnection(context)
+
+    @Singleton
+    @Provides
+    fun provideSwipeSongAdapter() = SwipeSongAdapter()
 
     @Singleton
     @Provides
@@ -27,5 +40,4 @@ object AppModule {
             .error(R.drawable.ic_baseline_image_24)
             .diskCacheStrategy(DiskCacheStrategy.DATA)
     )
-
 }

@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".fragments.HomeFragment">
+    tools:context=".fragments.HomeFragmentPod">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card"

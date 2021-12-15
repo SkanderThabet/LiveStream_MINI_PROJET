@@ -6,7 +6,6 @@ import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.support.v4.media.session.MediaControllerCompat
 import android.support.v4.media.session.MediaSessionCompat
-import androidx.browser.customtabs.CustomTabsSessionToken
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
@@ -15,6 +14,7 @@ import com.google.android.exoplayer2.ui.PlayerNotificationManager
 import com.projet.miniprojet.androidVox.R
 import com.projet.miniprojet.androidVox.other.Constants.NOTIFICATION_CHANNEL_ID
 import com.projet.miniprojet.androidVox.other.Constants.NOTIFICATION_ID
+
 
 class MusicNotificationManager(
     private val context: Context,
@@ -41,14 +41,16 @@ class MusicNotificationManager(
         }
     }
 
-fun showNotification(player: Player) {
-    notificationManager.setPlayer(player)
-}
+    fun showNotification(player: Player) {
+        notificationManager.setPlayer(player)
+    }
 
     private inner class DescriptionAdapter(
         private val mediaController: MediaControllerCompat
     ) : PlayerNotificationManager.MediaDescriptionAdapter {
+
         override fun getCurrentContentTitle(player: Player): CharSequence {
+            newSongCallback()
             return mediaController.metadata.description.title.toString()
         }
 
@@ -58,7 +60,7 @@ fun showNotification(player: Player) {
 
         override fun getCurrentContentText(player: Player): CharSequence? {
             return mediaController.metadata.description.subtitle.toString()
-            }
+        }
 
         override fun getCurrentLargeIcon(
             player: Player,
@@ -66,7 +68,7 @@ fun showNotification(player: Player) {
         ): Bitmap? {
             Glide.with(context).asBitmap()
                 .load(mediaController.metadata.description.iconUri)
-                .into(object : CustomTarget<Bitmap>(){
+                .into(object : CustomTarget<Bitmap>() {
                     override fun onResourceReady(
                         resource: Bitmap,
                         transition: Transition<in Bitmap>?
@@ -75,10 +77,29 @@ fun showNotification(player: Player) {
                     }
 
                     override fun onLoadCleared(placeholder: Drawable?) = Unit
-
                 })
             return null
         }
-
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
