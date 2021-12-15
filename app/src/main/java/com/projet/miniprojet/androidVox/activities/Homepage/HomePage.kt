@@ -11,6 +11,7 @@ import com.projet.miniprojet.androidVox.R
 import com.projet.miniprojet.androidVox.activities.BroadcastStreaming.BroadcastMain
 import com.projet.miniprojet.androidVox.activities.Chat.ChatMain
 import com.projet.miniprojet.androidVox.activities.LiveStreamChatInteraction.MainActivity
+import com.projet.miniprojet.androidVox.activities.PodcastStreaming.PodcastMainAct
 import io.realm.mongodb.App
 import io.realm.mongodb.AppConfiguration
 import io.realm.mongodb.Credentials
@@ -59,6 +60,9 @@ class HomePage : AppCompatActivity() {
             if(menuItem.itemId==R.id.channels_menu){
                 startStreamingView()
             }
+            if(menuItem.itemId==R.id.podcasts_menu){
+                startPodcastActivity()
+            }
 
             menuItem.isChecked = true
 
@@ -69,6 +73,10 @@ class HomePage : AppCompatActivity() {
             startStreamingActivity()
         }
 
+    }
+
+    private fun startPodcastActivity() {
+        startActivity(Intent(this,PodcastMainAct::class.java))
     }
 
     private fun startStreamingView() {
