@@ -565,4 +565,6 @@ Back</string>
     <string name="overview_hypercube_description">Test, Standards and Disclosure: Who to publish it for and how to make it meaningful.</string>
     <string name="overview_layers_title">Test - will be changed in the future</string>
     <string name="overview_layers_description">How to set a business plans to use information to a competitive advantage and support enterprise goals.</string>
+    <string name="notification_channel_name">Music Channel</string>
+    <string name="notification_channel_description">Shows the currently playing music</string>
 </resources>
