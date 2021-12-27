@@ -24,7 +24,7 @@ class oAuths : AppCompatActivity() {
         finish()
     }
     private fun startSignupActivity() {
-        startActivity(Intent(this,Sign_Up::class.java))
+        startActivity(Intent(this,Profile_compelation::class.java))
         finish()
     }
 }

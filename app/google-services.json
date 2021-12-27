@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "573492796570-s96ll8ldk1ooqadibpboqoq8g9jbeadl.apps.googleusercontent.com",
+          "client_id": "573492796570-coc42r1hnh4arvd1g00v54bjipfe9ov6.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.projet.miniprojet.androidVox",
-            "certificate_hash": "5c93459bb7b34ca8e5f6928a4d1c8761b25f6000"
+            "certificate_hash": "bfa3bd800713e69edecaa0f9a1302a289ca70809"
           }
         },
         {

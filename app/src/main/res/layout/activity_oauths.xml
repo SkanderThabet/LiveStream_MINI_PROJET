@@ -53,11 +53,11 @@
 
     <Button
         android:id="@+id/fbSigninBtn"
-        android:layout_width="315dp"
+        android:layout_width="0dp"
         android:layout_height="54dp"
         android:layout_marginStart="52dp"
         android:layout_marginTop="410dp"
-        android:layout_marginEnd="44dp"
+        android:layout_marginEnd="48dp"
         android:foreground="@drawable/facebook__actionloginfacebook_"
         android:foregroundGravity="center"
         android:text="Sign in with facebook"
@@ -68,11 +68,11 @@
 
     <Button
         android:id="@+id/googleSigninBtn"
-        android:layout_width="315dp"
+        android:layout_width="0dp"
         android:layout_height="54dp"
         android:layout_marginStart="52dp"
         android:layout_marginTop="21dp"
-        android:layout_marginEnd="44dp"
+        android:layout_marginEnd="48dp"
         android:backgroundTint="#FFFFFF"
         android:foreground="@drawable/google__actionlogingoogle_oauth2_"
         android:foregroundGravity="center"
