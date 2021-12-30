@@ -1,6 +1,8 @@
 package com.projet.miniprojet.androidVox.activities.Podcast.domain.repositories
 
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import com.projet.miniprojet.androidVox.activities.Podcast.data.datastore.PodcastDataStore
 import com.projet.miniprojet.androidVox.activities.Podcast.data.network.service.PodcastService
 import com.projet.miniprojet.androidVox.activities.Podcast.domain.models.PodcastSearch
@@ -19,6 +21,7 @@ class PodcastRepositoryImpl(
         private const val TAG = "PodcastRepository"
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override suspend fun searchPodcasts(
         query: String,
         type: String

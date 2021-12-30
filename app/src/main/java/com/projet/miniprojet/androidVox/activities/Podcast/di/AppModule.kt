@@ -6,6 +6,8 @@ import com.projet.miniprojet.androidVox.activities.Podcast.data.exoplayer.Podcas
 import com.projet.miniprojet.androidVox.activities.Podcast.data.network.client.ListenNotesAPIClient
 import com.projet.miniprojet.androidVox.activities.Podcast.data.network.service.PodcastService
 import com.projet.miniprojet.androidVox.activities.Podcast.data.service.MediaPlayerServiceConnection
+import com.projet.miniprojet.androidVox.activities.Podcast.domain.repositories.PodcastRepository
+import com.projet.miniprojet.androidVox.activities.Podcast.domain.repositories.PodcastRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

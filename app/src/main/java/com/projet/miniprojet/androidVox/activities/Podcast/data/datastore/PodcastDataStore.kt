@@ -1,7 +1,9 @@
 package com.projet.miniprojet.androidVox.activities.Podcast.data.datastore
 
 import android.content.Context
+import android.os.Build
 import android.util.Log
+import androidx.annotation.RequiresApi
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
@@ -24,6 +26,7 @@ class PodcastDataStore(
         private const val TAG = "PodcastDataStore"
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     suspend fun storePodcastSearchResult(data: PodcastSearch) {
         context.podcastDataStore.edit { preferences ->
             val jsonString = Gson().toJson(data)
@@ -40,6 +43,7 @@ class PodcastDataStore(
         }.first()
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     suspend fun canFetchAPI(): Boolean {
         return context.podcastDataStore.data.map { preferences ->
             val epochMillis = preferences[lastAPIFetchMillis]

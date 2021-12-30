@@ -15,6 +15,7 @@ import com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector
 import com.google.android.exoplayer2.upstream.cache.CacheDataSource
 import com.projet.miniprojet.androidVox.activities.Podcast.Constant.K
 import com.projet.miniprojet.androidVox.activities.Podcast.data.exoplayer.*
+import com.projet.miniprojet.androidVox.activities.Podcast.ui.PodcastMainActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -57,7 +58,7 @@ class MediaPlayerService : MediaBrowserServiceCompat() {
     override fun onCreate() {
         super.onCreate()
         Log.i(TAG, "onCreate called")
-        val activityPendingIntent = Intent(this, MainActivity::class.java)
+        val activityPendingIntent = Intent(this, PodcastMainActivity::class.java)
             .apply {
                 action = K.ACTION_PODCAST_NOTIFICATION_CLICK
             }

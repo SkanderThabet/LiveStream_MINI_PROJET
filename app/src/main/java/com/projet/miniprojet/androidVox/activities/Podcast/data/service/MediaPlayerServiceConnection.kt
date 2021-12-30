@@ -10,6 +10,7 @@ import androidx.compose.runtime.mutableStateOf
 import com.projet.miniprojet.androidVox.activities.Podcast.Constant.K
 import com.projet.miniprojet.androidVox.activities.Podcast.data.exoplayer.PodcastMediaSource
 import com.projet.miniprojet.androidVox.activities.Podcast.domain.models.Episode
+import com.projet.miniprojet.androidVox.activities.Podcast.util.currentPosition
 
 class MediaPlayerServiceConnection(
     context: Context,
