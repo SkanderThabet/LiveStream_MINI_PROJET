@@ -5,6 +5,10 @@ import com.projet.miniprojet.androidVox.activities.Podcast.data.datastore.Podcas
 import com.projet.miniprojet.androidVox.activities.Podcast.data.network.service.PodcastService
 import com.projet.miniprojet.androidVox.activities.Podcast.domain.models.PodcastSearch
 import com.projet.miniprojet.androidVox.activities.Podcast.domain.repositories.PodcastRepository
+import com.projet.miniprojet.androidVox.activities.Podcast.error.Failure
+import com.projet.miniprojet.androidVox.activities.Podcast.util.Either
+import com.projet.miniprojet.androidVox.activities.Podcast.util.left
+import com.projet.miniprojet.androidVox.activities.Podcast.util.right
 
 class PodcastRepositoryImpl(
     private val service: PodcastService,

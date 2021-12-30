@@ -4,6 +4,9 @@ package com.projet.miniprojet.androidVox.activities.Podcast.domain.repositories
 import com.projet.miniprojet.androidVox.activities.Podcast.domain.models.Episode
 import com.projet.miniprojet.androidVox.activities.Podcast.domain.models.Podcast
 import com.projet.miniprojet.androidVox.activities.Podcast.domain.models.PodcastSearch
+import com.projet.miniprojet.androidVox.activities.Podcast.error.Failure
+import com.projet.miniprojet.androidVox.activities.Podcast.util.Either
+import com.projet.miniprojet.androidVox.activities.Podcast.util.right
 import kotlinx.coroutines.delay
 
 class PodcastRepositoryMockImpl : PodcastRepository {
