@@ -1,5 +1,7 @@
 package com.projet.miniprojet.androidVox.activities.Podcast.data.network.model
 
+import com.projet.miniprojet.androidVox.activities.Podcast.domain.models.PodcastSearch
+
 
 data class PodcastSearchDto(
     val count: Long,

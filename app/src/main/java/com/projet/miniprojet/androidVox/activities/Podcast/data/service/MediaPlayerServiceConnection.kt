@@ -7,7 +7,9 @@ import android.support.v4.media.MediaMetadataCompat
 import android.support.v4.media.session.MediaControllerCompat
 import android.support.v4.media.session.PlaybackStateCompat
 import androidx.compose.runtime.mutableStateOf
+import com.projet.miniprojet.androidVox.activities.Podcast.Constant.K
 import com.projet.miniprojet.androidVox.activities.Podcast.data.exoplayer.PodcastMediaSource
+import com.projet.miniprojet.androidVox.activities.Podcast.domain.models.Episode
 
 class MediaPlayerServiceConnection(
     context: Context,

@@ -1,6 +1,7 @@
 package com.projet.miniprojet.androidVox.activities.Podcast.data.network.model
 
 import com.google.gson.annotations.SerializedName
+import com.projet.miniprojet.androidVox.activities.Podcast.domain.models.Podcast
 
 data class PodcastDto(
     val id: String,

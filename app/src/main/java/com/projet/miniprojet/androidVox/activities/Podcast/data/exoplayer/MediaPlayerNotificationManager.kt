@@ -10,11 +10,11 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
-import com.fabirt.podcastapp.R
-import com.fabirt.podcastapp.constant.K
 import com.google.android.exoplayer2.DefaultControlDispatcher
 import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.ui.PlayerNotificationManager
+import com.projet.miniprojet.androidVox.R
+import com.projet.miniprojet.androidVox.activities.Podcast.Constant.K
 
 class MediaPlayerNotificationManager(
     private val context: Context,

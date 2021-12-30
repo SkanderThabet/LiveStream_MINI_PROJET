@@ -567,4 +567,7 @@ Back</string>
     <string name="overview_layers_description">How to set a business plans to use information to a competitive advantage and support enterprise goals.</string>
     <string name="notification_channel_name">Music Channel</string>
     <string name="notification_channel_description">Shows the currently playing music</string>
+    <string name="playback_notification_channel_name" />
+    <string name="playback_notification_channel_description" />
+    <string name="unexpected_error">An unexpected error occurred :(\nPlease try again</string>
 </resources>

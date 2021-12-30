@@ -4,11 +4,11 @@ import android.support.v4.media.MediaBrowserCompat
 import android.support.v4.media.MediaDescriptionCompat
 import android.support.v4.media.MediaMetadataCompat
 import androidx.core.net.toUri
-import com.fabirt.podcastapp.domain.model.Episode
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.source.ConcatenatingMediaSource
 import com.google.android.exoplayer2.source.ProgressiveMediaSource
 import com.google.android.exoplayer2.upstream.DataSource
+import com.projet.miniprojet.androidVox.activities.Podcast.domain.models.Episode
 import javax.inject.Inject
 import javax.inject.Singleton
 

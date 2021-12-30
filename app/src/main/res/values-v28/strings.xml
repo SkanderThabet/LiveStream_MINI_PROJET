@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="playback_notification_channel_name" />
+    <string name="playback_notification_channel_description" />
+    <string name="unexpected_error">An unexpected error occurred :(\nPlease try again</string>
+</resources>

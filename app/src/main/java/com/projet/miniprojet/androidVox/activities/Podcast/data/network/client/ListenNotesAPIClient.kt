@@ -3,6 +3,8 @@ package com.projet.miniprojet.androidVox.activities.Podcast.data.network.client
 
 
 import com.projet.miniprojet.androidVox.BuildConfig
+import com.projet.miniprojet.androidVox.activities.Podcast.data.network.constant.ListenNotesAPI
+import com.projet.miniprojet.androidVox.activities.Podcast.data.network.service.PodcastService
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
