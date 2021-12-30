@@ -6,32 +6,34 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import androidx.fragment.app.FragmentActivity
 import com.android.volley.*
 import com.android.volley.toolbox.HttpHeaderParser
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import com.google.gson.JsonObject
 import com.projet.miniprojet.androidVox.R
 import com.projet.miniprojet.androidVox.activities.Homepage.HomePage
+import com.projet.miniprojet.androidVox.models.User
+import com.projet.miniprojet.androidVox.retrofit.ApiInterface
+import com.projet.miniprojet.androidVox.retrofit.RetrofitInstance
+import com.squareup.okhttp.ResponseBody
 import kotlinx.android.synthetic.main.activity_profile_compelation.*
 import kotlinx.android.synthetic.main.activity_sign_in.*
 import org.json.JSONException
 import org.json.JSONObject
+import retrofit2.Call
+import retrofit2.Callback
 import java.io.UnsupportedEncodingException
 import java.nio.charset.Charset
-import com.projet.miniprojet.androidVox.activities.LiveStreamChatInteraction.MainActivity
-
-import com.android.volley.VolleyError
-
-import com.android.volley.toolbox.StringRequest
-
-import com.android.volley.RequestQueue
 import java.util.*
 import kotlin.collections.HashMap
 
 
 class Profile_compelation : AppCompatActivity() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,8 +46,8 @@ class Profile_compelation : AppCompatActivity() {
         btn_complete_profile.setOnClickListener {
             if (validate()) {
                 Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show()
-
-                registerUser()
+                signup()
+//                registerUser()
 
             }
         }
@@ -53,6 +55,40 @@ class Profile_compelation : AppCompatActivity() {
     }
 
 
+    private fun signup(){
+        val retIn = RetrofitInstance.getRetrofitInstance().create(ApiInterface::class.java)
+        val email=outline_et_email.text.toString()
+        val password=outline_et_password.text.toString()
+        val firstname=outline_et_firstname.text.toString()
+        val lastname=outline_et_lastname.text.toString()
+        val dob=tv_dob.text.toString()
+        val registerInfo = User(email,password,firstname, lastname, dob)
+
+        retIn.registerUser(registerInfo).enqueue(object :
+            Callback<ResponseBody> {
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                Toast.makeText(
+                    this@Profile_compelation,
+                    t.message,
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+            override fun onResponse(
+                call: Call<ResponseBody>,
+                response: retrofit2.Response<ResponseBody>
+            ) {
+                if (response.code() == 200) {
+                    Toast.makeText(this@Profile_compelation, "Success", Toast.LENGTH_SHORT)
+                        .show()
+
+                }
+                else{
+                    Toast.makeText(this@Profile_compelation, "Registration failed!", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            }
+        })
+    }
 
 
     private fun registerUser() {

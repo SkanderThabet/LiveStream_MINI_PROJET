@@ -5,12 +5,14 @@ plugins {
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs.kotlin'
     id 'com.google.gms.google-services'
+    id 'dagger.hilt.android.plugin'
 
 
 }
 apply plugin: 'realm-android'
 
-
+def localProperties = new Properties()
+localProperties.load(new FileInputStream(rootProject.file("local.properties")))
 android {
     compileSdk 31
 
@@ -23,9 +25,15 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.OTPSecondStep.runner.AndroidJUnitRunner"
+        buildConfigField "String", "API_KEY", "\"" + localProperties['apiKey'] + "\""
     }
     buildFeatures {
         viewBinding true
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion compose_version
+        kotlinCompilerVersion '1.4.32'
     }
 
     buildTypes {
@@ -57,6 +65,7 @@ android {
         getByName("main").java.srcDirs("build/generated/source/navigation-args")
     }
 }
+
 
 realm {
     syncEnabled = true
@@ -130,5 +139,43 @@ dependencies {
     //circle image
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+    //Rxjava
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.13'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    //Palette API - Selecting colors
+    implementation 'androidx.palette:palette-ktx:1.0.0'
+    // Preferences DataStore
+    implementation "androidx.datastore:datastore-preferences:1.0.0-beta02"
 
+    // Compose Accompanist
+    implementation "com.google.accompanist:accompanist-insets:$accompanist_version"
+    implementation "com.google.accompanist:accompanist-coil:$accompanist_version"
+
+    // Hilt - dependency injection
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+    implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03'
+    kapt 'androidx.hilt:hilt-compiler:1.0.0'
+
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version"
+
+
+    // Navigation
+    implementation "androidx.navigation:navigation-compose:2.4.0-alpha03"
+
+    implementation "androidx.compose.ui:ui:$compose_version"
+    implementation "androidx.compose.material:material:$compose_version"
+    implementation "androidx.compose.ui:ui-tooling:$compose_version"
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.0-alpha02'
+    implementation 'androidx.activity:activity-compose:1.3.0-beta02'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha07"
 }
