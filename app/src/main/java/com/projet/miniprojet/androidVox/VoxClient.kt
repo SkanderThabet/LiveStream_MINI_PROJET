@@ -3,7 +3,6 @@ package com.projet.miniprojet.androidVox
 import android.app.Application
 import android.util.Log
 import com.projet.miniprojet.androidVox.activities.LiveStreamChatInteraction.AppConfig
-import dagger.hilt.android.HiltAndroidApp
 import io.getstream.chat.android.client.ChatClient
 import io.getstream.chat.android.client.logger.ChatLogLevel
 import io.getstream.chat.android.client.models.User
@@ -19,7 +18,6 @@ lateinit var voxApp: App
 const val APP_ID="vox-kpgyp"
 inline fun <reified T> T.TAG(): String = T::class.java.simpleName
 
-@HiltAndroidApp
 class VoxClient : Application() {
 
     override fun onCreate() {

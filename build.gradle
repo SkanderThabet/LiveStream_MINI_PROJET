@@ -5,8 +5,8 @@ buildscript {
         kotlin_coroutines_version = '1.5.0'
         compose_version = '1.0.0'
         accompanist_version = '0.12.0'
-        room_version = "2.2.6"
-        hilt_version = "2.37"
+        architecture_version = '1.1.1'
+
     }
     repositories {
         google()
@@ -21,7 +21,6 @@ buildscript {
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5"
         classpath 'com.google.gms:google-services:4.3.10'
         classpath "io.realm:realm-gradle-plugin:10.4.0"
-        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

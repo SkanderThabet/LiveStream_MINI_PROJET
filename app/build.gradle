@@ -5,7 +5,7 @@ plugins {
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs'
     id 'com.google.gms.google-services'
-    id 'dagger.hilt.android.plugin'
+
 
 
 }
@@ -26,15 +26,12 @@ android {
 
         testInstrumentationRunner "androidx.OTPSecondStep.runner.AndroidJUnitRunner"
         buildConfigField "String", "API_KEY", "\"" + localProperties['apiKey'] + "\""
+
     }
     buildFeatures {
         viewBinding true
-        compose true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion compose_version
-        kotlinCompilerVersion '1.4.32'
-    }
+
 
     buildTypes {
         def appId = "vox-kpgyp"  // Replace with proper Application ID
@@ -156,15 +153,9 @@ dependencies {
     // Preferences DataStore
     implementation "androidx.datastore:datastore-preferences:1.0.0-beta02"
 
-    // Compose Accompanist
-    implementation "com.google.accompanist:accompanist-insets:$accompanist_version"
-    implementation "com.google.accompanist:accompanist-coil:$accompanist_version"
 
-    // Hilt - dependency injection
-    implementation "com.google.dagger:hilt-android:$hilt_version"
-    kapt "com.google.dagger:hilt-compiler:$hilt_version"
-    implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03'
-    kapt 'androidx.hilt:hilt-compiler:1.0.0'
+
+
 
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.0"
@@ -172,13 +163,16 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version"
 
 
-    // Navigation
-    implementation "androidx.navigation:navigation-compose:2.4.0-alpha03"
+    //room
+    implementation "androidx.room:room-runtime:2.4.0-alpha03"
+    annotationProcessor "androidx.room:room-compiler:2.4.0-alpha03"
+    kapt 'androidx.room:room-compiler:2.4.0-alpha03'
 
-    implementation "androidx.compose.ui:ui:$compose_version"
-    implementation "androidx.compose.material:material:$compose_version"
-    implementation "androidx.compose.ui:ui-tooling:$compose_version"
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.0-alpha02'
-    implementation 'androidx.activity:activity-compose:1.3.0-beta02'
-    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha07"
+    implementation "com.firebase:firebase-jobdispatcher:0.8.5"
+    implementation "android.arch.lifecycle:extensions:$architecture_version"
+    annotationProcessor "android.arch.lifecycle:compiler:$architecture_version"
+    testImplementation "com.google.truth:truth:1.0.1"
+    androidTestImplementation "com.google.truth:truth:1.0.1"
+    androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
+
 }

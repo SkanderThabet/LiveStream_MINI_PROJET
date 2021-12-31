@@ -3,4 +3,12 @@
     <string name="share_podcast_content">Take a look at this podcast: %1$s %2$s</string>
     <string name="get_started">Get Started</string>
     <string name="welcome_title">Say it with\nPodcast</string>
+    <string name="subscribe">Subscribe</string>
+    <string name="search">Search</string>
+    <string name="episode_notification_title">New episodes</string>
+    <string name="episode_notification_text">%1$d new episode(s) for %2$s</string>
+    <string name="search_results">Search Results</string>
+    <string name="ok_button">Ok</string>
+    <string name="subscribed_podcasts">Subscribed Podcasts</string>
+    <string name="unsubscribe">Unsubscribe</string>
 </resources>

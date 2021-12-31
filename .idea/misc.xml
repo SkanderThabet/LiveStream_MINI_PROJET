@@ -133,6 +133,7 @@
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/values/dim/drawable/ic_baseline_calendar_today_24.xml" value="0.18020833333333333" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/values/dim/mipmap-anydpi-v26/ic_launcher.xml" value="0.18020833333333333" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/values/dim/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.18020833333333333" />
+        <entry key="app/src/main/res/drawable-ldpi/ic_play_pause_toggle.xml" value="0.12777777777777777" />
         <entry key="app/src/main/res/drawable-xhdpi/ic_music_file.xml" value="0.12708333333333333" />
         <entry key="app/src/main/res/drawable-xhdpi/ic_podcast.xml" value="0.2232638888888889" />
         <entry key="app/src/main/res/layout/activity_custom.xml" value="0.12056010928961748" />
@@ -148,6 +149,7 @@
         <entry key="app/src/main/res/layout/activity_on_boarding.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/activity_otp2.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/activity_otp3.xml" value="0.12056010928961748" />
+        <entry key="app/src/main/res/layout/activity_podcast.xml" value="0.1403688524590164" />
         <entry key="app/src/main/res/layout/activity_podcast_main.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/activity_profile_compelation.xml" value="0.20637299482155527" />
         <entry key="app/src/main/res/layout/activity_profile_settings.xml" value="0.12056010928961748" />
@@ -156,14 +158,17 @@
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/activity_welcome_page.xml" value="0.1426948869697147" />
         <entry key="app/src/main/res/layout/drawer_header.xml" value="0.12056010928961748" />
+        <entry key="app/src/main/res/layout/episode_item.xml" value="0.1403688524590164" />
         <entry key="app/src/main/res/layout/fragment_channel.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/fragment_chat.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/fragment_chats.xml" value="0.12056010928961748" />
+        <entry key="app/src/main/res/layout/fragment_episode_player.xml" value="0.1403688524590164" />
         <entry key="app/src/main/res/layout/fragment_events.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/fragment_home_pod.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/fragment_login_chat.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/fragment_people2.xml" value="0.12056010928961748" />
+        <entry key="app/src/main/res/layout/fragment_podcast_details.xml" value="0.11701388888888889" />
         <entry key="app/src/main/res/layout/fragment_song.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/fragment_user.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/include_event_1.xml" value="0.12056010928961748" />
@@ -178,6 +183,8 @@
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.18888888888888888" />
         <entry key="app/src/main/res/menu/drawer_menu.xml" value="0.18888888888888888" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.18888888888888888" />
+        <entry key="app/src/main/res/menu/menu_details.xml" value="0.2125" />
+        <entry key="app/src/main/res/menu/menu_search.xml" value="0.2125" />
         <entry key="app/src/main/res/menu/navigation_controller.xml" value="0.18888888888888888" />
         <entry key="app/src/main/res/menu/users_menu.xml" value="0.18888888888888888" />
       </map>

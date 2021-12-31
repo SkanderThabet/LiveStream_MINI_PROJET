@@ -17,7 +17,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.projet.miniprojet.androidVox.R
 import com.projet.miniprojet.androidVox.activities.Homepage.HomePage
-import com.projet.miniprojet.androidVox.activities.Podcast.ui.MainPodcastActivity
+import com.projet.miniprojet.androidVox.activities.PodcastV2.ui.PodcastActivity
 import com.projet.miniprojet.androidVox.databinding.FragmentChannelBinding
 import io.getstream.chat.android.client.ChatClient
 import io.getstream.chat.android.client.models.Channel
@@ -154,7 +154,7 @@ class ChannelFragment : Fragment() {
     }
 
     private fun startPodcastAct() {
-        startActivity(Intent(this.requireContext(), MainPodcastActivity::class.java))
+        startActivity(Intent(this.requireContext(), PodcastActivity::class.java))
     }
 
     private fun startHomeAct() {

@@ -3,6 +3,7 @@
     package="com.projet.miniprojet.androidVox">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- some devices need read permission to create folders or files -->
     <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
@@ -123,33 +124,63 @@
             android:exported="true"
             android:theme="@style/Theme.VirtualEvent.BlackStatusBar" />
 
-        <activity
-            android:name=".activities.Podcast.ui.MainPodcastActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:launchMode="singleTop"
-            android:screenOrientation="fullSensor"
-            android:theme="@style/Theme.Podcast.Launch"
-            android:windowSoftInputMode="adjustResize">
+<!--        <activity-->
+<!--            android:name=".activities.Podcast.ui.MainPodcastActivity"-->
+<!--            android:exported="true"-->
+<!--            android:label="@string/app_name"-->
+<!--            android:launchMode="singleTop"-->
+<!--            android:screenOrientation="fullSensor"-->
+<!--            android:theme="@style/Theme.Podcast.Launch"-->
+<!--            android:windowSoftInputMode="adjustResize">-->
 
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data
-                    android:host="www.listennotes.com"
-                    android:pathPrefix="/e"
-                    android:scheme="https" />
-            </intent-filter>
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.VIEW" />-->
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--                <category android:name="android.intent.category.BROWSABLE" />-->
+<!--                <data-->
+<!--                    android:host="www.listennotes.com"-->
+<!--                    android:pathPrefix="/e"-->
+<!--                    android:scheme="https" />-->
+<!--            </intent-filter>-->
 
-        </activity>
-<!--        <service-->
-<!--            android:name=".activities.Podcast.data.service.MediaPlayerService"-->
+<!--        </activity>-->
+<!--        <receiver android:name="androidx.media.session.MediaButtonReceiver"-->
 <!--            android:exported="false">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MEDIA_BUTTON" />-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
+<!--        <service-->
+<!--            android:name="com.projet.miniprojet.androidVox.activities.Podcast.data.service.MediaPlayerService"-->
+<!--            android:exported="false"-->
+<!--            android:enabled="true">-->
 <!--            <intent-filter>-->
 <!--                <action android:name="android.media.browse.MediaBrowserService" />-->
 <!--            </intent-filter>-->
 <!--        </service>-->
+        <activity android:name=".activities.PodcastV2.ui.PodcastActivity" android:launchMode="singleTop" android:theme="@style/Theme.AppCompat.NoActionBar" android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.SEARCH"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
+        </activity>
+        <service
+            android:exported="true"
+            android:name=".activities.PodcastV2.Service.EpisodeUpdateService">
+            <intent-filter>
+                <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE"/>
+            </intent-filter>
+        </service>
+        <service android:name=".activities.PodcastV2.Service.PodplayMediaService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.media.browse.MediaBrowserService" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

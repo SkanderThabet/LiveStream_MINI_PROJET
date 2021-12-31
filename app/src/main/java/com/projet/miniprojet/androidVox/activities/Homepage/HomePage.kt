@@ -9,10 +9,8 @@ import com.projet.miniprojet.androidVox.R
 import com.projet.miniprojet.androidVox.activities.BroadcastStreaming.BroadcastMain
 import com.projet.miniprojet.androidVox.activities.Chat.ChatMain
 import com.projet.miniprojet.androidVox.activities.LiveStreamChatInteraction.MainActivity
-import com.projet.miniprojet.androidVox.activities.Podcast.ui.MainPodcastActivity
-import dagger.hilt.android.AndroidEntryPoint
+import com.projet.miniprojet.androidVox.activities.PodcastV2.ui.PodcastActivity
 import kotlinx.android.synthetic.main.activity_home_page.*
-@AndroidEntryPoint
 class HomePage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,8 +69,7 @@ class HomePage : AppCompatActivity() {
     }
 
     private fun startPodcast() {
-        startActivity(Intent(this,MainPodcastActivity::class.java))
-        finish()
+        startActivity(Intent(this,PodcastActivity::class.java))
     }
 
 

@@ -10,6 +10,15 @@
 Emma,</string>
     <string name="otp_verific">OTP Verification</string>
     <string name="we_will_sen">
+        <string name="search_hint">Enter Podcast Search</string>
+    <string name="search">Search</string>
+    <string name="search_results">Search Results</string>
+    <string name="subscribe">Subscribe</string>
+    <string name="ok_button">OK</string>
+    <string name="subscribed_podcasts">Subscribed Podcasts</string>
+    <string name="unsubscribe">Unsubscribe</string>
+    <string name="episode_notification_title">New episodes</string>
+    <string name="episode_notification_text">%1$d new episode(s) for %2$s</string>
 
 We will send you a one-time password to this mobile number.
 </string>
@@ -584,4 +593,12 @@ Back</string>
     <string name="share_podcast_content">Take a look at this podcast: %1$s %2$s</string>
     <string name="get_started">Get Started</string>
     <string name="welcome_title">Say it with\nPodcast</string>
+    <string name="subscribe">Subscribe</string>
+    <string name="search">Search</string>
+    <string name="episode_notification_title">New episodes</string>
+    <string name="episode_notification_text">%1$d new episode(s) for %2$s</string>
+    <string name="search_results">Search Results</string>
+    <string name="ok_button">Ok</string>
+    <string name="subscribed_podcasts">Subscribed Podcasts</string>
+    <string name="unsubscribe">Unsubscribe</string>
 </resources>
