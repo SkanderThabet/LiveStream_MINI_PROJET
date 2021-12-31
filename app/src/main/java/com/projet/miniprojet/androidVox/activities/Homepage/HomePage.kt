@@ -4,18 +4,15 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.projet.miniprojet.androidVox.APP_ID
 import com.projet.miniprojet.androidVox.R
 import com.projet.miniprojet.androidVox.activities.BroadcastStreaming.BroadcastMain
 import com.projet.miniprojet.androidVox.activities.Chat.ChatMain
 import com.projet.miniprojet.androidVox.activities.LiveStreamChatInteraction.MainActivity
-import io.realm.mongodb.App
-import io.realm.mongodb.AppConfiguration
-import io.realm.mongodb.Credentials
+import com.projet.miniprojet.androidVox.activities.Podcast.ui.MainPodcastActivity
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_home_page.*
-
+@AndroidEntryPoint
 class HomePage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,16 +22,16 @@ class HomePage : AppCompatActivity() {
         /**
          * Anonymous logging test
          */
-        val app = App(AppConfiguration.Builder(APP_ID).build())
-        val credentials=Credentials.anonymous()
-        app.loginAsync(credentials){
-            if(it.isSuccess){
-                Log.v("User","Logged in anonymously")
-            }
-            else{
-                Log.e("EXAMPLE", "Failed to log in: ${it.error.errorMessage}")
-            }
-        }
+//        val app = App(AppConfiguration.Builder(APP_ID).build())
+//        val credentials=Credentials.anonymous()
+//        app.loginAsync(credentials){
+//            if(it.isSuccess){
+//                Log.v("User","Logged in anonymously")
+//            }
+//            else{
+//                Log.e("EXAMPLE", "Failed to log in: ${it.error.errorMessage}")
+//            }
+//        }
 
         topAppBar.setNavigationOnClickListener {
             drawerLayout.open()
@@ -57,6 +54,9 @@ class HomePage : AppCompatActivity() {
             if(menuItem.itemId==R.id.channels_menu){
                 startStreamingView()
             }
+            if(menuItem.itemId==R.id.podcasts_menu){
+                startPodcast()
+            }
 
 
             menuItem.isChecked = true
@@ -70,6 +70,10 @@ class HomePage : AppCompatActivity() {
 
     }
 
+    private fun startPodcast() {
+        startActivity(Intent(this,MainPodcastActivity::class.java))
+        finish()
+    }
 
 
     private fun startStreamingView() {

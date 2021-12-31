@@ -1,8 +1,11 @@
 package com.projet.miniprojet.androidVox.activities.Podcast.ui
+import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.OnBackPressedDispatcher
 import androidx.activity.compose.setContent
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
@@ -16,6 +19,7 @@ import com.projet.miniprojet.androidVox.activities.Podcast.ui.welcome.WelcomeScr
 
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.projet.miniprojet.androidVox.R
+import com.projet.miniprojet.androidVox.activities.Homepage.HomePage
 import com.projet.miniprojet.androidVox.activities.Podcast.Constant.K
 import com.projet.miniprojet.androidVox.activities.Podcast.ui.common.ProvideMultiViewModel
 import com.projet.miniprojet.androidVox.activities.Podcast.ui.home.HomeScreen
@@ -29,13 +33,14 @@ import com.projet.miniprojet.androidVox.activities.Podcast.ui.theme.PodcastAppTh
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class PodcastMainActivity : ComponentActivity() {
+class MainPodcastActivity : ComponentActivity() {
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(R.style.Theme_Podcast)
         WindowCompat.setDecorFitsSystemWindows(window, false)
-        var startDestination = Destination.welcome
+        var startDestination = Destination.home
         if (intent?.action == K.ACTION_PODCAST_NOTIFICATION_CLICK) {
             startDestination = Destination.home
         }
@@ -49,9 +54,10 @@ class PodcastMainActivity : ComponentActivity() {
     }
 }
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun PodcastApp(
-    startDestination: String = Destination.welcome,
+    startDestination: String = Destination.home,
     backDispatcher: OnBackPressedDispatcher
 ) {
     PodcastAppTheme {

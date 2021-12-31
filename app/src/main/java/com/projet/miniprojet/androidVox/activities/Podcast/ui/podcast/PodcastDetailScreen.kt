@@ -1,5 +1,7 @@
 package com.projet.miniprojet.androidVox.activities.Podcast.ui.podcast
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -24,6 +26,7 @@ import com.projet.miniprojet.androidVox.activities.Podcast.util.Resource
 import com.projet.miniprojet.androidVox.activities.Podcast.util.formatMillisecondsAsDate
 import com.projet.miniprojet.androidVox.activities.Podcast.util.toDurationMinutes
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun PodcastDetailScreen(
     podcastId: String,

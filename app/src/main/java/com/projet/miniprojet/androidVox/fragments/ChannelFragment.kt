@@ -16,25 +16,20 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.projet.miniprojet.androidVox.R
-import com.projet.miniprojet.androidVox.activities.Chat.ChatMain
 import com.projet.miniprojet.androidVox.activities.Homepage.HomePage
+import com.projet.miniprojet.androidVox.activities.Podcast.ui.MainPodcastActivity
 import com.projet.miniprojet.androidVox.databinding.FragmentChannelBinding
 import io.getstream.chat.android.client.ChatClient
-import io.getstream.chat.android.client.logger.ChatLogLevel
 import io.getstream.chat.android.client.models.Channel
 import io.getstream.chat.android.client.models.Filters
 import io.getstream.chat.android.client.models.User
 import io.getstream.chat.android.livedata.ChatDomain
 import io.getstream.chat.android.ui.avatar.AvatarView
-import io.getstream.chat.android.ui.channel.list.ChannelListView
-import io.getstream.chat.android.ui.channel.list.header.ChannelListHeaderView
 import io.getstream.chat.android.ui.channel.list.header.viewmodel.ChannelListHeaderViewModel
 import io.getstream.chat.android.ui.channel.list.header.viewmodel.bindView
 import io.getstream.chat.android.ui.channel.list.viewmodel.ChannelListViewModel
 import io.getstream.chat.android.ui.channel.list.viewmodel.bindView
 import io.getstream.chat.android.ui.channel.list.viewmodel.factory.ChannelListViewModelFactory
-import kotlinx.android.synthetic.main.fragment_channel.*
-import kotlinx.android.synthetic.main.slider.view.*
 
 
 class ChannelFragment : Fragment() {
@@ -143,6 +138,9 @@ class ChannelFragment : Fragment() {
             if(it.itemId==R.id.home_menu){
                 startHomeAct()
             }
+            if(it.itemId==R.id.podcasts_menu){
+                startPodcastAct()
+            }
             false
         }
         val currentUser = client.getCurrentUser()!!
@@ -153,6 +151,10 @@ class ChannelFragment : Fragment() {
         headerId.text = currentUser.id
         val headerName = headerView.findViewById<TextView>(R.id.name_textView)
         headerName.text = currentUser.name
+    }
+
+    private fun startPodcastAct() {
+        startActivity(Intent(this.requireContext(), MainPodcastActivity::class.java))
     }
 
     private fun startHomeAct() {

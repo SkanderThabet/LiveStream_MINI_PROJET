@@ -30,7 +30,7 @@ class PodcastRepositoryMockImpl : PodcastRepository {
         )
 
         return PodcastSearch(
-            count = 10,
+            count = 20,
             total = 9000,
             results = (1..20).map {
                 Episode(

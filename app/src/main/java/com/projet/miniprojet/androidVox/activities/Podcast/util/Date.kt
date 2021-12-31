@@ -1,9 +1,12 @@
 package com.projet.miniprojet.androidVox.activities.Podcast.util
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import java.time.Instant
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 
+@RequiresApi(Build.VERSION_CODES.O)
 fun Long.formatMillisecondsAsDate(
     pattern: String = "yyyy-MM-dd HH:mm:ss"
 ): String {

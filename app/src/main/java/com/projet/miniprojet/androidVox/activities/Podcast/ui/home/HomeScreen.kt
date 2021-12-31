@@ -85,7 +85,7 @@ private fun openPodcastDetail(
 }
 
 @Composable
-@Preview(name = "Home")
+@Preview(name = "Podcast")
 fun HomeScreenPreview() {
     PreviewContent {
         HomeScreen()

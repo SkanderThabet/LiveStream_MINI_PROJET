@@ -3,6 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/compose-model-1640897819467.xml" value="0.13837792642140467" />
+        <entry key="../../../../layout/compose-model-1640897951046.xml" value="0.2799831081081081" />
+        <entry key="../../../../layout/compose-model-1640898099147.xml" value="0.2799831081081081" />
+        <entry key="../../../../layout/compose-model-1640899974648.xml" value="0.13837792642140467" />
+        <entry key="../../../../layout/compose-model-1640905037722.xml" value="0.13795986622073578" />
+        <entry key="../../../../layout/compose-model-1640905058927.xml" value="0.2791385135135135" />
+        <entry key="../../../../layout/compose-model-1640905061900.xml" value="0.3814814814814815" />
+        <entry key="../../../../layout/compose-model-1640909030877.xml" value="0.1" />
+        <entry key="../../../../layout/compose-model-1640910331895.xml" value="0.25" />
+        <entry key="../../../../layout/compose-model-1640911437574.xml" value="0.14381270903010032" />
+        <entry key="../../../../layout/compose-model-1640911608679.xml" value="0.37407407407407406" />
+        <entry key="../../../../layout/compose-model-1640911611002.xml" value="0.29096283783783783" />
+        <entry key="../../../../layout/compose-model-1640914289362.xml" value="0.1" />
+        <entry key="../../../../layout/compose-model-1640914298353.xml" value="0.29096283783783783" />
+        <entry key="../../../../layout/compose-model-1640914416371.xml" value="0.14381270903010032" />
+        <entry key="../../../../layout/compose-model-1640914652144.xml" value="0.14381270903010032" />
+        <entry key="../../../../layout/compose-model-1640914687885.xml" value="0.29096283783783783" />
+        <entry key="../../../../layout/compose-model-1640914985205.xml" value="0.1" />
+        <entry key="../../../../layout/compose-model-1640915313226.xml" value="0.37407407407407406" />
         <entry key="..\:/Users/Yepson/.gradle/caches/transforms-3/2c51e1188ae3b4c6b31d275deec6338c/transformed/appcompat-1.4.0/res/layout/support_simple_spinner_dropdown_item.xml" value="0.12056010928961748" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/app_live/src/main/res/layout/activity_main.xml" value="0.12431693989071038" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/drawable-v24/ic_add.xml" value="0.1701388888888889" />
@@ -114,6 +133,8 @@
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/values/dim/drawable/ic_baseline_calendar_today_24.xml" value="0.18020833333333333" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/values/dim/mipmap-anydpi-v26/ic_launcher.xml" value="0.18020833333333333" />
         <entry key="..\:/Users/Yepson/AndroidStudioProjects/Miniprojet/app/src/main/res/values/dim/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.18020833333333333" />
+        <entry key="app/src/main/res/drawable-xhdpi/ic_music_file.xml" value="0.12708333333333333" />
+        <entry key="app/src/main/res/drawable-xhdpi/ic_podcast.xml" value="0.2232638888888889" />
         <entry key="app/src/main/res/layout/activity_custom.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/activity_event_details.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/activity_example.xml" value="0.12056010928961748" />

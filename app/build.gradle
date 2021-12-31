@@ -3,7 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
-    id 'androidx.navigation.safeargs.kotlin'
+    id 'androidx.navigation.safeargs'
     id 'com.google.gms.google-services'
     id 'dagger.hilt.android.plugin'
 
@@ -55,6 +55,8 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+        useIR = true
+
     }
     sourceSets {
         main {
@@ -107,10 +109,11 @@ dependencies {
     // Client + offline + UI components
 
     implementation "io.getstream:stream-chat-android-ui-components:4.22.0"
-    implementation 'com.google.android.exoplayer:exoplayer-core:2.13.2'
-    implementation 'com.google.android.exoplayer:exoplayer-ui:2.13.2'
-    implementation("com.google.android.exoplayer:extension-rtmp:2.13.2")
-    implementation "com.google.android.exoplayer:extension-mediasession:2.13.2"
+    implementation "com.google.android.exoplayer:exoplayer:2.14.1"
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.14.1'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.14.1'
+    implementation("com.google.android.exoplayer:extension-rtmp:2.14.1")
+    implementation "com.google.android.exoplayer:extension-mediasession:2.14.1"
     implementation 'com.airbnb.android:lottie:4.1.0'
 
 

@@ -3,11 +3,13 @@ package com.projet.miniprojet.androidVox.activities.Podcast.data.service
 import android.app.PendingIntent
 import android.app.Service
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.support.v4.media.MediaBrowserCompat
 import android.support.v4.media.MediaMetadataCompat
 import android.support.v4.media.session.MediaSessionCompat
 import android.util.Log
+import androidx.annotation.RequiresApi
 import androidx.media.MediaBrowserServiceCompat
 
 import com.google.android.exoplayer2.SimpleExoPlayer
@@ -15,7 +17,7 @@ import com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector
 import com.google.android.exoplayer2.upstream.cache.CacheDataSource
 import com.projet.miniprojet.androidVox.activities.Podcast.Constant.K
 import com.projet.miniprojet.androidVox.activities.Podcast.data.exoplayer.*
-import com.projet.miniprojet.androidVox.activities.Podcast.ui.PodcastMainActivity
+import com.projet.miniprojet.androidVox.activities.Podcast.ui.MainPodcastActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -55,10 +57,11 @@ class MediaPlayerService : MediaBrowserServiceCompat() {
             private set
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate() {
         super.onCreate()
         Log.i(TAG, "onCreate called")
-        val activityPendingIntent = Intent(this, PodcastMainActivity::class.java)
+        val activityPendingIntent = Intent(this, MainPodcastActivity::class.java)
             .apply {
                 action = K.ACTION_PODCAST_NOTIFICATION_CLICK
             }
@@ -89,7 +92,7 @@ class MediaPlayerService : MediaBrowserServiceCompat() {
         this.sessionToken = mediaSession.sessionToken
 
         mediaPlayerNotificationManager = MediaPlayerNotificationManager(
-            this,
+            this.applicationContext,
             mediaSession.sessionToken,
             MediaPlayerNotificationListener(this)
         ) {

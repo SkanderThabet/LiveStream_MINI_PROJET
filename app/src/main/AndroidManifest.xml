@@ -19,14 +19,13 @@
         android:required="false" />
 
     <application
-        android:name=".ChatClient"
+        android:name=".VoxClient"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Miniprojet">
-
 
         <activity
             android:name=".activities.SignInUp.Profile_compelation"
@@ -125,34 +124,32 @@
             android:theme="@style/Theme.VirtualEvent.BlackStatusBar" />
 
         <activity
-            android:name=".activities.Podcast.ui.PodcastMainActivity"
+            android:name=".activities.Podcast.ui.MainPodcastActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
             android:theme="@style/Theme.Podcast.Launch"
             android:windowSoftInputMode="adjustResize">
 
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-
                 <data
                     android:host="www.listennotes.com"
                     android:pathPrefix="/e"
                     android:scheme="https" />
             </intent-filter>
-        </activity>
 
-        <service
-            android:name=".activities.Podcast.data.service.MediaPlayerService"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.media.browse.MediaBrowserService" />
-            </intent-filter>
-        </service>
+        </activity>
+<!--        <service-->
+<!--            android:name=".activities.Podcast.data.service.MediaPlayerService"-->
+<!--            android:exported="false">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.media.browse.MediaBrowserService" />-->
+<!--            </intent-filter>-->
+<!--        </service>-->
     </application>
 
 </manifest>

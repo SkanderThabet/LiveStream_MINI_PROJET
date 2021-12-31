@@ -8,7 +8,9 @@ import com.projet.miniprojet.androidVox.R
 import com.projet.miniprojet.androidVox.activities.SignInUp.Profile_compelation
 import com.projet.miniprojet.androidVox.activities.SignInUp.Sign_In
 import com.projet.miniprojet.androidVox.activities.SignInUp.Sign_Up
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class WelcomePage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
