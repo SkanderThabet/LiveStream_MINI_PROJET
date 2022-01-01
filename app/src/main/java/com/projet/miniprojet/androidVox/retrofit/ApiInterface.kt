@@ -15,7 +15,7 @@ interface ApiInterface {
     @POST("register")
     fun registerUser(
         @Body info: User
-    ): retrofit2.Call<ResponseBody>
+    ): retrofit2.Call<User>
 }
 class RetrofitInstance {
     companion object {

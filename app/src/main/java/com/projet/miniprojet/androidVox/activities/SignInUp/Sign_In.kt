@@ -1,7 +1,9 @@
 package com.projet.miniprojet.androidVox.activities.SignInUp
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
@@ -11,6 +13,7 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.projet.miniprojet.androidVox.R
 import com.projet.miniprojet.androidVox.activities.Homepage.HomePage
+import com.projet.miniprojet.androidVox.other.SharedPref
 import kotlinx.android.synthetic.main.activity_profile_compelation.*
 import kotlinx.android.synthetic.main.activity_sign_in.*
 import org.json.JSONException
@@ -21,20 +24,24 @@ import java.nio.charset.Charset
 
 class Sign_In : AppCompatActivity() {
 
-
+    lateinit var sharedPref: SharedPref
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
 
+
+        sharedPref = SharedPref(this)
         SignInButton.setOnClickListener {
-            if (validate()) {
+            val email = textinputEmail.text.toString()
+            val password = textinputpass.text.toString()
+            if (isValidForm(email, password)) {
                 loginUser()
             }
         }
     }
 
     private fun loginUser() {
-        progressBar_login.isVisible=true
+        progressBar_login.isVisible = true
 
         val params: HashMap<String, String> = HashMap()
         params["email"] = textinputEmail.text.toString()
@@ -49,14 +56,14 @@ class Sign_In : AppCompatActivity() {
                 try {
                     if (response.getBoolean("success")) {
                         val token = response.getString("token")
-                        //                            sharedPreferenceClass.setValue_string("token", token)
+                        sharedPref.setValue_string("token", token)
                         Toast.makeText(this@Sign_In, token, Toast.LENGTH_SHORT).show()
                         startActivity(Intent(this@Sign_In, HomePage::class.java))
                     }
-                    progressBar_login.isVisible=false
+                    progressBar_login.isVisible = false
                 } catch (e: JSONException) {
                     e.printStackTrace()
-                    progressBar_login.isVisible=false
+                    progressBar_login.isVisible = false
                 }
             }, Response.ErrorListener { error ->
                 val response = error.networkResponse
@@ -64,7 +71,12 @@ class Sign_In : AppCompatActivity() {
                     try {
                         val res = String(
                             response.data,
-                            Charset.forName(HttpHeaderParser.parseCharset(response.headers, "utf-8"))
+                            Charset.forName(
+                                HttpHeaderParser.parseCharset(
+                                    response.headers,
+                                    "utf-8"
+                                )
+                            )
                         )
                         val obj = JSONObject(res)
                         Toast.makeText(
@@ -72,13 +84,13 @@ class Sign_In : AppCompatActivity() {
                             obj.getString("msg"),
                             Toast.LENGTH_SHORT
                         ).show()
-                        progressBar_login.isVisible=false
+                        progressBar_login.isVisible = false
                     } catch (je: JSONException) {
                         je.printStackTrace()
-                        progressBar_login.isVisible=false
+                        progressBar_login.isVisible = false
                     } catch (je: UnsupportedEncodingException) {
                         je.printStackTrace()
-                        progressBar_login.isVisible=false
+                        progressBar_login.isVisible = false
                     }
                 }
             }) {
@@ -141,5 +153,36 @@ class Sign_In : AppCompatActivity() {
         return true
     }
 
+    private fun isValidForm(email: String, password: String): Boolean {
 
+        var isValid = true
+        if (!email.isValidEmail()) {
+            username_et.isErrorEnabled = true
+            username_et.error = "Email address is wrong!"
+            isValid = false
+        } else {
+            username_et.isErrorEnabled = false
+        }
+
+        if (password.isEmpty()) {
+            password_et.isErrorEnabled = true
+            password_et.error = "Password cannot be empty!"
+            isValid = false
+        } else {
+            password_et.isErrorEnabled = false
+        }
+        return isValid
+    }
+
+    private fun String.isValidEmail(): Boolean = this.isNotEmpty() &&
+            Patterns.EMAIL_ADDRESS.matcher(this).matches()
+
+    override fun onStart() {
+        super.onStart()
+        val voxPref: SharedPreferences = getSharedPreferences("vox_app", MODE_PRIVATE)
+        if (voxPref.contains("token")) {
+            startActivity(Intent(this@Sign_In, HomePage::class.java))
+            finish()
+        }
+    }
 }

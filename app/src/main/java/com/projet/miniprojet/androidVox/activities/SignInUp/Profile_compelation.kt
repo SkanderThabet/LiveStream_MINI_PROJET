@@ -1,6 +1,7 @@
 package com.projet.miniprojet.androidVox.activities.SignInUp
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -17,6 +18,7 @@ import com.google.gson.JsonObject
 import com.projet.miniprojet.androidVox.R
 import com.projet.miniprojet.androidVox.activities.Homepage.HomePage
 import com.projet.miniprojet.androidVox.models.User
+import com.projet.miniprojet.androidVox.other.SharedPref
 import com.projet.miniprojet.androidVox.retrofit.ApiInterface
 import com.projet.miniprojet.androidVox.retrofit.RetrofitInstance
 import com.squareup.okhttp.ResponseBody
@@ -34,12 +36,12 @@ import kotlin.collections.HashMap
 
 class Profile_compelation : AppCompatActivity() {
 
-
+    lateinit var sharedPref: SharedPref
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_compelation)
 
-
+        sharedPref= SharedPref(this)
         tv_dob.setOnClickListener {
             datedob()
         }
@@ -65,8 +67,10 @@ class Profile_compelation : AppCompatActivity() {
         val registerInfo = User(email,password,firstname, lastname, dob)
 
         retIn.registerUser(registerInfo).enqueue(object :
-            Callback<ResponseBody> {
-            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+            Callback<User> {
+            override fun onFailure(call: Call<User>, t: Throwable) {
+                Log.e("Retrofit",t.localizedMessage)
+                Log.e("RetrofitError",t.stackTraceToString())
                 Toast.makeText(
                     this@Profile_compelation,
                     t.message,
@@ -74,13 +78,13 @@ class Profile_compelation : AppCompatActivity() {
                 ).show()
             }
             override fun onResponse(
-                call: Call<ResponseBody>,
-                response: retrofit2.Response<ResponseBody>
+                call: Call<User>,
+                response: retrofit2.Response<User>
             ) {
                 if (response.code() == 200) {
                     Toast.makeText(this@Profile_compelation, "Success", Toast.LENGTH_SHORT)
                         .show()
-
+                loginUser(email,password)
                 }
                 else{
                     Toast.makeText(this@Profile_compelation, "Registration failed!", Toast.LENGTH_SHORT)
@@ -91,18 +95,14 @@ class Profile_compelation : AppCompatActivity() {
     }
 
 
-    private fun registerUser() {
-        VolleyLog.DEBUG=true
-        progressBar_profile.isVisible = true
+    private fun loginUser(email:String,password:String) {
+        progressBar_profile.isVisible=true
 
         val params: HashMap<String, String> = HashMap()
-        params["email"] = outline_et_email.text.toString()
-        params["passowrd"] = outline_et_password.text.toString()
-        params["firstname"] = outline_et_firstname.text.toString()
-        params["lastname"] = outline_et_lastname.text.toString()
-        params["dob"] = tv_dob.text.toString()
+        params["email"] = email
+        params["password"] = password
 
-        val apiKey = "https://voxappli.herokuapp.com/api/vox/auth/register"
+        val apiKey = "https://voxappli.herokuapp.com/api/vox/auth/login"
 
         val jsonObjectRequest: JsonObjectRequest = object : JsonObjectRequest(
             Request.Method.POST,
@@ -111,13 +111,12 @@ class Profile_compelation : AppCompatActivity() {
                 try {
                     if (response.getBoolean("success")) {
                         val token = response.getString("token")
-                        //                            sharedPreferenceClass.setValue_string("token", token)
+                        sharedPref.setValue_string("token", token)
                         Toast.makeText(this@Profile_compelation, token, Toast.LENGTH_SHORT).show()
                         startActivity(Intent(this@Profile_compelation, HomePage::class.java))
                     }
                     progressBar_profile.isVisible=false
                 } catch (e: JSONException) {
-                    Log.e("Voll",e.stackTraceToString())
                     e.printStackTrace()
                     progressBar_profile.isVisible=false
                 }
@@ -135,29 +134,12 @@ class Profile_compelation : AppCompatActivity() {
                             obj.getString("msg"),
                             Toast.LENGTH_SHORT
                         ).show()
-                        Log.e("Voll",error.stackTraceToString())
-                        Log.d("Voll",
-                            "onErrorResponse: statusCode=" + error.networkResponse.statusCode
-                        )
-                        for (header in error.networkResponse.allHeaders) {
-                            Log.d("Voll",
-                                "onErrorResponse: headers: " + header.name.toString() + "=" + header.value
-                            )
-                        }
-                        Log.i("jsonObjectRequest", "Error, Status Code " + error.networkResponse.statusCode);
-                        Log.i("jsonObjectRequest", "URL: " + apiKey);
-                        Log.i("jsonObjectRequest","Payload : "+JSONObject(params as Map<*, *>?).toString())
-                        Log.i("jsonObjectRequest", "Net Response to String: " + error.networkResponse.toString());
-                        Log.i("jsonObjectRequest", "Error bytes: " + String(error.networkResponse.data));
-                        Log.e("Voll",error.stackTraceToString())
                         progressBar_profile.isVisible=false
                     } catch (je: JSONException) {
                         je.printStackTrace()
-                        Log.e("Voll",je.stackTraceToString())
                         progressBar_profile.isVisible=false
                     } catch (je: UnsupportedEncodingException) {
                         je.printStackTrace()
-                        Log.e("Voll",je.stackTraceToString())
                         progressBar_profile.isVisible=false
                     }
                 }
@@ -166,8 +148,6 @@ class Profile_compelation : AppCompatActivity() {
             override fun getHeaders(): Map<String, String> {
                 val headers: HashMap<String, String> = HashMap()
                 headers["Content-Type"] = "application/json"
-                headers.put("User-agent", System.getProperty("http.agent"));
-                Log.d("Voll",params.toString())
                 return params
             }
         }
@@ -175,12 +155,14 @@ class Profile_compelation : AppCompatActivity() {
         // set retry policy
 
         // set retry policy
-        val socketTime = 5000
+        val socketTime = 3000
         val policy: RetryPolicy = DefaultRetryPolicy(
             socketTime,
             DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
         )
         jsonObjectRequest.retryPolicy = policy
+
+        // request add
 
         // request add
         val requestQueue = Volley.newRequestQueue(this)
@@ -240,5 +222,13 @@ class Profile_compelation : AppCompatActivity() {
         return true
     }
 
+    override fun onStart() {
+        super.onStart()
+        val voxPref: SharedPreferences = getSharedPreferences("vox_app", MODE_PRIVATE)
+        if(voxPref.contains("token")){
+            startActivity(Intent(this@Profile_compelation,HomePage::class.java))
+            finish()
+        }
+    }
 
 }

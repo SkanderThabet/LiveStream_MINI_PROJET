@@ -3,6 +3,7 @@ package com.projet.miniprojet.androidVox.activities.Homepage
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.projet.miniprojet.androidVox.R
@@ -10,12 +11,15 @@ import com.projet.miniprojet.androidVox.activities.BroadcastStreaming.BroadcastM
 import com.projet.miniprojet.androidVox.activities.Chat.ChatMain
 import com.projet.miniprojet.androidVox.activities.LiveStreamChatInteraction.MainActivity
 import com.projet.miniprojet.androidVox.activities.PodcastV2.ui.PodcastActivity
+import com.projet.miniprojet.androidVox.activities.SignInUp.oAuths
+import com.projet.miniprojet.androidVox.other.SharedPref
 import kotlinx.android.synthetic.main.activity_home_page.*
 class HomePage : AppCompatActivity() {
+    lateinit var sharedPref: SharedPref
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_page)
-
+        sharedPref= SharedPref(this)
 
         /**
          * Anonymous logging test
@@ -37,6 +41,8 @@ class HomePage : AppCompatActivity() {
         signoutBtnHome.setOnClickListener {
             val builder = AlertDialog.Builder(this)
             builder.setPositiveButton("Yes") { _, _ ->
+                sharedPref.clear()
+                startActivity(Intent(this,oAuths::class.java))
                 finish()
             }
             builder.setNegativeButton("No") { _, _ -> }
@@ -94,6 +100,4 @@ class HomePage : AppCompatActivity() {
             return Intent(context, HomePage::class.java)
         }
     }
-
-
 }

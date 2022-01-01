@@ -158,7 +158,7 @@
 <!--                <action android:name="android.media.browse.MediaBrowserService" />-->
 <!--            </intent-filter>-->
 <!--        </service>-->
-        <activity android:name=".activities.PodcastV2.ui.PodcastActivity" android:launchMode="singleTop" android:theme="@style/Theme.AppCompat.NoActionBar" android:configChanges="keyboardHidden|orientation|screenSize"
+        <activity android:name=".activities.PodcastV2.ui.PodcastActivity" android:launchMode="singleTop" android:theme="@style/Theme.Podcast" android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

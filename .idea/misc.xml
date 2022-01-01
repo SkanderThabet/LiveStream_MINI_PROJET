@@ -162,7 +162,7 @@
         <entry key="app/src/main/res/layout/fragment_channel.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/fragment_chat.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/fragment_chats.xml" value="0.12056010928961748" />
-        <entry key="app/src/main/res/layout/fragment_episode_player.xml" value="0.1403688524590164" />
+        <entry key="app/src/main/res/layout/fragment_episode_player.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_events.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/fragment_home_pod.xml" value="0.12056010928961748" />
@@ -177,6 +177,7 @@
         <entry key="app/src/main/res/layout/include_overview_stats_grid.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/item_message_plain_text.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/list_item_prod.xml" value="0.12056010928961748" />
+        <entry key="app/src/main/res/layout/search_item.xml" value="0.1407103825136612" />
         <entry key="app/src/main/res/layout/slider.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/swipe_item.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/user_row_layout.xml" value="0.12056010928961748" />

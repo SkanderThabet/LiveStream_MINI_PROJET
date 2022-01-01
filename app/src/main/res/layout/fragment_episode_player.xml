@@ -68,33 +68,36 @@
         android:id="@+id/playerControls"
         android:layout_width="0dp"
         android:layout_height="76dp"
-        android:background="@android:color/background_dark"
-        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/indigo_a700"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
             android:id="@+id/replayButton"
             android:layout_width="34dp"
             android:layout_height="34dp"
-            android:layout_marginEnd="24dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_replay_10_white"
             app:layout_constraintEnd_toStartOf="@+id/playToggleButton"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
+
         <Button
             android:id="@+id/playToggleButton"
             android:layout_width="34dp"
             android:layout_height="34dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/ic_play_pause_toggle"
+            android:backgroundTint="#00BCD4"
             android:scaleType="fitCenter"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
+
         <ImageButton
             android:id="@+id/forwardButton"
             android:layout_width="34dp"
@@ -105,56 +108,59 @@
             android:scaleType="fitCenter"
             android:src="@drawable/ic_forward_30_white"
             app:layout_constraintStart_toEndOf="@+id/playToggleButton"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
+
         <Button
             android:id="@+id/speedButton"
             android:layout_width="54dp"
             android:layout_height="34dp"
-            android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             android:background="@android:color/transparent"
             android:text="1x"
+            android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textSize="14sp"
-            android:textAllCaps="false"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/currentTimeTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
             android:text="0:00"
             android:textColor="@android:color/white"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/seekBar"/>
+            app:layout_constraintTop_toTopOf="@+id/seekBar" />
+
         <SeekBar
             android:id="@+id/seekBar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             android:progressBackgroundTint="@android:color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/endTimeTextView"
-            app:layout_constraintStart_toEndOf="@+id/currentTimeTextView"/>
+            app:layout_constraintStart_toEndOf="@+id/currentTimeTextView" />
+
         <TextView
             android:id="@+id/endTimeTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             android:text="0:00"
             android:textColor="@android:color/white"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/seekBar"/>
+            app:layout_constraintTop_toTopOf="@+id/seekBar" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

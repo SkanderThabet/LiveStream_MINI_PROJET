@@ -143,6 +143,7 @@ class ChannelFragment : Fragment() {
             }
             false
         }
+
         val currentUser = client.getCurrentUser()!!
         val headerView = binding.navigationView.getHeaderView(0)
         val headerAvatar = headerView.findViewById<AvatarView>(R.id.avatarView)

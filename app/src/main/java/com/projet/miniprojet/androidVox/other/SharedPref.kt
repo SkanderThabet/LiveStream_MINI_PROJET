@@ -8,13 +8,13 @@ import android.content.SharedPreferences
 
 
 
-class SharedPref {
+class SharedPref(context: Context) {
 
     private val USER_PREF = "vox_app"
     private var appShared: SharedPreferences? = null
     private var prefsEditor: SharedPreferences.Editor? = null
 
-    fun SharedPref(context: Context) {
+    init {
         appShared = context.getSharedPreferences(USER_PREF, Activity.MODE_PRIVATE)
         prefsEditor = appShared!!.edit()
     }
