@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.projet.miniprojet.androidVox.R
 import com.projet.miniprojet.androidVox.activities.Homepage.HomePage
+import com.projet.miniprojet.androidVox.activities.OTP.OTPFirstStep
 import kotlinx.android.synthetic.main.activity_oauths.*
 
 class oAuths : AppCompatActivity() {
@@ -26,7 +27,7 @@ class oAuths : AppCompatActivity() {
         finish()
     }
     private fun startSignupActivity() {
-        startActivity(Intent(this,Profile_compelation::class.java))
+        startActivity(Intent(this,OTPFirstStep::class.java))
         finish()
     }
 

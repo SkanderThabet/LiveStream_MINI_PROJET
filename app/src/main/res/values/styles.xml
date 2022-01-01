@@ -14,7 +14,10 @@
     <style name="txtMontserratregular16_3" parent="txtMontserratmedium16_1">
         <item name="android:textFontWeight">400</item>
     </style>
-
+    <style name="RoundedImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">60dp</item>
+    </style>
     <style name="txtMontserratregular16_4" parent="txtMontserratmedium16">
         <item name="android:textFontWeight">400</item>
     </style>

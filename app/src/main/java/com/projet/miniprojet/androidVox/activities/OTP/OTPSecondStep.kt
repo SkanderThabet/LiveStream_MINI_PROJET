@@ -4,6 +4,7 @@ import android.app.ProgressDialog
 import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.text.SpannableString
@@ -14,6 +15,7 @@ import android.text.style.ClickableSpan
 import android.util.Log
 import android.view.View
 import android.widget.*
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
@@ -22,10 +24,8 @@ import com.google.firebase.FirebaseException
 import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.*
 import com.projet.miniprojet.androidVox.R
-import com.projet.miniprojet.androidVox.activities.Chat.ChatMain
-import com.projet.miniprojet.androidVox.activities.Homepage.HomePage
 import com.projet.miniprojet.androidVox.activities.SignInUp.Profile_compelation
-import com.projet.miniprojet.androidVox.activities.SignInUp.Sign_Up
+import com.projet.miniprojet.androidVox.activities.SignInUp.oAuths
 import java.util.concurrent.TimeUnit
 
 const val PHONE_NUMBER = "PhoneNumber"
@@ -226,7 +226,7 @@ class OTPSecondStep : AppCompatActivity(), View.OnClickListener {
                     }
                     //First Time Login
                     if (it.result?.additionalUserInfo?.isNewUser == true) {
-                        startProfileSettingsActivity()
+                        StartProfileCompelationActivity()
                     } else {
                         showLoginActivity()
                     }
@@ -242,7 +242,7 @@ class OTPSecondStep : AppCompatActivity(), View.OnClickListener {
 
     }
 
-    private fun startProfileSettingsActivity() {
+    private fun StartProfileCompelationActivity() {
         startActivity(Intent(this, Profile_compelation::class.java))
         finish()
     }
@@ -264,7 +264,7 @@ class OTPSecondStep : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun showLoginActivity() {
-        startActivity(Intent(this, Sign_Up::class.java))
+        startActivity(Intent(this, oAuths::class.java))
         finish()
     }
 
@@ -272,6 +272,7 @@ class OTPSecondStep : AppCompatActivity(), View.OnClickListener {
         val resendotp = findViewById<TextView>(R.id.resendnotrecieved)
         val span = SpannableString(getString(R.string.resend_otp_if_not_recieved))
         val clickableSpan = object : ClickableSpan() {
+            @RequiresApi(Build.VERSION_CODES.M)
             override fun updateDrawState(ds: TextPaint) {
                 super.updateDrawState(ds)
                 ds.isUnderlineText = false
