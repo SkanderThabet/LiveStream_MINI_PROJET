@@ -26,6 +26,7 @@ android {
 
         testInstrumentationRunner "androidx.OTPSecondStep.runner.AndroidJUnitRunner"
         buildConfigField "String", "API_KEY", "\"" + localProperties['apiKey'] + "\""
+        buildConfigField("String","WEB_CLIENT_ID",'"573492796570-bdc71haoh8l1jlhpd1ev0tn856eqvund.apps.googleusercontent.com"')
 
     }
     buildFeatures {
@@ -98,7 +99,7 @@ dependencies {
 
     implementation platform('com.google.firebase:firebase-bom:29.0.0')
     implementation 'com.google.firebase:firebase-analytics-ktx'
-    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation "com.squareup.picasso:picasso:2.5.2"
     implementation 'com.google.firebase:firebase-auth-ktx'
     implementation 'androidx.browser:browser:1.4.0'
 
@@ -155,7 +156,8 @@ dependencies {
 
 
 
-
+    //Auth google one tap google api
+    implementation 'com.google.android.gms:play-services-auth:20.0.0'
 
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.0"

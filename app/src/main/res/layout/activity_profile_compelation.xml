@@ -81,6 +81,7 @@
             android:background="@android:color/transparent"
             android:fontFamily="@font/montserratregular400"
             android:inputType="textPassword"
+            android:autofillHints="password"
             android:textColor="#FFFFFF"
             android:textColorHint="#80E0FF " />
 

@@ -9,10 +9,12 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.util.Patterns
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import androidx.core.widget.doOnTextChanged
 import com.android.volley.*
 import com.android.volley.toolbox.HttpHeaderParser
 import com.android.volley.toolbox.JsonObjectRequest
@@ -67,10 +69,17 @@ class Profile_compelation : AppCompatActivity() {
             checkForPermission()
         }
         btn_complete_profile.setOnClickListener {
-            if (validate()) {
+            val email = outline_et_email.text.toString()
+            val password = outline_et_password.text.toString()
+            val firstname = outline_et_firstname.text.toString()
+            val lastname = outline_et_lastname.text.toString()
+            val dob = tv_dob.text.toString()
+            if (!::downloadURL.isInitialized) {
+                Toast.makeText(this,"Photo cannot be empty",Toast.LENGTH_SHORT).show()
+            }
+            if (isValidForm(email, password, firstname, lastname, dob)) {
                 Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show()
                 signup()
-//                registerUser()
 
             }
         }
@@ -308,6 +317,60 @@ class Profile_compelation : AppCompatActivity() {
 
         return true
     }
+    private fun isValidForm(email: String, password: String,firstname:String,lastname:String,dob:String): Boolean {
+        var isValid = true
+
+        if (firstname.isEmpty()){
+            et_firstname.isErrorEnabled = true
+            et_firstname.error = "Name cannot be empty!"
+            isValid = false
+        }else{
+            outline_et_firstname.doOnTextChanged { text, start, before, count ->
+                et_firstname.isErrorEnabled = false
+                outline_et_firstname.error=null
+            }
+            et_firstname.isErrorEnabled = false
+        }
+        if (lastname.isEmpty()){
+            et_lastname.isErrorEnabled = true
+            et_lastname.error = "Surname cannot be empty!"
+            isValid = false
+        }else{
+            et_lastname.isErrorEnabled = false
+        }
+        if (!email.isValidEmail()){
+            et_email.isErrorEnabled = true
+            et_email.error = "Email address is wrong!"
+            isValid = false
+        }else{
+            et_email.isErrorEnabled = false
+        }
+        if (password.isEmpty()){
+            et_password.isErrorEnabled = true
+            et_password.error = "Password cannot be empty!"
+            isValid = false
+        }
+        else if(password.length < 8){
+            et_password.isErrorEnabled = true
+            et_password.error = "Password length must be longer than 8."
+            isValid = false
+        }
+        else{
+            et_password.isErrorEnabled = false
+        }
+        if (dob.isEmpty()){
+            tv_dob.error = "You should pick a date it's required!"
+            isValid=false
+        }
+        else{
+            tv_dob.error=null
+        }
+        return isValid
+    }
+    private fun String.isValidEmail(): Boolean
+            = this.isNotEmpty() &&
+            Patterns.EMAIL_ADDRESS.matcher(this).matches()
+
 
     override fun onStart() {
         super.onStart()

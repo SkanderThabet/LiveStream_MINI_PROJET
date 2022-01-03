@@ -139,7 +139,7 @@
         <entry key="app/src/main/res/layout/activity_custom.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/activity_event_details.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/activity_example.xml" value="0.12056010928961748" />
-        <entry key="app/src/main/res/layout/activity_home_page.xml" value="0.12056010928961748" />
+        <entry key="app/src/main/res/layout/activity_home_page.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_homepage_test.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/activity_launch_screen.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/activity_live_broadcast.xml" value="0.12056010928961748" />
@@ -157,7 +157,7 @@
         <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/activity_welcome_page.xml" value="0.1426948869697147" />
-        <entry key="app/src/main/res/layout/drawer_header.xml" value="0.12056010928961748" />
+        <entry key="app/src/main/res/layout/drawer_header.xml" value="0.165" />
         <entry key="app/src/main/res/layout/episode_item.xml" value="0.1403688524590164" />
         <entry key="app/src/main/res/layout/fragment_channel.xml" value="0.12056010928961748" />
         <entry key="app/src/main/res/layout/fragment_chat.xml" value="0.12056010928961748" />
@@ -187,6 +187,8 @@
         <entry key="app/src/main/res/menu/menu_details.xml" value="0.2125" />
         <entry key="app/src/main/res/menu/menu_search.xml" value="0.2125" />
         <entry key="app/src/main/res/menu/navigation_controller.xml" value="0.18888888888888888" />
+        <entry key="app/src/main/res/menu/options_rtmp.xml" value="0.2222222222222222" />
+        <entry key="app/src/main/res/menu/options_rtsp.xml" value="0.2222222222222222" />
         <entry key="app/src/main/res/menu/users_menu.xml" value="0.18888888888888888" />
       </map>
     </option>
