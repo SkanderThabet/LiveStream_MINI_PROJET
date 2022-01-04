@@ -52,6 +52,8 @@
                 android:layout_height="36dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="340dp"
+                android:background="@drawable/ic_left"
+                android:backgroundTint="#000000"
                 app:circularflow_radiusInDP="28"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

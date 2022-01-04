@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.firebase.jobdispatcher.*
 import com.projet.miniprojet.androidVox.R
+import com.projet.miniprojet.androidVox.activities.Homepage.HomePage
 import com.projet.miniprojet.androidVox.activities.PodcastV2.Service.EpisodeUpdateService
 import com.projet.miniprojet.androidVox.activities.PodcastV2.Service.FeedService
 import com.projet.miniprojet.androidVox.activities.PodcastV2.Service.ItunesService
@@ -48,7 +49,12 @@ class PodcastActivity : AppCompatActivity(), PodcastListAdapter.PodcastListAdapt
         setupPodcastListView()
         addBackStackListener()
         scheduleJobs()
+        toolbar.getChildAt(0).setOnClickListener {
+            startActivity(Intent(this,HomePage::class.java))
+            finish()
+        }
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater = menuInflater

@@ -15,22 +15,29 @@ import com.google.android.gms.auth.api.identity.SignInClient
 import com.google.android.gms.auth.api.identity.SignInCredential
 import com.projet.miniprojet.androidVox.R
 import com.projet.miniprojet.androidVox.activities.BroadcastStreaming.BroadcastMain
+import com.projet.miniprojet.androidVox.activities.BroadcastStreaming.defaultexample.ExampleRtmpActivity
 import com.projet.miniprojet.androidVox.activities.Chat.ChatMain
+import com.projet.miniprojet.androidVox.activities.LiveStreamChatInteraction.AppConfig
 import com.projet.miniprojet.androidVox.activities.LiveStreamChatInteraction.MainActivity
 import com.projet.miniprojet.androidVox.activities.PodcastV2.ui.PodcastActivity
 import com.projet.miniprojet.androidVox.activities.SignInUp.EXTRA_CREDENTIAL
 import com.projet.miniprojet.androidVox.activities.SignInUp.oAuths
+import com.projet.miniprojet.androidVox.models.ChatUser
 import com.projet.miniprojet.androidVox.other.SharedPref
 import com.squareup.picasso.Picasso
+import io.getstream.chat.android.client.ChatClient
+import io.getstream.chat.android.client.models.User
 import kotlinx.android.synthetic.main.activity_home_page.*
 import kotlinx.android.synthetic.main.drawer_header.*
 import org.json.JSONException
 import org.json.JSONObject
 
 
+
 class HomePage : AppCompatActivity() {
     private lateinit var oneTapClient: SignInClient
-
+    private val client = ChatClient.instance()
+    private lateinit var user: User
     lateinit var sharedPref: SharedPref
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,6 +66,7 @@ class HomePage : AppCompatActivity() {
             val builder = AlertDialog.Builder(this)
             builder.setPositiveButton("Yes") { _, _ ->
                 sharedPref.clear()
+                client.disconnect()
                 startActivity(Intent(this, oAuths::class.java))
                 finish()
 
@@ -110,7 +118,7 @@ class HomePage : AppCompatActivity() {
     }
 
     private fun startStreamingActivity() {
-        startActivity(Intent(this, BroadcastMain::class.java))
+        startActivity(Intent(this, ExampleRtmpActivity::class.java))
         finish()
     }
 
@@ -140,6 +148,7 @@ class HomePage : AppCompatActivity() {
                                 .placeholder(R.drawable.defaultavatar)
                                 .error(R.drawable.defaultavatar)
                                 .into(avatarView)
+                            setupUser(userObj.getString("username"),fullname,userObj.getString("avatar"),token)
                         }
                     } catch (e: JSONException) {
                         e.printStackTrace()
@@ -170,21 +179,44 @@ class HomePage : AppCompatActivity() {
         val requestQueue = Volley.newRequestQueue(this)
         requestQueue.add(jsonObjectRequest)
     }
+    private fun connectUser(id:String,name:String,image:String,token:String) {
+
+        ChatClient.instance().connectUser(
+            user = User(
+                id = id,
+                extraData = mutableMapOf(
+                    "name" to name,
+                    "image" to image
+                )
+            ),
+            token = token
+        ).enqueue()
+    }
+    private fun setupUser(id:String,name:String,image:String,token:String) {
+
+            user =
+                User(
+                    id = id,
+                    extraData = mutableMapOf(
+                        "name" to name,
+                        "image" to image
+                    )
+                )
+            val token = client.devToken(user.id)
+            client.connectUser(
+                user = user,
+                token = token
+            ).enqueue { result ->
+                if (result.isSuccess) {
+                    Log.d("ChannelFragment", "Success Connecting the User")
+                } else {
+                    Log.d("ChannelFragment", result.error().message.toString())
+                }
+            }
+        }
 
 
-//    private fun signOut() {
-//        oneTapClient
-//            .signOut()
-//            .addOnSuccessListener {
-//                Log.d("VoxOneTAP", "Success sign out")
-//                startActivity(Intent(this, oAuths::class.java))
-//                finish()
-//            }
-//            .addOnFailureListener { e ->
-//                Log.d("VoxOneTAP", e.localizedMessage ?: "null")
-//            }
-//
-//    }
+
 
     companion object {
         fun createIntent(context: Context): Intent {

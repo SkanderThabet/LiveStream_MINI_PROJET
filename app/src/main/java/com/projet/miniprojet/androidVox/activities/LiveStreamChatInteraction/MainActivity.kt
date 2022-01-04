@@ -1,19 +1,16 @@
 package com.projet.miniprojet.androidVox.activities.LiveStreamChatInteraction
 
-import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.projet.miniprojet.androidVox.R
 import com.projet.miniprojet.androidVox.activities.Homepage.HomePage
-import io.getstream.chat.android.client.ChatClient
-
 import com.projet.miniprojet.androidVox.activities.LiveStreamChatInteraction.util.ThemeHelper
 import com.projet.miniprojet.androidVox.databinding.ActivityHomepageTestBinding
+import io.getstream.chat.android.client.ChatClient
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupToolbar() {
         ChatClient.instance().getCurrentUser()?.let {
-            binding.userAvatarView.setUserData(it)
+//            binding.userAvatarView.setUserData(it)
         }
         binding.userAvatarView.setOnClickListener {
             startActivity(HomePage.createIntent(this))

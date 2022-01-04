@@ -18,6 +18,7 @@ import androidx.navigation.fragment.navArgs
 import com.projet.miniprojet.androidVox.R
 import com.projet.miniprojet.androidVox.activities.Homepage.HomePage
 import com.projet.miniprojet.androidVox.activities.PodcastV2.ui.PodcastActivity
+import com.projet.miniprojet.androidVox.activities.SignInUp.sharedPref
 import com.projet.miniprojet.androidVox.databinding.FragmentChannelBinding
 import io.getstream.chat.android.client.ChatClient
 import io.getstream.chat.android.client.models.Channel
@@ -177,7 +178,12 @@ class ChannelFragment : Fragment() {
         val builder = AlertDialog.Builder(requireContext())
         builder.setPositiveButton("Yes") { _, _ ->
             client.disconnect()
-            findNavController().navigate(R.id.action_channelFragment_to_loginFragment)
+            sharedPref.clear()
+            activity!!.supportFragmentManager.beginTransaction().remove(this).commit();
+
+
+
+//            findNavController().navigate(R.id.action_channelFragment_to_loginFragment)
             showToast("Logged out successfully")
         }
         builder.setNegativeButton("No") { _, _ -> }
@@ -197,5 +203,10 @@ class ChannelFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onStop() {
+        super.onStop()
+
     }
 }

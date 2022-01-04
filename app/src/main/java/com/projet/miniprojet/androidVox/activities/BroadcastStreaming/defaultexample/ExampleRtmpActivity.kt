@@ -15,21 +15,29 @@
  */
 package com.projet.miniprojet.androidVox.activities.BroadcastStreaming.defaultexample
 
-import androidx.appcompat.app.AppCompatActivity
-import com.pedro.rtmp.utils.ConnectCheckerRtmp
-import android.view.SurfaceHolder
-import com.pedro.rtplibrary.rtmp.RtmpCamera1
-import android.widget.EditText
-import android.os.Bundle
-import android.view.WindowManager
-import com.projet.miniprojet.androidVox.R
-import android.view.SurfaceView
-import android.widget.Toast
-import com.pedro.encoder.input.video.CameraOpenException
+import android.Manifest
+import android.content.Context
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.wifi.WifiManager
 import android.os.Build
+import android.os.Bundle
+import android.util.Log
+import android.view.SurfaceHolder
+import android.view.SurfaceView
 import android.view.View
+import android.view.WindowManager
 import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import com.pedro.encoder.input.video.CameraOpenException
+import com.pedro.rtmp.utils.ConnectCheckerRtmp
+import com.pedro.rtplibrary.rtmp.RtmpCamera1
+import com.projet.miniprojet.androidVox.R
 import com.projet.miniprojet.androidVox.activities.BroadcastStreaming.utils.PathUtils
+import com.projet.miniprojet.androidVox.activities.Homepage.HomePage
 import kotlinx.android.synthetic.main.activity_example.*
 import java.io.File
 import java.io.IOException
@@ -43,6 +51,10 @@ import java.util.*
  */
 class ExampleRtmpActivity : AppCompatActivity(), ConnectCheckerRtmp, View.OnClickListener,
     SurfaceHolder.Callback {
+    private val PERMISSIONS = arrayOf(
+        Manifest.permission.RECORD_AUDIO, Manifest.permission.CAMERA,
+        Manifest.permission.WRITE_EXTERNAL_STORAGE
+    )
     private var rtmpCamera1: RtmpCamera1? = null
     private var button: Button? = null
     private val bRecord: Button? = null
@@ -51,6 +63,9 @@ class ExampleRtmpActivity : AppCompatActivity(), ConnectCheckerRtmp, View.OnClic
     private var folder: File? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (!hasPermissions(this, *PERMISSIONS)) {
+            ActivityCompat.requestPermissions(this, PERMISSIONS, 1)
+        }
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         setContentView(R.layout.activity_example)
         folder = PathUtils.getRecordPath(this)
@@ -64,6 +79,16 @@ class ExampleRtmpActivity : AppCompatActivity(), ConnectCheckerRtmp, View.OnClic
         rtmpCamera1 = RtmpCamera1(surfaceView, this)
         rtmpCamera1!!.setReTries(10)
         surfaceView.holder.addCallback(this)
+        et_rtp_url.setText("rtmp://${getLocalIpAddress()}/live/live")
+        quitBtnStreaming.setOnClickListener {
+            goBackHome()
+        }
+
+    }
+
+    private fun goBackHome() {
+        startActivity(Intent(this,HomePage::class.java))
+        finish()
     }
 
     override fun onConnectionStartedRtmp(rtmpUrl: String) {}
@@ -113,7 +138,25 @@ class ExampleRtmpActivity : AppCompatActivity(), ConnectCheckerRtmp, View.OnClic
             Toast.makeText(this@ExampleRtmpActivity, "Auth success", Toast.LENGTH_SHORT).show()
         }
     }
+    private fun getLocalIpAddress(): String? {
+        try {
 
+            val wifiManager: WifiManager = applicationContext.getSystemService(WIFI_SERVICE) as WifiManager
+            return ipToString(wifiManager.connectionInfo.ipAddress)
+        } catch (ex: Exception) {
+            Log.e("IP Address", ex.toString())
+        }
+
+        return null
+    }
+
+    private fun ipToString(i: Int): String {
+        return (i and 0xFF).toString() + "." +
+                (i shr 8 and 0xFF) + "." +
+                (i shr 16 and 0xFF) + "." +
+                (i shr 24 and 0xFF)
+
+    }
     override fun onClick(view: View) {
         when (view.id) {
             R.id.b_start_stop -> if (!rtmpCamera1!!.isStreaming) {
@@ -211,5 +254,17 @@ class ExampleRtmpActivity : AppCompatActivity(), ConnectCheckerRtmp, View.OnClic
             button!!.text = resources.getString(R.string.start_button)
         }
         rtmpCamera1!!.stopPreview()
+    }
+    private fun hasPermissions(context: Context?, vararg permissions: String): Boolean {
+        if (context != null && permissions != null) {
+            for (permission in permissions) {
+                if (ActivityCompat.checkSelfPermission(context, permission)
+                    != PackageManager.PERMISSION_GRANTED
+                ) {
+                    return false
+                }
+            }
+        }
+        return true
     }
 }

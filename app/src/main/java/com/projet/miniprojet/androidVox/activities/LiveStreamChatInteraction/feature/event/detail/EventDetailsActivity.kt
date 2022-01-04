@@ -86,9 +86,9 @@ class EventDetailsActivity : AppCompatActivity() {
             .also { exoPlayer ->
                 binding.playerView.player = exoPlayer
 
-                val videoUri = Uri.parse("rtmp://192.168.1.111/live/test")
+                val videoUri = Uri.parse("rtmp://192.168.1.151/live/test")
                 val videoSource = ProgressiveMediaSource.Factory(RtmpDataSourceFactory())
-                    .createMediaSource(MediaItem.fromUri(Uri.parse("rtmp://192.168.1.111/live/test")))
+                    .createMediaSource(MediaItem.fromUri(Uri.parse("rtmp://192.168.1.151/live/test")))
                 exoPlayer.setMediaSource(videoSource)
 //                exoPlayer.setMediaItem(MediaItem.fromUri(videoUri))
 //                exoPlayer.repeatMode = Player.REPEAT_MODE_ONE

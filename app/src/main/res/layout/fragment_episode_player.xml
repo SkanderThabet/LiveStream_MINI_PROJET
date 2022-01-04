@@ -85,13 +85,13 @@
             app:layout_constraintEnd_toStartOf="@+id/playToggleButton"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/playToggleButton"
             android:layout_width="34dp"
             android:layout_height="34dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/ic_play_pause_toggle"
-            android:backgroundTint="#00BCD4"
+            android:backgroundTint="@color/white"
             android:scaleType="fitCenter"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -144,10 +144,12 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
+            android:thumbTint="@color/deep_purple_A200"
             android:progressBackgroundTint="@android:color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/endTimeTextView"
-            app:layout_constraintStart_toEndOf="@+id/currentTimeTextView" />
+            app:layout_constraintStart_toEndOf="@+id/currentTimeTextView"
+            android:progressTint="#CB3EF9"/>
 
         <TextView
             android:id="@+id/endTimeTextView"

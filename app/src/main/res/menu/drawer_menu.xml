@@ -36,20 +36,20 @@
                     android:icon="@drawable/ic_baseline_home_24"
                     android:iconTint="@color/indigo_A700"
                     android:title="Home" />
-                <item
-                    android:id="@+id/profile_menu"
-                    android:icon="@drawable/ic_baseline_person_24"
-                    android:iconTint="@color/indigo_A700"
-                    android:title="Profile" />
-                <item
-                    android:id="@+id/notification_menu"
-                    android:icon="@drawable/ic_baseline_notifications_24"
-                    android:iconTint="@color/indigo_A700"
-                    android:title="Notifications" />
-                <item
-                    android:id="@+id/settings_menu"
-                    android:icon="@drawable/ic_settings"
-                    android:title="Settings" />
+<!--                <item-->
+<!--                    android:id="@+id/profile_menu"-->
+<!--                    android:icon="@drawable/ic_baseline_person_24"-->
+<!--                    android:iconTint="@color/indigo_A700"-->
+<!--                    android:title="Profile" />-->
+<!--                <item-->
+<!--                    android:id="@+id/notification_menu"-->
+<!--                    android:icon="@drawable/ic_baseline_notifications_24"-->
+<!--                    android:iconTint="@color/indigo_A700"-->
+<!--                    android:title="Notifications" />-->
+<!--                <item-->
+<!--                    android:id="@+id/settings_menu"-->
+<!--                    android:icon="@drawable/ic_settings"-->
+<!--                    android:title="Settings" />-->
 
             </group>
         </menu>

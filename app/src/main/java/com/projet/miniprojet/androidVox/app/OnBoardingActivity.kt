@@ -1,6 +1,8 @@
 package com.projet.miniprojet.androidVox.app
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -8,11 +10,13 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.projet.miniprojet.androidVox.R
-import com.projet.miniprojet.androidVox.activities.welcome.WelcomePage
+import com.projet.miniprojet.androidVox.activities.SignInUp.oAuths
 import com.projet.miniprojet.androidVox.adapters.ViewPageAdapter
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+import java.lang.Boolean
 
 class OnBoardingActivity : AppCompatActivity() {
+    private val prevStarted="yes"
     lateinit var viewPager: ViewPager
     lateinit var viewPageAdapter: ViewPageAdapter
 
@@ -55,7 +59,17 @@ class OnBoardingActivity : AppCompatActivity() {
         })
     }
 
-
+    override fun onResume() {
+        super.onResume()
+        val sh:SharedPreferences =getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE)
+        if (!sh.getBoolean(prevStarted, false)) {
+            val editor: SharedPreferences.Editor = sh.edit()
+            editor.putBoolean(prevStarted, Boolean.TRUE)
+            editor.apply()
+        } else {
+            openfirstact()
+        }
+    }
     private fun getItem(i: Int): Int {
         return viewPager.currentItem + i
     }
@@ -63,7 +77,7 @@ class OnBoardingActivity : AppCompatActivity() {
     private fun getStartButton() {
         val getstartBtn = findViewById<Button>(R.id.getstartedbtn)
         getstartBtn.setOnClickListener {
-            otpFirstAct()
+            openfirstact()
         }
     }
 
@@ -80,8 +94,8 @@ class OnBoardingActivity : AppCompatActivity() {
         }
     }
 
-    private fun otpFirstAct() {
-        startActivity(Intent(this, WelcomePage::class.java))
+    private fun openfirstact() {
+        startActivity(Intent(this, oAuths::class.java))
         finish()
     }
 

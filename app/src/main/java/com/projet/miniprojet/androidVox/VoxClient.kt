@@ -25,7 +25,7 @@ class VoxClient : Application() {
 
         val client = ChatClient.Builder(getString(R.string.api_key),this).logLevel(ChatLogLevel.ALL).build()
         ChatDomain.Builder(client,this).build()
-        connectUser()
+
 
         Realm.init(this)
         val config = RealmConfiguration.Builder().name(APP_ID).build()
@@ -44,17 +44,17 @@ class VoxClient : Application() {
 
         Log.v(TAG(), "Initialized the Realm App configuration for: ${voxApp.configuration.appId}")
     }
-    private fun connectUser() {
-        val userCredentials = AppConfig.availableUsers[0]
-        ChatClient.instance().connectUser(
-            user = User(
-                id = userCredentials.id,
-                extraData = mutableMapOf(
-                    "name" to userCredentials.name,
-                    "image" to userCredentials.image
-                )
-            ),
-            token = userCredentials.token
-        ).enqueue()
-    }
+//    private fun connectUser() {
+//        val userCredentials = AppConfig.availableUsers[0]
+//        ChatClient.instance().connectUser(
+//            user = User(
+//                id = userCredentials.id,
+//                extraData = mutableMapOf(
+//                    "name" to userCredentials.name,
+//                    "image" to userCredentials.image
+//                )
+//            ),
+//            token = userCredentials.token
+//        ).enqueue()
+//    }
 }

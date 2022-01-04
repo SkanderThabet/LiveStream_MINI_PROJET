@@ -5,11 +5,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import com.android.volley.*
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.Volley
 import com.google.android.material.textfield.TextInputLayout
 import com.projet.miniprojet.androidVox.R
+import com.projet.miniprojet.androidVox.activities.SignInUp.sharedPref
 import com.projet.miniprojet.androidVox.databinding.FragmentLoginChatBinding
 import com.projet.miniprojet.androidVox.models.ChatUser
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.drawer_header.*
+import org.json.JSONException
+import org.json.JSONObject
 
 
 class LoginFragmentChat : Fragment() {
@@ -42,6 +51,7 @@ class LoginFragmentChat : Fragment() {
         }
 
     }
+
 
     private fun validateInput(inputText:String,textInputLayout: TextInputLayout ) : Boolean{
         return if(inputText.length<=3){

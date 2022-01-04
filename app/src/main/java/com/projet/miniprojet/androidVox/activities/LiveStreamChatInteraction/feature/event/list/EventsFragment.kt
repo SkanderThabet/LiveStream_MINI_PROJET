@@ -1,14 +1,17 @@
 package com.projet.miniprojet.androidVox.activities.LiveStreamChatInteraction.feature.event.list
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.projet.miniprojet.androidVox.R
+import com.projet.miniprojet.androidVox.activities.BroadcastStreaming.defaultexample.ExampleRtmpActivity
 import com.projet.miniprojet.androidVox.databinding.FragmentEventsBinding
 import com.projet.miniprojet.androidVox.activities.LiveStreamChatInteraction.feature.event.detail.EventDetailsActivity
 import com.projet.miniprojet.androidVox.activities.LiveStreamChatInteraction.AppConfig
+import kotlinx.android.synthetic.main.fragment_events.*
 
 /**
  * Fragment with a list of conference events.
@@ -46,6 +49,9 @@ class EventsFragment : Fragment() {
                     requireContext().getString(R.string.overview_layers_title)
                 )
             )
+        }
+        StreamBtn.setOnClickListener {
+            startActivity(Intent(this.context,ExampleRtmpActivity::class.java))
         }
     }
 }
