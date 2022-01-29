@@ -57,7 +57,7 @@ class Sign_In : AppCompatActivity() {
                     if (response.getBoolean("success")) {
                         val token = response.getString("token")
                         sharedPref.setValue_string("token", token)
-                        Toast.makeText(this@Sign_In, token, Toast.LENGTH_SHORT).show()
+//                        Toast.makeText(this@Sign_In, token, Toast.LENGTH_SHORT).show()
                         startActivity(Intent(this@Sign_In, HomePage::class.java))
                     }
                     progressBar_login.isVisible = false

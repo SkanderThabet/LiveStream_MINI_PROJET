@@ -17,6 +17,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.projet.miniprojet.androidVox.R
 import com.projet.miniprojet.androidVox.activities.Homepage.HomePage
+import com.projet.miniprojet.androidVox.activities.LiveStreamChatInteraction.MainActivity
 import com.projet.miniprojet.androidVox.activities.PodcastV2.ui.PodcastActivity
 import com.projet.miniprojet.androidVox.activities.SignInUp.sharedPref
 import com.projet.miniprojet.androidVox.databinding.FragmentChannelBinding
@@ -142,6 +143,9 @@ class ChannelFragment : Fragment() {
             if(it.itemId==R.id.podcasts_menu){
                 startPodcastAct()
             }
+            if(it.itemId==R.id.channels_menu){
+                startChannelsAct()
+            }
             false
         }
 
@@ -153,6 +157,11 @@ class ChannelFragment : Fragment() {
         headerId.text = currentUser.id
         val headerName = headerView.findViewById<TextView>(R.id.name_textView)
         headerName.text = currentUser.name
+    }
+
+    private fun startChannelsAct() {
+        startActivity(Intent(this.requireContext(), MainActivity::class.java))
+
     }
 
     private fun startPodcastAct() {
