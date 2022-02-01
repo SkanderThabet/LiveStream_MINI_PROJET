@@ -1,5 +1,7 @@
 package com.projet.miniprojet.androidVox.activities.OTP
 
+import android.app.Dialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -10,6 +12,11 @@ import androidx.core.widget.addTextChangedListener
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.hbb20.CountryCodePicker
 import com.projet.miniprojet.androidVox.R
+
+import android.widget.TextView
+import com.hbb20.CountryCodePicker.CustomDialogTextProvider
+import kotlinx.android.synthetic.main.activity_otp2.*
+
 
 class OTPFirstStep : AppCompatActivity() {
     lateinit var phoneNumber: String
@@ -34,11 +41,38 @@ class OTPFirstStep : AppCompatActivity() {
         getOTPbtn.setOnClickListener {
             checkNumber()
         }
+        cpp.setCustomDialogTextProvider(object : CustomDialogTextProvider {
+            override fun getCCPDialogTitle(
+                language: CountryCodePicker.Language,
+                defaultTitle: String
+            ): String {
+                return when (language) {
+                    CountryCodePicker.Language.ENGLISH -> "Select Country/Region"
+                    else -> defaultTitle
+                }
+            }
+
+            override fun getCCPDialogSearchHintText(
+                language: CountryCodePicker.Language?,
+                defaultSearchHintText: String?
+            ): String? {
+                return defaultSearchHintText
+            }
+
+            override fun getCCPDialogNoResultACK(
+                language: CountryCodePicker.Language,
+                defaultNoResultACK: String
+            ): String {
+                return defaultNoResultACK
+            }
+        })
     }
 
     private fun checkNumber() {
         val ccp = findViewById<CountryCodePicker>(R.id.cpp)
         val phonenumberET = findViewById<EditText>(R.id.phonenumberET)
+
+
         countryCode = ccp.selectedCountryCodeWithPlus
         phoneNumber = countryCode + phonenumberET.text.toString()
 

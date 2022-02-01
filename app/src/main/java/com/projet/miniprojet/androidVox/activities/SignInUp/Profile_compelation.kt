@@ -78,7 +78,7 @@ class Profile_compelation : AppCompatActivity() {
                 Toast.makeText(this,"Photo cannot be empty",Toast.LENGTH_SHORT).show()
             }
             if (isValidForm(email, password, firstname, lastname, dob)) {
-                Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show()
                 signup()
 
             }
@@ -170,8 +170,8 @@ class Profile_compelation : AppCompatActivity() {
                 response: retrofit2.Response<User>
             ) {
                 if (response.code() == 200) {
-                    Toast.makeText(this@Profile_compelation, "Success", Toast.LENGTH_SHORT)
-                        .show()
+//                    Toast.makeText(this@Profile_compelation, "Success", Toast.LENGTH_SHORT)
+//                        .show()
                     loginUser(email, password)
                 } else {
                     Toast.makeText(
@@ -203,7 +203,7 @@ class Profile_compelation : AppCompatActivity() {
                     if (response.getBoolean("success")) {
                         val token = response.getString("token")
                         sharedPref.setValue_string("token", token)
-                        Toast.makeText(this@Profile_compelation, token, Toast.LENGTH_SHORT).show()
+//                        Toast.makeText(this@Profile_compelation, token, Toast.LENGTH_SHORT).show()
                         startActivity(Intent(this@Profile_compelation, HomePage::class.java))
                     }
                     progressBar_profile.isVisible = false

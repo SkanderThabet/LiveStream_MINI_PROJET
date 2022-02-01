@@ -48,7 +48,7 @@
         android:layout_marginEnd="49dp"
         android:gravity="center_horizontal|top"
         android:lineSpacingExtra="4sp"
-        android:text="@string/we_will_sen"
+        android:text="Enter your mobile phone number to get verified"
         android:textAppearance="@style/we_will_sen"
         android:translationY="-2.25sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -98,6 +98,9 @@
                 android:gravity="center"
                 app:ccp_autoDetectCountry="true"
                 app:ccp_showNameCode="false"
+                app:ccpDialog_showCloseIcon="true"
+                app:ccpDialog_showTitle="true"
+                app:ccp_defaultLanguage="ENGLISH"
                 app:ccp_textSize="@dimen/_20sp" />
 
             <EditText
