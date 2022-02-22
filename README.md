@@ -60,7 +60,7 @@
 <div align="center">
   <img src="app/src/main/java/com/projet/miniprojet/androidVox/Screenshots/Google Pixel 4 XL Screenshot 0.png" alt="sc1" width="400"><img src="app/src/main/java/com/projet/miniprojet/androidVox/Screenshots/Google Pixel 4 XL Screenshot 1.png" alt="sc1" width="400">
 </div>
-<div align="center"><img src="app/src/main/java/com/projet/miniprojet/androidVox/Screenshots/Google Pixel 4 XL Screenshot 4.png" alt="sc1" width="300"><img src="app/src/main/java/com/projet/miniprojet/androidVox/Screenshots/Google Pixel 4 XL Screenshot 2.png" alt="sc1" width="300">. <img src="app/src/main/java/com/projet/miniprojet/androidVox/Screenshots/Google Pixel 4 XL Screenshot 3.png" alt="sc1" width="300">
+<div align="center"><img src="app/src/main/java/com/projet/miniprojet/androidVox/Screenshots/Google Pixel 4 XL Screenshot 4.png" alt="sc1" width="250"><img src="app/src/main/java/com/projet/miniprojet/androidVox/Screenshots/Google Pixel 4 XL Screenshot 2.png" alt="sc1" width="250">. <img src="app/src/main/java/com/projet/miniprojet/androidVox/Screenshots/Google Pixel 4 XL Screenshot 3.png" alt="sc1" width="250">
 </div>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
