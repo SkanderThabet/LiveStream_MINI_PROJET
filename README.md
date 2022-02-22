@@ -118,7 +118,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Skander Thabet - [@your_twitter](https://linkedin.com/in/skanderthabet) - skander.thabet@esprit.tn
+Skander Thabet - [LinkedIn](https://linkedin.com/in/skanderthabet) - skander.thabet@esprit.tn
 
 Project Link: [https://github.com/SkanderThabet/LiveStream_MINI_PROJET](https://github.com/SkanderThabet/LiveStream_MINI_PROJET)
 
