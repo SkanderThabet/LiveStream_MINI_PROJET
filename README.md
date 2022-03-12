@@ -86,7 +86,6 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <br/>
 <p align="center">
 <strong>Maker account</strong><br />
-<a href="https://getstream.io/?utm_source=github.com/pedroSG94/rtmp-rtsp-stream-client-java&utm_medium=github&utm_campaign=oss_sponsorship" target="_blank">
 <img src="https://stream-blog-v2.imgix.net/blog/wp-content/uploads/f7401112f41742c4e173c30d4f318cb8/stream_logo_white.png?w=350" alt="Stream Chat" style="margin: 8px" />
   <p align="center">
 <a href="https://appgallery.huawei.com/app/C105458665?sharePrepath=ag&locale=en_US&source=appshare&subsource=C105458665&shareTo=com.android.bluetooth&shareFrom=appmarket&fbclid=IwAR13QfQQMYtBnU-m_0mneD3wZhrsE0_hbGvypyXHT5s7XX8P9Sm0oWbj_iE" target="_blank">
