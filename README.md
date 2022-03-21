@@ -29,7 +29,7 @@
     <img src="app/src/main/java/com/projet/miniprojet/androidVox/Screenshots/Color.png" alt="Logo" width="200" height="150">
   </a>
 
-  <h3 align="center">Vox broadcast streaming, chat messaging and podcast streaming mobile app</h3>
+  <h3 align="center">Vox is a broadcast streaming, chat messaging and podcast streaming mobile app</h3>
 
   <p align="center">
     Mini project Android Application!
@@ -69,8 +69,6 @@
 
 
 ### Built With
-
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 * [Kotlin](https://kotlinlang.org/)
 * [Node.js](https://nodejs.org/en/)
